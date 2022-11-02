@@ -36,5 +36,6 @@
         <Button x:Name="cedulabtn" Content="Buscar por Cedula" HorizontalAlignment="Left" Margin="138,299,0,0" VerticalAlignment="Top" Width="119" Click="cedulabtn_Click"/>
         <TextBox x:Name="cedulaFindtxt"  HorizontalAlignment="Left" Margin="32,300,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="20" Width="101"/>
         <Label x:Name="lblMessage" Content="" HorizontalAlignment="Left" Margin="64,43,0,0" Visibility="Hidden" VerticalAlignment="Top" RenderTransformOrigin="0.101,0.595" Width="37"/>
+        <ListBox Margin="332,253,332,43"/>
     </Grid>
 </Window>

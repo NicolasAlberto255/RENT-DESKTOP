@@ -1,0 +1,68 @@
+{
+    "regiones": [
+        {
+            "idnombreRegion": 1,
+            "nombreRegion": "Arica y Parinacota"
+        },
+        {
+            "idnombreRegion": 2,
+            "nombreRegion": "Tarapacá"
+        },
+        {
+            "idnombreRegion": 3,
+            "nombreRegion": "Antofagasta"
+        },
+        {
+            "idnombreRegion": 4,
+            "nombreRegion": "Atacama"
+        },
+        {
+            "idnombreRegion": 5,
+            "nombreRegion": "Coquimbo"
+        },
+        {
+            "idnombreRegion": 6,
+            "nombreRegion": "Valparaíso"
+        },
+        {
+            "idnombreRegion": 7,
+            "nombreRegion": "Región Metropolitana de Santiago" 
+        },
+        {
+            "idnombreRegion": 8,
+            "nombreRegion": "Región del Libertador Gral. Bernardo O’Higgins" 
+        },
+        {
+            "idnombreRegion": 9,
+            "nombreRegion": "Región del Maule"
+        },
+        {
+            "idnombreRegion": 10,
+            "nombreRegion": "Región de Ñuble" 
+        },
+        {
+            "idnombreRegion": 11,
+            "nombreRegion": "Región del Biobío"  
+        },
+        {
+            "idnombreRegion": 12,    
+            "nombreRegion": "Región de la Araucanía"
+        },
+        {
+            "idnombreRegion": 13,
+            "nombreRegion": "Región de Los Ríos" 
+        },
+        {
+            "idnombreRegion": 14,
+            "nombreRegion": "Región de Los Lagos"
+        },
+        {
+            "idnombreRegion": 15,
+            "nombreRegion": "Región Aisén del Gral. Carlos Ibáñez del Campo"
+        },
+        {
+            "idnombreRegion": 16,
+            "nombreRegion": "Región de Magallanes y de la Antártica Chilena"
+        }
+    ]
+}

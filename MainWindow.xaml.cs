@@ -28,8 +28,9 @@ namespace RENT
 
         private void rgUsuarioBtn_Click(object sender, RoutedEventArgs e)
         {
-            AddUsuario addUsuario = new AddUsuario();
-            addUsuario.Show();
+            AddUsuarios addUsuarios = new AddUsuarios();
+            this.Content = addUsuarios;
+            addUsuarios.GetRegiones();
         }
 
         private void bUsuariosBtn_Click(object sender, RoutedEventArgs e)
