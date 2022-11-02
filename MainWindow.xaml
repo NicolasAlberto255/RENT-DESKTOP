@@ -8,6 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Button x:Name="rgUsuarioBtn" Content="Registrar Usuario" HorizontalAlignment="Left" Margin="187,189,0,0" VerticalAlignment="Top" Click="rgUsuarioBtn_Click"/>
+        <Button x:Name="bUsuariosBtn" Content="Buscar Usuarios" HorizontalAlignment="Left" Margin="307,189,0,0" VerticalAlignment="Top" Click="bUsuariosBtn_Click"/>
 
     </Grid>
 </Window>

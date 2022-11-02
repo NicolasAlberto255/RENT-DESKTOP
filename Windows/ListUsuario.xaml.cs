@@ -25,14 +25,13 @@ namespace RENT.Windows
         HttpClient client = new HttpClient();
         public ListUsuario()
         {
-            client.BaseAddress = new Uri("http://apirent-env.eba-n7bvnjak.us-east-1.elasticbeanstalk.com/");
+            client.BaseAddress = new Uri("http://apirent-env.eba-n7bvnjak.us-east-1.elasticbeanstalk.com");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
             InitializeComponent();
         }
         private void cargarUsuariobtn_Click(object sender, RoutedEventArgs e)
         {
-            dgUsuarios.ItemsSource = null;
             this.GetUsuarios();
         }
 

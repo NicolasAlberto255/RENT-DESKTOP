@@ -5941,11 +5941,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nicolas\\OneDrive\\Escritorio\\Portafolio\\RENT-DESKTOP\\RENT\\RENT.csproj",
+      "projectUniqueName": "C:\\Users\\Nicolas\\OneDrive\\Escritorio\\Portafolio\\RENT-DESKTOP\\RENT\\RENT-DESKTOP\\RENT.csproj",
       "projectName": "RENT",
-      "projectPath": "C:\\Users\\Nicolas\\OneDrive\\Escritorio\\Portafolio\\RENT-DESKTOP\\RENT\\RENT.csproj",
+      "projectPath": "C:\\Users\\Nicolas\\OneDrive\\Escritorio\\Portafolio\\RENT-DESKTOP\\RENT\\RENT-DESKTOP\\RENT.csproj",
       "packagesPath": "C:\\Users\\Nicolas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nicolas\\OneDrive\\Escritorio\\Portafolio\\RENT-DESKTOP\\RENT\\obj\\",
+      "outputPath": "C:\\Users\\Nicolas\\OneDrive\\Escritorio\\Portafolio\\RENT-DESKTOP\\RENT\\RENT-DESKTOP\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

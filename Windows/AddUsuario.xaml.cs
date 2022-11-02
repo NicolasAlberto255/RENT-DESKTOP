@@ -80,19 +80,24 @@ namespace RENT.Windows
         {
             await client.PostAsJsonAsync("/usuario/usuariosPut/" + usuario.idUsuario, usuario);
         }
-        public async void GetRegiones()
-        {
-            var response = await client.GetAsync("region/regiones");
-            var json = await response.Content.ReadAsStringAsync();
-            var regiones = JsonConvert.DeserializeObject<List<Regiones>>(json);
-            regiones.ForEach(x => regionescmb.Items.Add(x.nombreRegion));
 
+        private async Task CargarRegiones()
+        {
+            string response = await client.GetStringAsync("region/regiones");
+            List<Regiones> regiones = JsonConvert.DeserializeObject<List<Regiones>>(response);
+            regiones.Insert(0, new Regiones() { idRegion = 0, nombreRegion = "Seleccione una región" });
+            regionescmb.ItemsSource = regiones;
+            regionescmb.DisplayMemberPath = "nombreRegion";
+            regionescmb.SelectedValuePath = "idRegion";
+            
         }
         
-      
+
+
         private void regionescmb_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            this.GetRegiones();
+            this.CargarRegiones();
         }
+
     }
 }

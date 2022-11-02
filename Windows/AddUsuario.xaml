@@ -22,7 +22,7 @@
         <Label Content="Rol:" HorizontalAlignment="Left" Margin="58,230,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="idtxt" Visibility="Hidden" HorizontalAlignment="Left" Margin="130,43,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="35" Height="26"/>
         <Label x:Name="lblMessage" Content="" HorizontalAlignment="Left" Margin="58,341,0,0" VerticalAlignment="Top" Width="87"/>
-        <ComboBox x:Name="regionescmb"  HorizontalAlignment="Left" Margin="130,261,0,0" VerticalAlignment="Top" Width="138" Height="26" SelectionChanged="regionescmb_SelectionChanged"/>
+        <ComboBox x:Name="regionescmb"  HorizontalAlignment="Left" Margin="130,261,0,0" VerticalAlignment="Top" Width="138" Height="26" SelectionChanged="regionescmb_SelectionChanged" ItemsSource="{Binding Path=nombreRegion}"/>
         <ComboBox x:Name="provinciacmb"  HorizontalAlignment="Left" Margin="130,292,0,0" VerticalAlignment="Top" Width="138" Height="26"/>
         <ComboBox x:Name="comunacmb"  HorizontalAlignment="Left" Margin="130,325,0,0" VerticalAlignment="Top" Width="138" Height="26"/>
         <Label Content="Regiones:" HorizontalAlignment="Left" Margin="58,261,0,0" VerticalAlignment="Top"/>

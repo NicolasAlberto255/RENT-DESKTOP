@@ -31,5 +31,11 @@ namespace RENT
             AddUsuario addUsuario = new AddUsuario();
             addUsuario.Show();
         }
+
+        private void bUsuariosBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ListUsuario listUsuario = new ListUsuario();
+            listUsuario.Show();
+        }
     }
 }
