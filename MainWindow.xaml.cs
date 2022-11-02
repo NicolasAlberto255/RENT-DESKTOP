@@ -31,6 +31,7 @@ namespace RENT
             AddUsuarios addUsuarios = new AddUsuarios();
             this.Content = addUsuarios;
             addUsuarios.GetRegiones();
+            addUsuarios.GetComunas();
         }
 
         private void bUsuariosBtn_Click(object sender, RoutedEventArgs e)

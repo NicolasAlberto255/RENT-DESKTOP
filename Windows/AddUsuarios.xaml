@@ -8,31 +8,29 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AddUsuarios">
 
-    <Grid>
+    <Grid Background="#FFFCFCFC">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="11*"/>
-            <ColumnDefinition Width="389*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="guardarbtn" Content="Guardar Usuarios" HorizontalAlignment="Left" Margin="594,352,0,0" VerticalAlignment="Top" Click="guardarbtn_Click" Width="138" Grid.Column="1"/>
+        <Button x:Name="guardarbtn" Content="Guardar Usuarios" HorizontalAlignment="Left" Margin="594,352,0,0" VerticalAlignment="Top" Click="guardarbtn_Click" Width="138" Grid.Column="1" Height="20"/>
         <TextBox x:Name="nombretxt" HorizontalAlignment="Left" Margin="108,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Height="26" Grid.Column="1"/>
-        <Label Content="Nombre:" HorizontalAlignment="Left" Margin="36,74,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label Content="Nombre:" HorizontalAlignment="Left" Margin="36,74,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="56"/>
         <TextBox x:Name="apellidotxt" HorizontalAlignment="Left" Margin="108,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Height="26" Grid.Column="1"/>
-        <Label Content="Apellido:" HorizontalAlignment="Left" Margin="36,105,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label Content="Apellido:" HorizontalAlignment="Left" Margin="36,105,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="56"/>
         <TextBox x:Name="cedulatxt" HorizontalAlignment="Left" Margin="108,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Height="26" Grid.Column="1"/>
-        <Label Content="Cedula:" HorizontalAlignment="Left" Margin="36,136,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label Content="Cedula:" HorizontalAlignment="Left" Margin="36,136,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="49"/>
         <TextBox x:Name="correotxt" HorizontalAlignment="Left" Margin="108,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Height="26" Grid.Column="1"/>
-        <Label Content="Correo:" HorizontalAlignment="Left" Margin="36,167,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label Content="Correo:" HorizontalAlignment="Left" Margin="36,167,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="49"/>
         <TextBox x:Name="telefonotxt" HorizontalAlignment="Left" Margin="108,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Height="26" Grid.Column="1"/>
-        <Label Content="Telefono:" HorizontalAlignment="Left" Margin="36,199,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label Content="Telefono:" HorizontalAlignment="Left" Margin="36,199,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="58"/>
         <TextBox x:Name="roltxt" HorizontalAlignment="Left" Margin="108,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Height="26" Grid.Column="1"/>
-        <Label Content="Rol:" HorizontalAlignment="Left" Margin="36,230,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label Content="Rol:" HorizontalAlignment="Left" Margin="36,230,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="29"/>
         <TextBox x:Name="idtxt" Visibility="Hidden" HorizontalAlignment="Left" Margin="108,43,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="35" Height="26" Grid.Column="1"/>
-        <Label x:Name="lblMessage" Content="" HorizontalAlignment="Left" Margin="36,341,0,0" VerticalAlignment="Top" Width="87" Grid.Column="1"/>
-        <ComboBox x:Name="regionescmb"  HorizontalAlignment="Left" Margin="108,261,0,0" VerticalAlignment="Top" Width="138" Height="26" SelectionChanged="regionescmb_SelectionChanged" ItemsSource="{Binding Path=nombreRegion}" Grid.Column="1"/>
-        <ComboBox x:Name="provinciacmb"  HorizontalAlignment="Left" Margin="108,292,0,0" VerticalAlignment="Top" Width="138" Height="26" Grid.Column="1"/>
-        <ComboBox x:Name="comunacmb"  HorizontalAlignment="Left" Margin="108,325,0,0" VerticalAlignment="Top" Width="138" Height="26" Grid.Column="1"/>
-        <Label Content="Regiones:" HorizontalAlignment="Left" Margin="36,261,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <Label Content="Provincia:" HorizontalAlignment="Left" Margin="36,292,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-        <Label Content="Comuna:" HorizontalAlignment="Left" Margin="36,325,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label x:Name="lblMessage" Content="" HorizontalAlignment="Left" Margin="36,308,0,0" VerticalAlignment="Top" Width="87" Grid.Column="1" Height="26"/>
+        <ComboBox x:Name="regionescmb"  HorizontalAlignment="Left" Margin="108,261,0,0" VerticalAlignment="Top" Width="138" Height="26" ItemsSource="{Binding Path=nombreRegion}" Grid.Column="1"/>
+        <ComboBox x:Name="comunascmb"  HorizontalAlignment="Left" Margin="108,292,0,0" VerticalAlignment="Top" Width="138" Height="26" ItemsSource="{Binding Path=nombreComuna}" Grid.Column="1"/>
+        <Label Content="Regiones:" HorizontalAlignment="Left" Margin="36,261,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="61"/>
+        <Label Content="Comuna:" HorizontalAlignment="Left" Margin="36,292,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="57"/>
     </Grid>
 </Page>

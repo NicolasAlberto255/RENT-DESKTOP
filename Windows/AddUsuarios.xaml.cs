@@ -79,29 +79,32 @@ namespace RENT.Windows
             await client.PostAsJsonAsync("/usuario/usuariosPut/" + usuario.idUsuario, usuario);
         }
 
-        public class Regiones
-        {
-            public int? idRegion { get; set; }
-            public string? nombreRegion { get; set; }
-        }
-
         public void GetRegiones()
         {
             var response = client.GetAsync("region/regiones").Result;
-            var json = response.Content.ReadAsStringAsync();
-            var x = JsonConvert.DeserializeObject<List<Regiones>>(json.Result);
-            foreach (var regiones in x)
+            var regiones = response.Content.ReadAsAsync<List<Regiones>>().Result;
+
+            foreach (var region in regiones)
             {
-                regionescmb.Items.Add(regiones.nombreRegion);
-                
+                regionescmb.ItemsSource = regiones;
+                regionescmb.SelectedValue = "idRegion";
+                regionescmb.DisplayMemberPath = "nombreRegion";
+            }
+        }
+
+        public void GetComunas()
+        {
+            var response = client.GetAsync("comuna/comunas").Result;
+            var comunas = response.Content.ReadAsAsync<List<Comunas>>().Result;
+
+            foreach (var comuna in comunas)
+            {
+                comunascmb.ItemsSource = comunas;
+                comunascmb.SelectedValue = "idComuna";
+                comunascmb.DisplayMemberPath = "nombreComuna";
             }
         }
         
-
-
-        private void regionescmb_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-        }
 
     }
 }

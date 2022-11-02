@@ -11,9 +11,9 @@ namespace RENT.Models
         public Comunas() { 
         }
 
-        public int comunaId { get; set; }
+        public int idComuna { get; set; }
 
-        public int regionId { get; set; }
+        public int idRegion { get; set; }
 
         public string? nombreComuna { get; set; }
     }
