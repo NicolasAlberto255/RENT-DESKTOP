@@ -11,14 +11,7 @@ namespace RENT.Models
 {
     public class Regiones
     {
-        public Regiones()
-        {
-        }
-
         public int? idRegion { get; set; }
-
-        public string? nombreRegion { get; set; }
-
-        
+        public string? nombreRegion { get; set; }        
     }
 }

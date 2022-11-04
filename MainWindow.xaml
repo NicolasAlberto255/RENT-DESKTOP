@@ -6,9 +6,10 @@
         xmlns:local="clr-namespace:RENT"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button x:Name="rgUsuarioBtn" Content="Registrar Usuario" HorizontalAlignment="Left" Margin="187,189,0,0" VerticalAlignment="Top" Click="rgUsuarioBtn_Click"/>
-        <Button x:Name="bUsuariosBtn" Content="Buscar Usuarios" HorizontalAlignment="Left" Margin="307,189,0,0" VerticalAlignment="Top" Click="bUsuariosBtn_Click"/>
-
+    <Grid Background="#FFFCFCFC" Height="450" Width="800">
+        <Button x:Name="rgUsuarioBtn" Content="Registrar Usuario" HorizontalAlignment="Left" Margin="187,189,0,0" VerticalAlignment="Top" Click="rgUsuarioBtn_Click" ClickMode="Press"/>
+        <Button x:Name="bUsuariosBtn" Content="Buscar Usuarios" HorizontalAlignment="Left" Margin="187,214,0,0" VerticalAlignment="Top" Click="bUsuariosBtn_Click" ClickMode="Press"/>
+        <Button x:Name="addReservaBtn" Content="Añadir Reserva" HorizontalAlignment="Left" Margin="187,239,0,0" VerticalAlignment="Top" Click="addReservaBtn_Click" ClickMode="Press"/>
+        <Button x:Name="addDepartamentoBtn" Content="Añadir Departamento" HorizontalAlignment="Left" Margin="187,264,0,0" VerticalAlignment="Top" Click="addDepartamentoBtn_Click"/>
     </Grid>
 </Window>

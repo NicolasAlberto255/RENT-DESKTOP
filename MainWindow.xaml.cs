@@ -36,8 +36,26 @@ namespace RENT
 
         private void bUsuariosBtn_Click(object sender, RoutedEventArgs e)
         {
-            ListUsuario listUsuario = new ListUsuario();
-            listUsuario.Show();
+            ListUsuarios listUsuarios = new ListUsuarios();
+            this.Content = listUsuarios;
+        }
+
+        private void addReservaBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddReserva addReserva = new AddReserva();
+            this.Content = addReserva;
+            addReserva.cntDiasTxt.IsEnabled = false;
+            addReserva.fechaFinDtp.IsEnabled = false;
+            addReserva.GetServicios();
+            addReserva.Today();
+        }
+
+        private void addDepartamentoBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddDepartamento addDepartamento = new AddDepartamento();
+            this.Content = addDepartamento;
+            addDepartamento.GetRegiones();
+            addDepartamento.GetComunas();
         }
     }
 }

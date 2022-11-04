@@ -7,10 +7,16 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Windows\AddDepartamento.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\AddReserva.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\AddUsuarios.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\ListUsuario.xaml.cs">
+    <Compile Update="Windows\ListUsuarios.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -18,10 +24,16 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Windows\AddDepartamento.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\AddReserva.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Windows\AddUsuarios.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\ListUsuario.xaml">
+    <Page Update="Windows\ListUsuarios.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

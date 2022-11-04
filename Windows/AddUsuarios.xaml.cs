@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -28,24 +29,26 @@ namespace RENT.Windows
         HttpClient client = new HttpClient();
         public AddUsuarios()
         {
-            client.BaseAddress = new Uri("http://apirent-env.eba-n7bvnjak.us-east-1.elasticbeanstalk.com/");
+            //client.BaseAddress = new Uri("http://apirent-env.eba-n7bvnjak.us-east-1.elasticbeanstalk.com/");
+            client.BaseAddress = new Uri("http://localhost:8080/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
             InitializeComponent();
         }
 
-        private void guardarbtn_Click(object sender, RoutedEventArgs e)
+        private void guardarBtn_Click(object sender, RoutedEventArgs e)
         {
-
             var usuario = new Usuarios()
             {
-                idUsuario = Convert.ToInt32(idtxt.Text),
-                nombreUsuario = nombretxt.Text,
-                apellidoUsuario = apellidotxt.Text,
-                correoUsuario = correotxt.Text,
-                cedulaUsuario = cedulatxt.Text,
-                telefonoUsuario = Convert.ToInt32(telefonotxt.Text),
-                rolUsuario = roltxt.Text
+                idUsuario = Convert.ToInt32(idTxt.Text),
+                nombreUsuario = nombreTxt.Text,
+                apellidoUsuario = apellidoTxt.Text,
+                correoUsuario = correoTxt.Text,
+                cedulaUsuario = cedulaTxt.Text,
+                telefonoUsuario = Convert.ToInt32(telefonoTxt.Text),
+                rolUsuario = Convert.ToInt32(rolTxt.Text),
+                regionUsuario = regionesCmb.Text,
+                comunaUsuario = comunasCmb.Text
             };
 
             if (usuario.idUsuario == 0)
@@ -59,13 +62,15 @@ namespace RENT.Windows
                 lblMessage.Content = "Usuario actualizado";
             }
 
-            idtxt.Text = 0.ToString();
-            nombretxt.Text = "";
-            apellidotxt.Text = "";
-            correotxt.Text = "";
-            cedulatxt.Text = "";
-            telefonotxt.Text = "";
-            roltxt.Text = "";
+            idTxt.Text = 0.ToString();
+            nombreTxt.Text = "";
+            apellidoTxt.Text = "";
+            correoTxt.Text = "";
+            cedulaTxt.Text = "";
+            telefonoTxt.Text = "";
+            rolTxt.Text = "";
+            regionesCmb.SelectedIndex = -1;
+            comunasCmb.SelectedIndex = -1;
 
         }
 
@@ -76,7 +81,7 @@ namespace RENT.Windows
 
         private async void UpdateUsuario(Usuarios usuario)
         {
-            await client.PostAsJsonAsync("/usuario/usuariosPut/" + usuario.idUsuario, usuario);
+            await client.PostAsJsonAsync("usuario/usuariosPut/" + usuario.idUsuario, usuario);
         }
 
         public void GetRegiones()
@@ -86,9 +91,7 @@ namespace RENT.Windows
 
             foreach (var region in regiones)
             {
-                regionescmb.ItemsSource = regiones;
-                regionescmb.SelectedValue = "idRegion";
-                regionescmb.DisplayMemberPath = "nombreRegion";
+                regionesCmb.ItemsSource = regiones;
             }
         }
 
@@ -99,12 +102,8 @@ namespace RENT.Windows
 
             foreach (var comuna in comunas)
             {
-                comunascmb.ItemsSource = comunas;
-                comunascmb.SelectedValue = "idComuna";
-                comunascmb.DisplayMemberPath = "nombreComuna";
+                comunasCmb.ItemsSource = comunas;
             }
         }
-        
-
     }
 }

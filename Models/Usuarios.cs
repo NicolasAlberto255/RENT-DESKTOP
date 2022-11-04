@@ -11,28 +11,14 @@ namespace RENT.Models
 {
     public class Usuarios
     {   
-        public Usuarios()
-        {
-            
-        }
-        
         public int? idUsuario { get; set; }
         public string? nombreUsuario { get; set; }
-
         public string? apellidoUsuario { get; set; }
-
         public string? correoUsuario { get; set; }
-
         public string? cedulaUsuario { get; set; }
-
         public int? telefonoUsuario { get; set; }
-
-        public string? rolUsuario { get; set; }
-
+        public int rolUsuario { get; set; }
         public string? regionUsuario { get; set; }
-
         public string? comunaUsuario { get; set; }
-
-        public string? provinciaUsuario { get; set; }
     }
 }

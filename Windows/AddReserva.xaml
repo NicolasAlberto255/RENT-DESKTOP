@@ -1,0 +1,82 @@
+﻿<Page x:Class="RENT.Windows.AddReserva"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RENT.Windows"
+      mc:Ignorable="d" 
+      Title="AddReserva">
+
+    <Grid Background="#FFFCFCFC" Height="450" Width="800">
+        <Label Content="Fecha de Inicio de Reserva" HorizontalAlignment="Left" Margin="46,104,0,0" VerticalAlignment="Top"/>
+        <Label Content="Cantidad de Dias Reserva" HorizontalAlignment="Left" Margin="46,73,0,0" VerticalAlignment="Top"/>
+        <Label Content="Fecha de Fin de Reserva" HorizontalAlignment="Left" Margin="46,135,0,0" VerticalAlignment="Top"/>
+        <Label Content="Servicios" HorizontalAlignment="Left" Margin="46,166,0,0" VerticalAlignment="Top"/>
+
+        <TextBox x:Name="cntDiasTxt" HorizontalAlignment="Left" Margin="203,73,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="32" Height="26" MaxLength="2"/>
+        <TextBox x:Name="cedulaFindTxt" HorizontalAlignment="Left" Margin="481,46,0,0" VerticalAlignment="Top" Width="120" Height="20" TextWrapping="Wrap"/>
+        <TextBlock IsHitTestVisible="False" Text="Cedula" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="487,48,0,0" Foreground="DarkGray">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text, ElementName=cedulaFindTxt}" Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+
+        <DatePicker x:Name="fechaInicioDtp" HorizontalAlignment="Left" Margin="203,104,0,0" VerticalAlignment="Top" Height="26" Width="120"
+            SelectedDateChanged="fechaInicioDtp_SelectedChanged"
+            FirstDayOfWeek="Monday"/>
+        <DatePicker x:Name="fechaFinDtp" HorizontalAlignment="Left" Margin="203,135,0,0" VerticalAlignment="Top" Height="26" Width="120" 
+            SelectedDateChanged="fechaFinDtp_SelectedChanged"
+            FirstDayOfWeek="Monday"/>
+        <CheckBox x:Name="diasBetweenCbx" Content="?Agregar Cantidad de Dias¿" HorizontalAlignment="Left" Margin="32,53,0,0" VerticalAlignment="Top" FlowDirection="RightToLeft" UseLayoutRounding="False" Width="186" 
+                  Checked="diasBetweenCbx_Checked"
+                  Unchecked="diasBetweenCbx_Unchecked"/>
+        <CheckBox x:Name="diasFinCbx" Content="?Seleccionar ultimo dia de Reseva¿" HorizontalAlignment="Left" Margin="11,33,0,0" VerticalAlignment="Top" FlowDirection="RightToLeft" UseLayoutRounding="False" Width="207"
+                  Checked="diasFinCbx_Checked"
+                  Unchecked="diasFinCbx_Unchecked"/>
+
+        <ComboBox x:Name="serviciosCmb" HorizontalAlignment="Left" Margin="203,166,0,0" VerticalAlignment="Top" Width="120" Height="26" 
+                  ItemsSource="{Binding Path=nombreServicios}"
+                  DisplayMemberPath="nombreServicios"
+                  SelectedValuePath="idServicios"/>
+        <Button x:Name="cargarCedulaBtn" Content="Buscar Usuario" HorizontalAlignment="Left" Margin="391,46,0,0" VerticalAlignment="Top" Click="cargarCedulaBtn_Click"/>
+
+        <ListBox x:Name="usListBox" Margin="391,73,129,271" IsEnabled="False">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border Name="border" BorderBrush="DarkSlateBlue" BorderThickness="2" CornerRadius="2" Padding="5" Margin="5">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Padding="0,0,5,0" Text="Nombre: " Width="120"/>
+                            <TextBlock Grid.Row="0" Grid.Column="1" Padding="0,0,5,0" Text="{Binding nombreUsuario}" Width="120"/>
+                            <TextBlock Grid.Row="1" Grid.Column="0" Padding="0,0,5,0" Text="Apellido: " Width="120"/>
+                            <TextBlock Grid.Row="1" Grid.Column="1" Padding="0,0,5,0" Text="{Binding apellidoUsuario}" Width="120"/>
+                            <TextBlock Grid.Row="2" Grid.Column="0" Padding="0,0,5,0" Text="Correo: " Width="120"/>
+                            <TextBlock Grid.Row="2" Grid.Column="1" Padding="0,0,5,0" Text="{Binding correoUsuario}" Width="120"/>
+                            <TextBlock Grid.Row="3" Grid.Column="0" Padding="0,0,5,0" Text="Telefono: " Width="120"/>
+                            <TextBlock Grid.Row="3" Grid.Column="1" Padding="0,0,5,0" Text="{Binding telefonoUsuario}" Width="120"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Page>
