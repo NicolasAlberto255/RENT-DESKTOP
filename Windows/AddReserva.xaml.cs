@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Newtonsoft.Json;
+using System.Data;
 
 namespace RENT.Windows
 {
@@ -26,8 +27,8 @@ namespace RENT.Windows
         HttpClient client = new HttpClient();
         public AddReserva()
         {
-            //client.BaseAddress = new Uri("http://apirent-env.eba-n7bvnjak.us-east-1.elasticbeanstalk.com/");
-            client.BaseAddress = new Uri("http://localhost:8080/");
+            client.BaseAddress = new Uri("http://apirent-env.eba-n7bvnjak.us-east-1.elasticbeanstalk.com/");
+            //client.BaseAddress = new Uri("http://localhost:8080/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
             InitializeComponent();
@@ -83,7 +84,6 @@ namespace RENT.Windows
                 fechaFinDtp.SelectedDate = DateTime.Now;
             }
         }
-
         private void diasBetweenCbx_Unchecked(object sender, RoutedEventArgs e)
         {
             if (diasBetweenCbx.IsChecked == false)
@@ -139,6 +139,16 @@ namespace RENT.Windows
             SearchByCedula(new Usuarios());
         }
 
+        public void GetUsuarios()
+        {
+            var response = client.GetAsync("usuario/usuarios").Result;
+            var usuarios = response.Content.ReadAsAsync<List<Usuarios>>().Result;
+          
+            foreach (var usuario in usuarios)
+            {
+                cedulaCmb.ItemsSource = usuarios;                  
+            }
+        }
         private async void SearchByCedula(Usuarios usuario)
         {
             var cedulaUsuario = cedulaFindTxt.Text;
@@ -150,11 +160,25 @@ namespace RENT.Windows
                 var jsonString = await response.Content.ReadAsStringAsync();
                 var _Data = JsonConvert.DeserializeObject<List<Usuarios>>(jsonString);
                 usListBox.ItemsSource = _Data;
+                
+                //if(_Data != null)
+                //{
+                //    cedulaTxt.Text = _Data[0].cedulaUsuario;
+                //    nombreTxt.Text = _Data[0].nombreUsuario;
+                //    apellidoTxt.Text = _Data[0].apellidoUsuario;
+                //    telefonoTxt.Text = Convert.ToString(_Data[0].telefonoUsuario);
+                //}
             }
             else
             {
                 MessageBox.Show("Error Code" + response.StatusCode + " : Message - " + response.ReasonPhrase);
             }
+        }
+
+        private void cedulaCmb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            usListBox.Items.Clear();
+            usListBox.Items.Add(cedulaCmb.SelectedItem);
         }
     }
 }

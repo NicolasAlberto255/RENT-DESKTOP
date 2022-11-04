@@ -175,8 +175,6 @@ C:\Users\Lab02\Desktop\RENT-DESKTOP\bin\Debug\net6.0-windows\RENT.runtimeconfig.
 C:\Users\Lab02\Desktop\RENT-DESKTOP\bin\Debug\net6.0-windows\RENT.dll
 C:\Users\Lab02\Desktop\RENT-DESKTOP\bin\Debug\net6.0-windows\RENT.pdb
 C:\Users\Lab02\Desktop\RENT-DESKTOP\bin\Debug\net6.0-windows\System.Net.Http.Formatting.dll
-C:\Users\Lab02\Desktop\RENT-DESKTOP\bin\Debug\net6.0-windows\System.Web.Http.dll
-C:\Users\Lab02\Desktop\RENT-DESKTOP\bin\Debug\net6.0-windows\System.Web.Http.WebHost.dll
 C:\Users\Lab02\Desktop\RENT-DESKTOP\bin\Debug\net6.0-windows\Microsoft.AspNetCore.Authentication.Abstractions.dll
 C:\Users\Lab02\Desktop\RENT-DESKTOP\bin\Debug\net6.0-windows\Microsoft.AspNetCore.Authentication.Core.dll
 C:\Users\Lab02\Desktop\RENT-DESKTOP\bin\Debug\net6.0-windows\Microsoft.AspNetCore.Authorization.dll
@@ -209,12 +207,10 @@ C:\Users\Lab02\Desktop\RENT-DESKTOP\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
 C:\Users\Lab02\Desktop\RENT-DESKTOP\bin\Debug\net6.0-windows\Newtonsoft.Json.Bson.dll
 C:\Users\Lab02\Desktop\RENT-DESKTOP\obj\Debug\net6.0-windows\RENT.csproj.AssemblyReference.cache
 C:\Users\Lab02\Desktop\RENT-DESKTOP\obj\Debug\net6.0-windows\MainWindow.g.cs
-C:\Users\Lab02\Desktop\RENT-DESKTOP\obj\Debug\net6.0-windows\Windows\ListUsuario.g.cs
 C:\Users\Lab02\Desktop\RENT-DESKTOP\obj\Debug\net6.0-windows\App.g.cs
 C:\Users\Lab02\Desktop\RENT-DESKTOP\obj\Debug\net6.0-windows\RENT_MarkupCompile.cache
 C:\Users\Lab02\Desktop\RENT-DESKTOP\obj\Debug\net6.0-windows\RENT_MarkupCompile.lref
 C:\Users\Lab02\Desktop\RENT-DESKTOP\obj\Debug\net6.0-windows\MainWindow.baml
-C:\Users\Lab02\Desktop\RENT-DESKTOP\obj\Debug\net6.0-windows\Windows\ListUsuario.baml
 C:\Users\Lab02\Desktop\RENT-DESKTOP\obj\Debug\net6.0-windows\RENT.g.resources
 C:\Users\Lab02\Desktop\RENT-DESKTOP\obj\Debug\net6.0-windows\RENT.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Lab02\Desktop\RENT-DESKTOP\obj\Debug\net6.0-windows\RENT.AssemblyInfoInputs.cache
@@ -236,3 +232,9 @@ C:\Users\Nicolas\OneDrive\Escritorio\Portafolio\RENT-DESKTOP\RENT\RENT-DESKTOP\o
 C:\Users\Nicolas\OneDrive\Escritorio\Portafolio\RENT-DESKTOP\RENT\RENT-DESKTOP\obj\Debug\net6.0-windows\Windows\ListUsuarios.baml
 C:\Users\Nicolas\OneDrive\Escritorio\Portafolio\RENT-DESKTOP\RENT\RENT-DESKTOP\obj\Debug\net6.0-windows\Windows\AddDepartamento.g.cs
 C:\Users\Nicolas\OneDrive\Escritorio\Portafolio\RENT-DESKTOP\RENT\RENT-DESKTOP\obj\Debug\net6.0-windows\Windows\AddDepartamento.baml
+C:\Users\Lab02\Desktop\RENT-DESKTOP\obj\Debug\net6.0-windows\Windows\AddDepartamento.g.cs
+C:\Users\Lab02\Desktop\RENT-DESKTOP\obj\Debug\net6.0-windows\Windows\AddReserva.g.cs
+C:\Users\Lab02\Desktop\RENT-DESKTOP\obj\Debug\net6.0-windows\Windows\ListUsuarios.g.cs
+C:\Users\Lab02\Desktop\RENT-DESKTOP\obj\Debug\net6.0-windows\Windows\AddDepartamento.baml
+C:\Users\Lab02\Desktop\RENT-DESKTOP\obj\Debug\net6.0-windows\Windows\AddReserva.baml
+C:\Users\Lab02\Desktop\RENT-DESKTOP\obj\Debug\net6.0-windows\Windows\ListUsuarios.baml

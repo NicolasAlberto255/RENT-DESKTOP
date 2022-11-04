@@ -47,6 +47,7 @@ namespace RENT
             addReserva.cntDiasTxt.IsEnabled = false;
             addReserva.fechaFinDtp.IsEnabled = false;
             addReserva.GetServicios();
+            addReserva.GetUsuarios();
             addReserva.Today();
         }
 
