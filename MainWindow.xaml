@@ -50,6 +50,6 @@
                 </Button.Resources>
             </Button>
         </StackPanel>
-        <Image x:Name="logoImg" Margin="158,156,158,156" Source="C:\Users\Lab02\Desktop\RENT-DESKTOP\img\6T0bcLp.png" Stretch="Fill"/>
+        <Image x:Name="logoImg" Margin="-4,121,-4,104" Source="C:\Users\Lab02\Desktop\RENT-DESKTOP\img\Logo-RENT.png" Stretch="Fill"/>
     </Grid>
 </Window>
