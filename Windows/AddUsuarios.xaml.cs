@@ -105,47 +105,55 @@ namespace RENT.Windows
         {
             RegionComuna();
         }
-
         private void VerificarUsuario()
         {
             if (string.IsNullOrEmpty(nombreTxt.Text))
             {
                 nomErrLbl.Text = "Ingrese Nombre Valido.";
+                nombreTxt.Focus();
+                return;
             }
-            else if (string.IsNullOrEmpty(apellidoTxt.Text))
+            if (string.IsNullOrEmpty(apellidoTxt.Text))
             {
                 apeErrLbl.Text = "Ingrese Apellido Valido.";
+                apellidoTxt.Focus();
+                return;
             }
-            else if (string.IsNullOrEmpty(cedulaTxt.Text))
+            if (string.IsNullOrEmpty(cedulaTxt.Text))
             {
                 cedErrLbl.Text = "Ingrese Cedula Valida.";
+                cedulaTxt.Focus();
+                return;
             }
-            else if (string.IsNullOrEmpty(correoTxt.Text))
+            if (string.IsNullOrEmpty(correoTxt.Text))
             {
                 emailErrLbl.Text = "Ingrese Correo Valido.";
+                correoTxt.Focus();
+                return;
             }
-            else if (string.IsNullOrEmpty(telefonoTxt.Text))
+            if (string.IsNullOrEmpty(telefonoTxt.Text))
             {
                 telErrLbl.Text = "Ingrese Telefono Valido.";
+                telefonoTxt.Focus();
+                return;
             }
-            else if (string.IsNullOrEmpty(regionCmb.Text))
+            if (string.IsNullOrEmpty(regionCmb.Text))
             {
                 regErrLbl.Text = "Ingrese Region.";
             }
-            else if (string.IsNullOrEmpty(comunaCmb.Text))
+            if (string.IsNullOrEmpty(comunaCmb.Text))
             {
                 comErrLbl.Text = "Ingrese Comuna.";
             }
-            else if (string.IsNullOrEmpty(passNewPB.Password))
+            if (string.IsNullOrEmpty(passNewPB.Password))
             {
                 noPassLbl.Text = "Ingrese Contraseña.";
             }
-            else if (passNewPB.Password != conPassPB.Password)
+            if (passNewPB.Password != conPassPB.Password)
             {
                 incPassLbl.Text = "Las contraseñas no coinciden.";
             }                
         }
-
         private void RegionComuna()
         {
             var idRegion = regionCmb.SelectedValue;
@@ -153,17 +161,14 @@ namespace RENT.Windows
             var comunas = response.Content.ReadAsAsync<List<Comunas>>().Result;
             comunaCmb.ItemsSource = comunas;
         }
-
         private async void SaveUsuario(Usuarios usuario)
         {
             await client.PostAsJsonAsync("usuario/usuariosSave ", usuario);
         }
-
         private async void UpdateUsuario(Usuarios usuario)
         {
             await client.PostAsJsonAsync("usuario/usuariosPut/" + usuario.idUsuario, usuario);
         }
-
         public void GetRegiones()
         {
             var response = client.GetAsync("region/regiones").Result;
@@ -174,7 +179,6 @@ namespace RENT.Windows
                 regionCmb.ItemsSource = regiones;
             }
         }
-
         public void GetComunas()
         {
             var response = client.GetAsync("comuna/comunas").Result;
@@ -185,25 +189,21 @@ namespace RENT.Windows
                 comunaCmb.ItemsSource = comunas;
             }
         }
-
         private void ValidacionDeNumeros(object sender, TextCompositionEventArgs e)
         {
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
         }
-
         private void ValidacionDeTexto(object sender, TextCompositionEventArgs e)
         {
             Regex regex = new Regex("[^a-zA-Z]+");
             e.Handled = regex.IsMatch(e.Text);
 
         }
-
         private void ValidarRut_LostFocus(object sender, EventArgs e)
         {
             cedulaTxt.Text = FormatearRut(cedulaTxt.Text);
         }
-
         public string FormatearRut(string rut)
         {
             int cont = 0;

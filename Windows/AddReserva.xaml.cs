@@ -37,17 +37,14 @@ namespace RENT.Windows
 
             InitializeComponent();
         }
-
         private void fechaInicioDtp_SelectedChanged(object sender, SelectionChangedEventArgs e)
         {
             AddDaysBetween();
         }
-
         private void fechaFinDtp_SelectedChanged(object sender, SelectionChangedEventArgs e)
         {
             GetDaysBetween();
         }
-
         private void diasFinCbx_Checked(object sender, RoutedEventArgs e)
         {
             if (diasFinCbx.IsChecked == true)
@@ -61,7 +58,6 @@ namespace RENT.Windows
                 correctBtnTB.Text = "";
             }
         }
-
         private void diasFinCbx_Unchecked(object sender, RoutedEventArgs e)
         {
             fechaInicioDtp.BlackoutDates.Clear();
@@ -76,7 +72,6 @@ namespace RENT.Windows
                 correctBtnTB.Text = "";
             }
         }
-
         private void diasBetweenCbx_Checked(object sender, RoutedEventArgs e)
         {
             if (diasBetweenCbx.IsChecked == true)
@@ -103,7 +98,6 @@ namespace RENT.Windows
                 correctBtnTB.Text = "";
             }
         }
-
         private void cedulaCmb_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             usListBox.Items.Clear();
@@ -124,13 +118,11 @@ namespace RENT.Windows
                 comunaUsuarioTxt.Text = usuario.comunaUsuario;
             }
         }
-        
         private void departamentoCmb_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             deptoListBox.Items.Clear();
             deptoListBox.Items.Add(departamentoCmb.SelectedItem);
             correctBtnTB.Text = "";
-
 
             if (departamentoCmb.SelectedItem != null)
             {
@@ -148,7 +140,6 @@ namespace RENT.Windows
 
             }
         }
-
         private void serviciosCmb1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             correctBtnTB.Text = "";
@@ -171,7 +162,6 @@ namespace RENT.Windows
                 descripcionServicios2Txt.Text = servicios.descripcionServicios;
             }
         }
-
         private void servicios3Cmb_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             correctBtnTB.Text = "";
@@ -183,7 +173,6 @@ namespace RENT.Windows
                 descripcionServicios3Txt.Text = servicios.descripcionServicios;
             }
         }
-
         private void guardarReservaBtn_Click(object sender, RoutedEventArgs e)
         {
             int cntDias = Convert.ToInt32(cntDiasTxt.Text); 
@@ -286,7 +275,6 @@ namespace RENT.Windows
                 valorTotalTxt.Text = "$";
             }
         }
-
         private void Precio_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (precioAbonoTxt.Text == "")
@@ -294,19 +282,16 @@ namespace RENT.Windows
                 precioAbonoTxt.Text = "0";
             }
         }
-
         private void cargarCedulaBtn_Click(object sender, RoutedEventArgs e)
         {
             //SearchByCedula(new Usuarios());
         }
-
         public void Today()
         {
             cntDiasTxt.Text = "0";
             fechaInicioDtp.SelectedDate = DateTime.Now;
             fechaInicioDtp.BlackoutDates.Add(new CalendarDateRange(DateTime.MinValue, DateTime.Now.AddDays(-1)));
         }
-
         private void GetDaysBetween()
         {
             DateTime? fechaInicio = fechaInicioDtp.SelectedDate;
@@ -319,13 +304,11 @@ namespace RENT.Windows
                 cntDiasTxt.Text = cntDias.ToString();
             }
         }
-
         private void AddDaysBetween()
         {
             DateTime fechaInicio = (DateTime)fechaInicioDtp.SelectedDate;
             fechaFinDtp.SelectedDate = fechaInicio.AddDays(Convert.ToInt32(cntDiasTxt.Text));
         }
-
         public void GetServicios()
         {
             var response = client.GetAsync("servicio/servicios").Result;
@@ -338,7 +321,6 @@ namespace RENT.Windows
                 servicios3Cmb.ItemsSource = servicios;
             }
         }
-
         public void GetUsuarios()
         {
             var response = client.GetAsync("usuario/usuarios").Result;
@@ -348,8 +330,7 @@ namespace RENT.Windows
             {
                 cedulaCmb.ItemsSource = usuarios;                  
             }
-        }        
-        
+        }     
         public void GetDepartamentos()
         {
             var response = client.GetAsync("departamentos/departamentos").Result;
@@ -360,28 +341,24 @@ namespace RENT.Windows
                 departamentoCmb.ItemsSource = departamentos;
             }
         }
-        
         private async void SaveReservas(Reservas reservas)
         {
             var reservaPost = JsonConvert.SerializeObject(reservas);
             var deserialized = JsonConvert.DeserializeObject<Reservas>(reservaPost);
             await client.PostAsJsonAsync("reserva/reservaAdd", deserialized);
         }
-
         private async void UpdateReserva(Reservas reservas)
         {
             await client.PostAsJsonAsync("reserva/reservaPut/" + reservas.idReserva, reservas);
         }
-        
-
         private void ValidarDatos()
         {
-            if (departamentoCmb.SelectedItem == null)
+            if (string.IsNullOrEmpty(departamentoCmb.Text))
             {
                 departamentosTB.Text = "Seleccione un Departamento";
             }
 
-            if (cedulaCmb.SelectedItem == null)
+            if (string.IsNullOrEmpty(cedulaCmb.Text))
             {
                 usuarioTB.Text = "Seleccione un Usuario";
             }
@@ -391,11 +368,10 @@ namespace RENT.Windows
                 reservasDiasTB.Text = "Ingrese una cantidad de dias";
             }
         }
-
         private void ValidacionDeNumeros(object sender, TextCompositionEventArgs e)
         {
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
         }
-   }
+    }
 }

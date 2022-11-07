@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nicolas\\OneDrive\\Escritorio\\Portafolio\\RENT-DESKTOP\\RENT\\RENT-DESKTOP\\RENT.csproj": {}
+    "C:\\Users\\Lab02\\Desktop\\RENT-DESKTOP\\RENT.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nicolas\\OneDrive\\Escritorio\\Portafolio\\RENT-DESKTOP\\RENT\\RENT-DESKTOP\\RENT.csproj": {
+    "C:\\Users\\Lab02\\Desktop\\RENT-DESKTOP\\RENT.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nicolas\\OneDrive\\Escritorio\\Portafolio\\RENT-DESKTOP\\RENT\\RENT-DESKTOP\\RENT.csproj",
+        "projectUniqueName": "C:\\Users\\Lab02\\Desktop\\RENT-DESKTOP\\RENT.csproj",
         "projectName": "RENT",
-        "projectPath": "C:\\Users\\Nicolas\\OneDrive\\Escritorio\\Portafolio\\RENT-DESKTOP\\RENT\\RENT-DESKTOP\\RENT.csproj",
-        "packagesPath": "C:\\Users\\Nicolas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nicolas\\OneDrive\\Escritorio\\Portafolio\\RENT-DESKTOP\\RENT\\RENT-DESKTOP\\obj\\",
+        "projectPath": "C:\\Users\\Lab02\\Desktop\\RENT-DESKTOP\\RENT.csproj",
+        "packagesPath": "C:\\Users\\Lab02\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Lab02\\Desktop\\RENT-DESKTOP\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Nicolas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Lab02\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

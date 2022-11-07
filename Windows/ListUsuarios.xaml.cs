@@ -37,27 +37,22 @@ namespace RENT.Windows
         {
             GetUsuarios();
         }
-
         private void idBtn_Click(object sender, RoutedEventArgs e)
         {
             SearchByIdUsuario(new Usuarios());
         }
-
         private void nombreBtn_Click(object sender, RoutedEventArgs e)
         {
             SearchByNombre(new Usuarios());
         }
-
         private void apellidoBtn_Click(object sender, RoutedEventArgs e)
         {
             SearchByApellido(new Usuarios());
         }
-
         private void cedulaBtn_Click(object sender, RoutedEventArgs e)
         {
             SearchByCedula(new Usuarios());
         }
-
         private void GetUsuarios()
         {
             HttpResponseMessage response = client.GetAsync("usuario/usuarios").Result;
@@ -71,7 +66,6 @@ namespace RENT.Windows
                 MessageBox.Show("Error Code" + response.StatusCode + " : Message - " + response.ReasonPhrase);
             }
         }
-
         private async void SearchByIdUsuario(Usuarios usuario)
         {
             var id = idFindTxt.Text;
@@ -88,7 +82,6 @@ namespace RENT.Windows
                 MessageBox.Show("Error Code" + response.StatusCode + " : Message - " + response.ReasonPhrase);
             }
         }
-
         private async void SearchByNombre(Usuarios usuario)
         {
             var nombreUsuario = nombreFindTxt.Text;
@@ -106,7 +99,6 @@ namespace RENT.Windows
                 MessageBox.Show("Error Code" + response.StatusCode + " : Message - " + response.ReasonPhrase);
             }
         }
-
         private async void SearchByApellido(Usuarios usuario)
         {
             var apellidoUsuario = apellidoFindTxt.Text;
@@ -124,7 +116,6 @@ namespace RENT.Windows
                 MessageBox.Show("Error Code" + response.StatusCode + " : Message - " + response.ReasonPhrase);
             }
         }
-
         private async void SearchByCedula(Usuarios usuario)
         {
             var cedulaUsuario = cedulaFindTxt.Text;
@@ -142,13 +133,11 @@ namespace RENT.Windows
                 MessageBox.Show("Error Code" + response.StatusCode + " : Message - " + response.ReasonPhrase);
             }
         }
-
         private void ValidacionDeNumeros(object sender, TextCompositionEventArgs e)
         {
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
         }
-
         private void ValidacionDeTexto(object sender, TextCompositionEventArgs e)
         {
             Regex regex = new Regex("[^a-zA-Z]+");

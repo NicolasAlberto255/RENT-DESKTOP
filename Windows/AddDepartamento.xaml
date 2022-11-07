@@ -57,7 +57,7 @@
         <TextBlock x:Name="vNocheErrTB" Text="" HorizontalAlignment="Left" Margin="225,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="9" Width="114" Foreground="#FFF51313" TextAlignment="Center"/>
         <TextBlock x:Name="regionErrTB" Text="" HorizontalAlignment="Left" Margin="225,321,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="9" Width="114" Foreground="#FFF51313" TextAlignment="Center"/>
         <TextBlock x:Name="comunaErrTB" Text="" HorizontalAlignment="Left" Margin="225,362,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="9" Width="114" Foreground="#FFF51313" TextAlignment="Center"/>
-        <Image Margin="401,112,83,144" Source="C:\Users\Nicolas\OneDrive\Escritorio\Portafolio\RENT-DESKTOP\RENT\RENT-DESKTOP\img\Plano-de-departamento-en-3D-Jermey-Gamelin.jpg" Stretch="Fill"/>
+        <Image Margin="401,112,83,144" Source="C:\Users\Lab02\Desktop\RENT-DESKTOP\img\Plano-de-departamento-en-3D-Jermey-Gamelin.jpg" Stretch="Fill"/>
 
     </Grid>
 
