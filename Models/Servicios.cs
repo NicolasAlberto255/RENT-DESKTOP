@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RENT.Models
 {
-    internal class Servicios
+    public class Servicios
     {
         public int idServicios { get; set; }
         public string? nombreServicios { get; set; }

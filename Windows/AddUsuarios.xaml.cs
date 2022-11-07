@@ -29,49 +29,129 @@ namespace RENT.Windows
         HttpClient client = new HttpClient();
         public AddUsuarios()
         {
-            //client.BaseAddress = new Uri("http://apirent-env.eba-n7bvnjak.us-east-1.elasticbeanstalk.com/");
-            client.BaseAddress = new Uri("http://localhost:8080/");
+            client.BaseAddress = new Uri("http://apirent-env.eba-n7bvnjak.us-east-1.elasticbeanstalk.com/");
+            //client.BaseAddress = new Uri("http://localhost:8080/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
             InitializeComponent();
         }
 
         private void guardarBtn_Click(object sender, RoutedEventArgs e)
-        {
-            var usuario = new Usuarios()
+        { 
+            if (nombreTxt.Text == "" || apellidoTxt.Text == "" || correoTxt.Text == "" || cedulaTxt.Text == ""
+                || telefonoTxt.Text == "" || rolTxt.Text == "" || passNewPB.Password == "" || conPassPB.Password == null
+                || regionCmb.SelectedItem == null || comunaCmb.SelectedItem == null)
             {
-                idUsuario = Convert.ToInt32(idTxt.Text),
-                nombreUsuario = nombreTxt.Text,
-                apellidoUsuario = apellidoTxt.Text,
-                correoUsuario = correoTxt.Text,
-                cedulaUsuario = cedulaTxt.Text,
-                telefonoUsuario = Convert.ToInt32(telefonoTxt.Text),
-                rolUsuario = Convert.ToInt32(rolTxt.Text),
-                regionUsuario = regionesCmb.Text,
-                comunaUsuario = comunasCmb.Text
-            };
-
-            if (usuario.idUsuario == 0)
-            {
-                this.SaveUsuario(usuario);
-                lblMessage.Content = "Usuario guardado";
+                lblError.Content = "Debe llenar todos los campos";
+                VerificarUsuario();
             }
             else
             {
-                this.UpdateUsuario(usuario);
-                lblMessage.Content = "Usuario actualizado";
+                if (passNewPB.Password != conPassPB.Password)
+                {
+                    incPassLbl.Text = "Las contraseñas no coinciden";
+                }
+                else
+                {
+                    if (nombreTxt.Text != "" && apellidoTxt.Text != "" && correoTxt.Text != "" && cedulaTxt.Text != ""
+                        && telefonoTxt.Text != "" && rolTxt.Text != null && passNewPB.Password != "" && conPassPB.Password != ""
+                        && regionCmb.SelectedItem != null && comunaCmb.SelectedItem != null)
+                    {
+                        var usuario = new Usuarios()
+                        {
+                            idUsuario = Convert.ToInt32(idTxt.Text),
+                            nombreUsuario = nombreTxt.Text,
+                            apellidoUsuario = apellidoTxt.Text,
+                            correoUsuario = correoTxt.Text,
+                            cedulaUsuario = cedulaTxt.Text,
+                            telefonoUsuario = Convert.ToInt32(telefonoTxt.Text),
+                            rolUsuario = Convert.ToInt32(rolTxt.Text),
+                            regionUsuario = regionCmb.Text,
+                            comunaUsuario = comunaCmb.Text,
+                            passwordUsuario = conPassPB.Password
+                        };
+
+                        if (usuario.idUsuario == 0)
+                        {
+                            this.SaveUsuario(usuario);
+                            lblMessage.Content = "Usuario guardado";
+                            idTxt.Text = 0.ToString();
+                            nombreTxt.Text = "";
+                            apellidoTxt.Text = "";
+                            correoTxt.Text = "";
+                            cedulaTxt.Text = "";
+                            telefonoTxt.Text = "";
+                            rolTxt.Text = "";
+                            conPassPB.Password = "";
+                        }
+                        else
+                        {
+                            this.UpdateUsuario(usuario);
+                            lblMessage.Content = "Usuario actualizado";
+                            idTxt.Text = 0.ToString();
+                            nombreTxt.Text = "";
+                            apellidoTxt.Text = "";
+                            correoTxt.Text = "";
+                            cedulaTxt.Text = "";
+                            telefonoTxt.Text = "";
+                            rolTxt.Text = "";
+                            conPassPB.Password = "";
+                        }
+                    }
+                }
             }
+        }
+        private void regionCmb_Changed(object sender, SelectionChangedEventArgs e)
+        {
+            RegionComuna();
+        }
 
-            idTxt.Text = 0.ToString();
-            nombreTxt.Text = "";
-            apellidoTxt.Text = "";
-            correoTxt.Text = "";
-            cedulaTxt.Text = "";
-            telefonoTxt.Text = "";
-            rolTxt.Text = "";
-            regionesCmb.SelectedIndex = -1;
-            comunasCmb.SelectedIndex = -1;
+        private void VerificarUsuario()
+        {
+            if (string.IsNullOrEmpty(nombreTxt.Text))
+            {
+                nomErrLbl.Text = "Ingrese Nombre Valido.";
+            }
+            else if (string.IsNullOrEmpty(apellidoTxt.Text))
+            {
+                apeErrLbl.Text = "Ingrese Apellido Valido.";
+            }
+            else if (string.IsNullOrEmpty(cedulaTxt.Text))
+            {
+                cedErrLbl.Text = "Ingrese Cedula Valida.";
+            }
+            else if (string.IsNullOrEmpty(correoTxt.Text))
+            {
+                emailErrLbl.Text = "Ingrese Correo Valido.";
+            }
+            else if (string.IsNullOrEmpty(telefonoTxt.Text))
+            {
+                telErrLbl.Text = "Ingrese Telefono Valido.";
+            }
+            else if (string.IsNullOrEmpty(regionCmb.Text))
+            {
+                regErrLbl.Text = "Ingrese Region.";
+            }
+            else if (string.IsNullOrEmpty(comunaCmb.Text))
+            {
+                comErrLbl.Text = "Ingrese Comuna.";
+            }
+            else if (string.IsNullOrEmpty(passNewPB.Password))
+            {
+                noPassLbl.Text = "Ingrese Contraseña.";
+            }
+            else if (passNewPB.Password != conPassPB.Password)
+            {
+                incPassLbl.Text = "Las contraseñas no coinciden.";
+            }                
+        }
 
+        private void RegionComuna()
+        {
+            var idRegion = regionCmb.SelectedValue;
+            var response = client.GetAsync("comuna/comunasByRegionId?id=" + idRegion).Result;
+            var comunas = response.Content.ReadAsAsync<List<Comunas>>().Result;
+            comunaCmb.ItemsSource = comunas;
         }
 
         private async void SaveUsuario(Usuarios usuario)
@@ -91,7 +171,7 @@ namespace RENT.Windows
 
             foreach (var region in regiones)
             {
-                regionesCmb.ItemsSource = regiones;
+                regionCmb.ItemsSource = regiones;
             }
         }
 
@@ -102,7 +182,52 @@ namespace RENT.Windows
 
             foreach (var comuna in comunas)
             {
-                comunasCmb.ItemsSource = comunas;
+                comunaCmb.ItemsSource = comunas;
+            }
+        }
+
+        private void ValidacionDeNumeros(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void ValidacionDeTexto(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^a-zA-Z]+");
+            e.Handled = regex.IsMatch(e.Text);
+
+        }
+
+        private void ValidarRut_LostFocus(object sender, EventArgs e)
+        {
+            cedulaTxt.Text = FormatearRut(cedulaTxt.Text);
+        }
+
+        public string FormatearRut(string rut)
+        {
+            int cont = 0;
+            string formato;
+            if (rut.Length == 0)
+            {
+                return "";
+            }
+            else
+            {
+                rut = rut.Replace(".", "");
+                rut = rut.Replace("-", "");
+                formato = "-" + rut.Substring(rut.Length - 1);
+                for (int i = rut.Length - 2; i >= 0; i--)
+                {
+                    formato = rut.Substring(i, 1) + formato;
+                    cont++;
+                    if (cont == 3 && i != 0)
+                    {
+                        formato = "." + formato;
+                        cont = 0;
+                    }
+                }
+                return formato;
             }
         }
     }

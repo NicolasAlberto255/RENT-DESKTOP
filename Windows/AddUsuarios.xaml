@@ -7,30 +7,73 @@
       mc:Ignorable="d" 
       Title="AddUsuarios">
 
-    <Grid Background="#FFFCFCFC" Height="450" Width="800">
-        <TextBox x:Name="nombreTxt" HorizontalAlignment="Left" Margin="108,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Height="26" Grid.Column="1"/>
-        <Label Content="Nombre:" HorizontalAlignment="Left" Margin="36,74,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="56"/>
-        <TextBox x:Name="apellidoTxt" HorizontalAlignment="Left" Margin="108,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Height="26" Grid.Column="1"/>
-        <Label Content="Apellido:" HorizontalAlignment="Left" Margin="36,105,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="56"/>
-        <TextBox x:Name="cedulaTxt" HorizontalAlignment="Left" Margin="108,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Height="26" Grid.Column="1"/>
-        <Label Content="Cedula:" HorizontalAlignment="Left" Margin="36,136,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="49"/>
-        <TextBox x:Name="correoTxt" HorizontalAlignment="Left" Margin="108,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Height="26" Grid.Column="1"/>
-        <Label Content="Correo:" HorizontalAlignment="Left" Margin="36,167,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="49"/>
-        <TextBox x:Name="telefonoTxt" HorizontalAlignment="Left" Margin="108,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Height="26" Grid.Column="1"/>
-        <Label Content="Telefono:" HorizontalAlignment="Left" Margin="36,199,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="58"/>
-        <TextBox x:Name="rolTxt" HorizontalAlignment="Left" Margin="10,414,0,0" Text="3"  TextWrapping="Wrap" Visibility="Hidden" VerticalAlignment="Top" Width="24" Height="26" Grid.Column="1"/>
-        <TextBox x:Name="idTxt" Visibility="Hidden" HorizontalAlignment="Left" Margin="108,43,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="35" Height="26" Grid.Column="1"/>
-        <Label x:Name="lblMessage" Content="" HorizontalAlignment="Left" Margin="36,319,0,0" VerticalAlignment="Top" Width="210" Height="26"/>
-        <ComboBox x:Name="regionesCmb"  HorizontalAlignment="Left" Margin="108,230,0,0" VerticalAlignment="Top" Width="138" Height="26" Grid.Column="1"
-                  ItemsSource="{Binding Path=nombreRegion}"
+    <Grid Background="White">
+        <Rectangle HorizontalAlignment="Left" Height="384" Margin="408,30,0,0" Stroke="Black" VerticalAlignment="Top" Width="318"/>
+
+        <TextBox x:Name="nombreTxt" HorizontalAlignment="Left" Margin="190,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Height="20"
+                 PreviewTextInput="ValidacionDeTexto"/>
+        <TextBox x:Name="apellidoTxt" HorizontalAlignment="Left" Margin="190,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Height="20"
+                 PreviewTextInput="ValidacionDeTexto"/>
+        <TextBox x:Name="cedulaTxt" HorizontalAlignment="Left" Margin="190,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Height="20"
+                 PreviewTextInput="ValidacionDeNumeros"
+                 LostFocus="ValidarRut_LostFocus"
+                 MaxLength="9"/>
+        <TextBox x:Name="correoTxt" HorizontalAlignment="Left" Margin="190,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Height="20"/>
+        <TextBox x:Name="telefonoTxt" HorizontalAlignment="Left" Margin="190,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Height="20"
+                 PreviewTextInput="ValidacionDeNumeros"
+                 MaxLength="9"/>
+        <TextBox x:Name="rolTxt" HorizontalAlignment="Left" Margin="10,414,0,0" Text="3"  TextWrapping="Wrap" Visibility="Hidden" VerticalAlignment="Top" Width="24" Height="20" Grid.Column="1"/>
+        <TextBox x:Name="idTxt" Visibility="Hidden" HorizontalAlignment="Left" Margin="108,43,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="20" Height="26" Grid.Column="1"/>
+
+        <ComboBox x:Name="regionCmb"  HorizontalAlignment="Left" Margin="190,262,0,0" VerticalAlignment="Top" Width="138" Height="20"
+                  ItemsSource="{Binding nombreRegion}"
                   DisplayMemberPath="nombreRegion"
-                  SelectedValuePath="idRegion"/>
-        <ComboBox x:Name="comunasCmb"  HorizontalAlignment="Left" Margin="108,263,0,0" VerticalAlignment="Top" Width="138" Height="26" Grid.Column="1"
-                  ItemsSource="{Binding Path=nombreComuna}" 
+                  SelectedValuePath="idRegion"
+                  SelectionChanged="regionCmb_Changed"/>
+        <ComboBox x:Name="comunaCmb"  HorizontalAlignment="Left" Margin="190,302,0,0" VerticalAlignment="Top" Width="138" Height="20"
+                  ItemsSource="{Binding nombreComuna}" 
                   DisplayMemberPath="nombreComuna"
                   SelectedValuePath="idComuna"/>
-        <Label Content="Regiones:" HorizontalAlignment="Left" Margin="36,230,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="61"/>
-        <Label Content="Comuna:" HorizontalAlignment="Left" Margin="36,261,0,0" VerticalAlignment="Top" Grid.Column="1" Height="26" Width="57"/>
-        <Button x:Name="guardarBtn" Content="Guardar Usuarios" Click="guardarBtn_Click" Width="138" Height="20" Margin="108,294,554,136"/>
+
+        <Label Content="Nombre:" HorizontalAlignment="Left" Margin="118,59,0,0" VerticalAlignment="Top" Height="26" Width="56"/>
+        <Label Content="Apellido:" HorizontalAlignment="Left" Margin="118,99,0,0" VerticalAlignment="Top" Height="26" Width="56"/>
+        <Label Content="Cedula:" HorizontalAlignment="Left" Margin="118,139,0,0" VerticalAlignment="Top" Height="26" Width="56"/>
+        <Label Content="Correo:" HorizontalAlignment="Left" Margin="118,179,0,0" VerticalAlignment="Top" Height="26" Width="56"/>
+        <Label Content="Telefono:" HorizontalAlignment="Left" Margin="118,219,0,0" VerticalAlignment="Top" Height="26" Width="58"/>
+        <Label x:Name="lblMessage" Content="" HorizontalAlignment="Left" Margin="481,268,0,0" VerticalAlignment="Top" Width="210" Height="26"/>
+        <Label Content="Regiones:" HorizontalAlignment="Left" Margin="118,259,0,0" VerticalAlignment="Top" Height="26" Width="61"/>
+        <Label Content="Comuna:" HorizontalAlignment="Left" Margin="118,299,0,0" VerticalAlignment="Top" Height="26" Width="57"/>
+
+        <Label Content="Nueva Contraseña:" HorizontalAlignment="Left" Margin="457,68,0,0" VerticalAlignment="Top"/>
+        <Label Content="Repetir Contraseña:" HorizontalAlignment="Left" Margin="453,153,0,0" VerticalAlignment="Top"/>
+
+
+        <Label  Content="*" HorizontalAlignment="Left" Margin="328,59,0,0" VerticalAlignment="Top" Foreground="#FFF51313" RenderTransformOrigin="0.517,0.395"/>
+        <Label  Content="*" HorizontalAlignment="Left" Margin="328,99,0,0" VerticalAlignment="Top" Foreground="#FFF51313"/>
+        <Label  Content="*" HorizontalAlignment="Left" Margin="328,139,0,0" VerticalAlignment="Top" Foreground="#FFF51313"/>
+        <Label  Content="*" HorizontalAlignment="Left" Margin="328,179,0,0" VerticalAlignment="Top" Foreground="#FFF51313"/>
+        <Label  Content="*" HorizontalAlignment="Left" Margin="328,219,0,0" VerticalAlignment="Top" Foreground="#FFF51313"/>
+        <Label  Content="*" HorizontalAlignment="Left" Margin="328,259,0,0" VerticalAlignment="Top" Foreground="#FFF51313"/>
+        <Label  Content="*" HorizontalAlignment="Left" Margin="328,299,0,0" VerticalAlignment="Top" Foreground="#FFF51313"/>
+        <Label  Content="*" HorizontalAlignment="Left" Margin="691,68,0,0" VerticalAlignment="Top" Foreground="#FFF51313"/>
+        <Label  Content="*" HorizontalAlignment="Left" Margin="691,155,0,0" VerticalAlignment="Top" Foreground="#FFF51313"/>
+
+        <Label x:Name="lblError" Content="" HorizontalAlignment="Left" Margin="154,339,0,0" VerticalAlignment="Top" Width="210" Height="26" Foreground="#FFF51313"/>
+
+        <PasswordBox x:Name="passNewPB" HorizontalAlignment="Left" Margin="567,71,0,0" VerticalAlignment="Top" Width="124" Height="20" MaxLength="12"/>
+        <PasswordBox x:Name="conPassPB" HorizontalAlignment="Left" Margin="567,157,0,0" VerticalAlignment="Top" Width="124" Height="20" MaxLength="12"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="567,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="60" Width="124" FontSize="9" Foreground="#FF504F4F"><Run Text="Minimo 8 caracters."/><LineBreak/><Run Text="Maximo 12 caracters."/><LineBreak/><Run Language="es-cl" Text="Minimo 1 letra MAYUSC."/><LineBreak/><Run Language="es-cl" Text="Minimo 1 numero."/><LineBreak/><Run/></TextBlock>
+        <TextBlock x:Name="nomErrLbl" Text="" HorizontalAlignment="Left" Margin="202,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="9" Width="114" Foreground="#FFF51313" TextAlignment="Center"/>
+        <TextBlock x:Name="apeErrLbl" Text="" HorizontalAlignment="Left" Margin="202,122,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" FontSize="9" Width="114" Foreground="#FFF51313" TextAlignment="Center"/>
+        <TextBlock x:Name="cedErrLbl" Text="" HorizontalAlignment="Left" Margin="202,162,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" FontSize="9" Width="114" Foreground="#FFF51313" TextAlignment="Center"/>
+        <TextBlock x:Name="emailErrLbl" Text="" HorizontalAlignment="Left" Margin="202,202,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" FontSize="9" Width="114" Foreground="#FFF51313" TextAlignment="Center"/>
+        <TextBlock x:Name="telErrLbl" Text="" HorizontalAlignment="Left" Margin="202,242,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" FontSize="9" Width="114" Foreground="#FFF51313" TextAlignment="Center"/>
+        <TextBlock x:Name="regErrLbl" Text="" HorizontalAlignment="Left" Margin="202,282,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" FontSize="9" Width="114" Foreground="#FFF51313" TextAlignment="Center"/>
+        <TextBlock x:Name="comErrLbl" Text="" HorizontalAlignment="Left" Margin="202,322,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" FontSize="9" Width="114" Foreground="#FFF51313" TextAlignment="Center"/>
+        <TextBlock x:Name="incPassLbl" Text="" HorizontalAlignment="Left" Margin="572,177,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" FontSize="9" Width="114" Foreground="#FFF51313" TextAlignment="Center"/>
+        <TextBlock x:Name="noPassLbl" Text="" HorizontalAlignment="Left" Margin="572,139,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" FontSize="9" Width="114" Foreground="#FFF51313" TextAlignment="Center"/>
+        <Button x:Name="guardarBtn" Content="Guardar Usuarios" Click="guardarBtn_Click" Width="138" Margin="512,322,150,99"/>
+
     </Grid>
 </Page>

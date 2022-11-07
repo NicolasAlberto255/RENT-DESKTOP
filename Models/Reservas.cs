@@ -6,13 +6,16 @@ using System.Threading.Tasks;
 
 namespace RENT.Models
 {
-    internal class Reservas
+    public class Reservas
     {
-        public int idReservas { get; set; }
-        public DateOnly fechaCreacion { get; set; }
-        public DateOnly fechaInicio { get; set; }
-        public DateOnly fechaFin { get; set; }
-        public int cntDias { get; set; }
+        public int idReserva { get; set; }
+        public DateTime fechaCreacion { get; set; }
+        public DateTime fechaInicio { get; set; }
+        public DateTime fechaFin { get; set; }
         public int precioAbono { get; set; }
+        public object[] servicios { get; set; }
+        public object[] usuarios { get; set; }
+        public object[] departamentos { get; set; }
+
     }
 }

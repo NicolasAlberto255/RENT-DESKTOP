@@ -29,34 +29,51 @@ namespace RENT
         private void rgUsuarioBtn_Click(object sender, RoutedEventArgs e)
         {
             AddUsuarios addUsuarios = new AddUsuarios();
-            this.Content = addUsuarios;
+            ListUsuarios listUsuarios = new ListUsuarios();
+            Main.Content = addUsuarios;
             addUsuarios.GetRegiones();
             addUsuarios.GetComunas();
+            logoImg.Visibility = Visibility.Hidden;
         }
 
         private void bUsuariosBtn_Click(object sender, RoutedEventArgs e)
         {
             ListUsuarios listUsuarios = new ListUsuarios();
-            this.Content = listUsuarios;
+            Main.Content = listUsuarios;
+            logoImg.Visibility = Visibility.Hidden;
         }
 
         private void addReservaBtn_Click(object sender, RoutedEventArgs e)
         {
             AddReserva addReserva = new AddReserva();
-            this.Content = addReserva;
+            Main.Content = addReserva;
             addReserva.cntDiasTxt.IsEnabled = false;
             addReserva.fechaFinDtp.IsEnabled = false;
+            addReserva.servicios1Cmb.SelectedIndex = 0;
+            addReserva.servicios2Cmb.SelectedIndex = 0;
+            addReserva.servicios3Cmb.SelectedIndex = 0;
             addReserva.GetServicios();
             addReserva.GetUsuarios();
+            addReserva.GetDepartamentos();
             addReserva.Today();
+            addReserva.valorTotalTxt.Text = "$";
+            addReserva.precioAbonoTxt.Text = "0";
+            logoImg.Visibility = Visibility.Hidden;
         }
 
         private void addDepartamentoBtn_Click(object sender, RoutedEventArgs e)
         {
             AddDepartamento addDepartamento = new AddDepartamento();
-            this.Content = addDepartamento;
+            Main.Content = addDepartamento;
             addDepartamento.GetRegiones();
             addDepartamento.GetComunas();
+            logoImg.Visibility = Visibility.Hidden;
+        }
+
+        private void inicioBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = null;
+            logoImg.Visibility = Visibility.Visible;
         }
     }
 }

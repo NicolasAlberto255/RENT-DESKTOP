@@ -5,19 +5,68 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:RENT.Windows"
       mc:Ignorable="d" 
-      Title="AddReserva">
+      Title="AddReserva"
+      d:Height="530" d:Width="850"
+      xml:lang="es">
 
-    <Grid Background="#FFFCFCFC" Height="450" Width="800">
-        <Label Content="Fecha de Inicio de Reserva" HorizontalAlignment="Left" Margin="46,104,0,0" VerticalAlignment="Top"/>
-        <Label Content="Cantidad de Dias Reserva" HorizontalAlignment="Left" Margin="46,73,0,0" VerticalAlignment="Top"/>
-        <Label Content="Fecha de Fin de Reserva" HorizontalAlignment="Left" Margin="46,135,0,0" VerticalAlignment="Top"/>
-        <Label Content="Servicios" HorizontalAlignment="Left" Margin="46,166,0,0" VerticalAlignment="Top"/>
-        <Label Content="Buscar por Cedula" HorizontalAlignment="Left" Margin="440,142,0,0" VerticalAlignment="Top"/>
+    <Grid Background="White">
+        <Label Content="¿Agregar Cantidad de Dias?" HorizontalAlignment="Left" Margin="389,23,0,0" VerticalAlignment="Top"/>
+        <Label Content="¿Seleccionar ultimo dia de Reseva?" HorizontalAlignment="Left" Margin="389,53,0,0" VerticalAlignment="Top"/>
+        <Label Content="Cantidad de Dias Reserva" HorizontalAlignment="Left" Margin="389,83,0,0" VerticalAlignment="Top"/>
+        <Label Content="Fecha de Inicio de Reserva" HorizontalAlignment="Left" Margin="389,113,0,0" VerticalAlignment="Top"/>
+        <Label Content="Fecha de Fin de Reserva" HorizontalAlignment="Left" Margin="389,143,0,0" VerticalAlignment="Top"/>
+        <Label Content="Servicios 1" HorizontalAlignment="Left" Margin="389,175,0,0" VerticalAlignment="Top"/>
+        <Label Content="Servicios 2" HorizontalAlignment="Left" Margin="389,205,0,0" VerticalAlignment="Top"/>
+        <Label Content="Servicios 3" HorizontalAlignment="Left" Margin="389,235,0,0" VerticalAlignment="Top"/>
+        <Label Content="Seleccionar Departamento" HorizontalAlignment="Left" Margin="71,198,0,0" VerticalAlignment="Top"/>
+        <Label Content="Buscar por Cedula" HorizontalAlignment="Left" Margin="114,345,0,0" VerticalAlignment="Top"/>
+        <Label Content="Valor Total" HorizontalAlignment="Left" Margin="389,267,0,0" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="cntDiasTxt" HorizontalAlignment="Left" Margin="203,73,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="32" Height="26" MaxLength="2"/>
-        <TextBox x:Name="cedulaFindTxt" HorizontalAlignment="Left" Margin="159,331,0,0" VerticalAlignment="Top" Width="120" Height="20" TextWrapping="Wrap"/>
+        <TextBox x:Name="valorTotalTxt" HorizontalAlignment="Left" Margin="596,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="27"
+                 IsEnabled="False"/>
+        <TextBox x:Name="cntDiasTxt" HorizontalAlignment="Left" Margin="596,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" Height="27" MaxLength="2"
+                 TextChanged="Dias_TextChanged"
+                 PreviewTextInput="ValidacionDeNumeros"/>
+        <TextBox x:Name="precioAbonoTxt" HorizontalAlignment="Left" Margin="596,299,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="27"
+                 PreviewTextInput="ValidacionDeNumeros"
+                 TextChanged="Precio_TextChanged"/>
 
-        <TextBlock IsHitTestVisible="False" Text="Cedula" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="164,331,0,0" Foreground="DarkGray">
+        <TextBox Visibility="Hidden" x:Name="cedulaFindTxt" HorizontalAlignment="Left" Margin="0,427,0,0" VerticalAlignment="Top" Width="120" Height="20" TextWrapping="Wrap"/>
+
+        <TextBox Visibility="Hidden" x:Name="idUsuarioTxt" HorizontalAlignment="Left" Margin="5,429,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Visibility="Hidden" x:Name="nombreUsuarioTxt" HorizontalAlignment="Left" Margin="5,429,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Visibility="Hidden" x:Name="apellidoUsuarioTxt" HorizontalAlignment="Left" Margin="5,429,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Visibility="Hidden" x:Name="correoUsuarioTxt" HorizontalAlignment="Left" Margin="5,429,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Visibility="Hidden" x:Name="cedulaUsuarioTxt" HorizontalAlignment="Left" Margin="5,429,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Visibility="Hidden" x:Name="telefonoUsuarioTxt" HorizontalAlignment="Left" Margin="5,429,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Visibility="Hidden" x:Name="rolUsuarioTxt" HorizontalAlignment="Left" Margin="5,429,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Visibility="Hidden" x:Name="regionUsuarioTxt" HorizontalAlignment="Left" Margin="5,429,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Visibility="Hidden" x:Name="comunaUsuarioTxt" HorizontalAlignment="Left" Margin="5,429,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+
+        <TextBox Visibility="Hidden" x:Name="idDepartamentoTxt" HorizontalAlignment="Left" Margin="5,429,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Visibility="Hidden" x:Name="nombreDepartamentoTxt" HorizontalAlignment="Left" Margin="5,429,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Visibility="Hidden" x:Name="nombreComunaDeptoTxt" HorizontalAlignment="Left" Margin="5,429,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Visibility="Hidden" x:Name="nombreRegionDeptoTxt" HorizontalAlignment="Left" Margin="5,429,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Visibility="Hidden" x:Name="nBanosTxt" HorizontalAlignment="Left" Margin="5,429,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Visibility="Hidden" x:Name="nDeptoTxt" HorizontalAlignment="Left" Margin="5,429,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Visibility="Hidden" x:Name="nEdificioTxt" HorizontalAlignment="Left" Margin="5,429,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Visibility="Hidden" x:Name="nHabitacionTxt" HorizontalAlignment="Left" Margin="5,429,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Visibility="Hidden" x:Name="vNocheTxt" HorizontalAlignment="Left" Margin="5,429,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
+        <TextBox Visibility="Hidden" x:Name="balconTxt" HorizontalAlignment="Left" Margin="5,429,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+
+        <TextBox Visibility="Hidden" x:Name="idServicios1Txt" HorizontalAlignment="Left" Margin="5,429,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Visibility="Hidden" x:Name="nombreServicios1Txt" HorizontalAlignment="Left" Margin="5,429,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Visibility="Hidden" x:Name="descripcionServicios1Txt" HorizontalAlignment="Left" Margin="5,429,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+
+        <TextBox Visibility="Hidden" x:Name="idServicios2Txt" HorizontalAlignment="Left" Margin="5,429,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Visibility="Hidden" x:Name="nombreServicios2Txt" HorizontalAlignment="Left" Margin="5,429,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Visibility="Hidden" x:Name="descripcionServicios2Txt" HorizontalAlignment="Left" Margin="5,429,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+
+        <TextBox Visibility="Hidden" x:Name="idServicios3Txt" HorizontalAlignment="Left" Margin="5,429,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Visibility="Hidden" x:Name="nombreServicios3Txt" HorizontalAlignment="Left" Margin="5,429,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Visibility="Hidden" x:Name="descripcionServicios3Txt" HorizontalAlignment="Left" Margin="5,429,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+
+        <TextBlock Visibility="Hidden" IsHitTestVisible="False" Text="Cedula" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5,427,0,0" Foreground="DarkGray">
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -30,31 +79,64 @@
             </TextBlock.Style>
         </TextBlock>
 
-        <DatePicker x:Name="fechaInicioDtp" HorizontalAlignment="Left" Margin="203,104,0,0" VerticalAlignment="Top" Height="26" Width="120"
+        <DatePicker x:Name="fechaInicioDtp" HorizontalAlignment="Left" Margin="596,113,0,0" VerticalAlignment="Top" Height="26" Width="120"
             SelectedDateChanged="fechaInicioDtp_SelectedChanged"
             FirstDayOfWeek="Monday"/>
-        <DatePicker x:Name="fechaFinDtp" HorizontalAlignment="Left" Margin="203,135,0,0" VerticalAlignment="Top" Height="26" Width="120" 
+        <DatePicker x:Name="fechaFinDtp" HorizontalAlignment="Left" Margin="596,143,0,0" VerticalAlignment="Top" Height="26" Width="120" 
             SelectedDateChanged="fechaFinDtp_SelectedChanged"
             FirstDayOfWeek="Monday"/>
-        <CheckBox x:Name="diasBetweenCbx" Content="?Agregar Cantidad de Dias¿" HorizontalAlignment="Left" Margin="32,53,0,0" VerticalAlignment="Top" FlowDirection="RightToLeft" UseLayoutRounding="False" Width="186" 
-                  Checked="diasBetweenCbx_Checked"
-                  Unchecked="diasBetweenCbx_Unchecked"/>
-        <CheckBox x:Name="diasFinCbx" Content="?Seleccionar ultimo dia de Reseva¿" HorizontalAlignment="Left" Margin="11,33,0,0" VerticalAlignment="Top" FlowDirection="RightToLeft" UseLayoutRounding="False" Width="207"
-                  Checked="diasFinCbx_Checked"
-                  Unchecked="diasFinCbx_Unchecked"/>
 
-        <ComboBox x:Name="serviciosCmb" HorizontalAlignment="Left" Margin="203,166,0,0" VerticalAlignment="Top" Width="120" Height="26" 
+        <CheckBox x:Name="diasBetweenCbx" Content="" HorizontalAlignment="Left" Margin="600,58,0,0" VerticalAlignment="Top" FlowDirection="RightToLeft" UseLayoutRounding="False" Width="16" 
+                  Checked="diasBetweenCbx_Checked"
+                  Unchecked="diasBetweenCbx_Unchecked" RenderTransformOrigin="0.5,0.5">
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+        <CheckBox x:Name="diasFinCbx" Content="" HorizontalAlignment="Left" Margin="600,27,0,0" VerticalAlignment="Top" FlowDirection="RightToLeft" UseLayoutRounding="False" Width="16"
+                  Checked="diasFinCbx_Checked"
+                  Unchecked="diasFinCbx_Unchecked" Height="15" RenderTransformOrigin="0.5,0.5">
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+
+        <ComboBox x:Name="servicios1Cmb" HorizontalAlignment="Left" Margin="596,175,0,0" VerticalAlignment="Top" Width="120" Height="23" 
                   ItemsSource="{Binding Path=nombreServicios}"
                   DisplayMemberPath="nombreServicios"
-                  SelectedValuePath="idServicios"/>
-        <ComboBox x:Name="cedulaCmb" HorizontalAlignment="Left" Margin="551,144,0,0" VerticalAlignment="Top" Width="120"
+                  SelectedValuePath="idServicios"
+                  SelectionChanged="serviciosCmb1_SelectionChanged"/>
+        <ComboBox x:Name="servicios2Cmb" HorizontalAlignment="Left" Margin="596,205,0,0" VerticalAlignment="Top" Width="120" Height="23" 
+                  ItemsSource="{Binding nombreServicios}"
+                  DisplayMemberPath="nombreServicios"
+                  SelectedValuePath="idServicios" 
+                  SelectionChanged="servicios2Cmb_SelectionChanged"/>
+        <ComboBox x:Name="servicios3Cmb" HorizontalAlignment="Left" Margin="596,235,0,0" VerticalAlignment="Top" Width="120" Height="23" 
+                  ItemsSource="{Binding nombreServicios}"
+                  DisplayMemberPath="nombreServicios"
+                  SelectedValuePath="idServicios" 
+                  SelectionChanged="servicios3Cmb_SelectionChanged"/>
+        <ComboBox x:Name="cedulaCmb" HorizontalAlignment="Left" Margin="225,347,0,0" VerticalAlignment="Top" Width="120"
                   ItemsSource="{Binding Path=cedulaUsuario}"
                   DisplayMemberPath="cedulaUsuario"
-                  SelectedValuePath="idUsuario" SelectionChanged="cedulaCmb_SelectionChanged"/>
+                  SelectedValuePath="idUsuario" 
+                  SelectionChanged="cedulaCmb_SelectionChanged"/>
+        <ComboBox x:Name="departamentoCmb" HorizontalAlignment="Left" Margin="226,200,0,0" VerticalAlignment="Top" Width="120"
+            ItemsSource="{Binding nombreDepartamento}"
+            DisplayMemberPath="nombreDepartamento"
+            SelectedValuePath="idDepartamentos" SelectionChanged="departamentoCmb_SelectionChanged"/>
 
-        <Button x:Name="cargarCedulaBtn" Content="Buscar Usuario" HorizontalAlignment="Left" Margin="159,306,0,0" VerticalAlignment="Top" Click="cargarCedulaBtn_Click"/>
-
-        <ListBox x:Name="usListBox" Margin="391,33,129,311" IsEnabled="False">
+        <ListBox x:Name="usListBox" Margin="65,229,0,0" IsEnabled="False" HorizontalAlignment="Left" VerticalAlignment="Top" Height="108" Width="280">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Border Name="border" BorderBrush="DarkSlateBlue" BorderThickness="2" CornerRadius="2" Padding="5" Margin="5">
@@ -85,7 +167,58 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        
-        
+        <ListBox x:Name="deptoListBox" Margin="41,16,0,0" IsEnabled="False" HorizontalContentAlignment="Stretch" HorizontalAlignment="Left" VerticalAlignment="Top" Height="179" Width="304">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border x:Name="border" BorderBrush="DarkSlateBlue" BorderThickness="2" CornerRadius="2" Padding="9" Margin="5">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Padding="0,0,5,0" Text="Comuna: " Width="120"/>
+                            <TextBlock Grid.Row="0" Grid.Column="1" Padding="0,0,5,0" Text="{Binding nombreComunaDepto}" Width="120"/>
+                            <TextBlock Grid.Row="1" Grid.Column="0" Padding="0,0,5,0" Text="Region: " Width="120"/>
+                            <TextBlock Grid.Row="1" Grid.Column="1" Padding="0,0,5,0" Text="{Binding nombreRegionDepto}" Width="120"/>
+                            <TextBlock Grid.Row="2" Grid.Column="0" Padding="0,0,5,0" Text="N° Baños: " Width="120"/>
+                            <TextBlock Grid.Row="2" Grid.Column="1" Padding="0,0,5,0" Text="{Binding nBanos}" Width="120"/>
+                            <TextBlock Grid.Row="3" Grid.Column="0" Padding="0,0,5,0" Text="N° Departamento: " Width="120"/>
+                            <TextBlock Grid.Row="3" Grid.Column="1" Padding="0,0,5,0" Text="{Binding nDepto}" Width="120"/>
+                            <TextBlock Grid.Row="4" Grid.Column="0" Padding="0,0,5,0" Text="N° Edificio: " Width="120"/>
+                            <TextBlock Grid.Row="4" Grid.Column="1" Padding="0,0,5,0" Text="{Binding nEdificio}" Width="120"/>
+                            <TextBlock Grid.Row="5" Grid.Column="0" Padding="0,0,5,0" Text="N° Habitaciones: " Width="120"/>
+                            <TextBlock Grid.Row="5" Grid.Column="1" Padding="0,0,5,0" Text="{Binding nHabitacion}" Width="120"/>
+                            <TextBlock Grid.Row="6" Grid.Column="0" Padding="0,0,5,0" Text="Valor Noche: " Width="120"/>
+                            <TextBlock Grid.Row="6" Grid.Column="1" Padding="0,0,5,0" Text="{Binding vNoche}" Width="120"/>
+                            <TextBlock Grid.Row="7" Grid.Column="0" Padding="0,0,5,0" Text="Balcon: " Width="120"/>
+                            <TextBlock Grid.Row="7" Grid.Column="1" Padding="0,0,5,0" Text="{Binding balcon}" Width="120"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <Button x:Name="guardarReservaBtn" Content="Guardar Reserva" HorizontalAlignment="Left" Margin="620,349,0,0" VerticalAlignment="Top" Click="guardarReservaBtn_Click" Width="96"/>
+        <Button Visibility="Hidden" x:Name="cargarCedulaBtn" Content="Buscar Usuario" HorizontalAlignment="Left" Margin="0,402,0,0" VerticalAlignment="Top" Click="cargarCedulaBtn_Click"/>
+        <Label Content="Precio Abono" HorizontalAlignment="Left" Margin="389,299,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="reservasDiasTB" HorizontalAlignment="Left" Margin="395,103,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="9" Width="138" Foreground="#FFF51313" TextAlignment="Center"/>
+        <TextBlock x:Name="departamentosTB" HorizontalAlignment="Left" Margin="217,224,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="9" Width="138" Foreground="#FFF51313" TextAlignment="Center"/>
+        <TextBlock x:Name="usuarioTB" HorizontalAlignment="Left" Margin="217,371,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="9" Width="138" Foreground="#FFF51313" TextAlignment="Center"/>
+        <TextBlock x:Name="abonoTB" HorizontalAlignment="Left" Margin="395,325,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="9" Width="138" Foreground="#FFF51313" TextAlignment="Center"/>
+        <TextBlock x:Name="saveBtnTB" HorizontalAlignment="Left" Margin="614,371,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="9" Width="115" Foreground="#FFF51313" TextAlignment="Center"/>
+        <TextBlock x:Name="correctBtnTB" HorizontalAlignment="Left" Margin="614,371,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="9" Width="115" Foreground="#FF091DC5" TextAlignment="Center"/>
+
     </Grid>
 </Page>

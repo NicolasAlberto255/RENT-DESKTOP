@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -26,8 +27,8 @@ namespace RENT.Windows
         HttpClient client = new HttpClient();
         public ListUsuarios()
         {
-            //client.BaseAddress = new Uri("http://apirent-env.eba-n7bvnjak.us-east-1.elasticbeanstalk.com/");
-            client.BaseAddress = new Uri("http://localhost:8080/");
+            client.BaseAddress = new Uri("http://apirent-env.eba-n7bvnjak.us-east-1.elasticbeanstalk.com/");
+            //client.BaseAddress = new Uri("http://localhost:8080/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
             InitializeComponent();
@@ -56,7 +57,6 @@ namespace RENT.Windows
         {
             SearchByCedula(new Usuarios());
         }
-
 
         private void GetUsuarios()
         {
@@ -141,6 +141,18 @@ namespace RENT.Windows
             {
                 MessageBox.Show("Error Code" + response.StatusCode + " : Message - " + response.ReasonPhrase);
             }
+        }
+
+        private void ValidacionDeNumeros(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void ValidacionDeTexto(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^a-zA-Z]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
     }
 }

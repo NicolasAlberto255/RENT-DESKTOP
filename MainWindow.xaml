@@ -5,11 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RENT"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Background="#FFFCFCFC" Height="450" Width="800">
-        <Button x:Name="rgUsuarioBtn" Content="Registrar Usuario" HorizontalAlignment="Left" Margin="187,189,0,0" VerticalAlignment="Top" Click="rgUsuarioBtn_Click" ClickMode="Press"/>
-        <Button x:Name="bUsuariosBtn" Content="Buscar Usuarios" HorizontalAlignment="Left" Margin="187,214,0,0" VerticalAlignment="Top" Click="bUsuariosBtn_Click" ClickMode="Press"/>
-        <Button x:Name="addReservaBtn" Content="Añadir Reserva" HorizontalAlignment="Left" Margin="187,239,0,0" VerticalAlignment="Top" Click="addReservaBtn_Click" ClickMode="Press"/>
-        <Button x:Name="addDepartamentoBtn" Content="Añadir Departamento" HorizontalAlignment="Left" Margin="187,264,0,0" VerticalAlignment="Top" Click="addDepartamentoBtn_Click"/>
+        Title="MainWindow" Height="550" Width="800">
+    <Grid>
+        <Frame x:Name="Main" Margin="0,40,0,23" Width="800" NavigationUIVisibility="Hidden"/>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Height="35" Grid.ColumnSpan="2">
+            <Button x:Name="HomeBtn" Content="Inicio" Margin="10,5,0,0" Click="inicioBtn_Click"/>
+            <Button x:Name="rgUsuarioBtn" Content="Registrar Usuario" Margin="10,5,0,0" Click="rgUsuarioBtn_Click"/>
+            <Button x:Name="bUsuariosBtn" Content="Buscar Usuarios" Margin="10,5,0,0" Click="bUsuariosBtn_Click"/>
+            <Button x:Name="addReservaBtn" Content="Añadir Reserva" Margin="10,5,0,0" Click="addReservaBtn_Click"/>
+            <Button x:Name="addDepartamentoBtn" Content="Añadir Departamento" Margin="10,5,0,0" Click="addDepartamentoBtn_Click"/>
+        </StackPanel>
+        <Image x:Name="logoImg" Margin="158,156,158,156" Source="C:\Users\Nicolas\OneDrive\Escritorio\Portafolio\RENT-DESKTOP\RENT\RENT-DESKTOP\img\6T0bcLp.png" Stretch="Fill"/>
     </Grid>
 </Window>

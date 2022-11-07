@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Lab02\Desktop\RENT-DESKTOP\obj\Debug\net6.0-windows\
+C:\Users\Nicolas\OneDrive\Escritorio\Portafolio\RENT-DESKTOP\RENT\RENT-DESKTOP\obj\Debug\net6.0-windows\
 RENT
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\Lab02\Desktop\RENT-DESKTOP\App.xaml
-51004261786
+C:\Users\Nicolas\OneDrive\Escritorio\Portafolio\RENT-DESKTOP\RENT\RENT-DESKTOP\App.xaml
+61208567555
 
-15-1486357625
-225-149811860
-MainWindow.xaml;Windows\AddDepartamento.xaml;Windows\AddReserva.xaml;Windows\AddUsuarios.xaml;Windows\ListUsuarios.xaml;
+16827218858
+262462779484
+MainWindow.xaml;Themes\Generic.xaml;Windows\AddDepartamento.xaml;Windows\AddReserva.xaml;Windows\AddUsuarios.xaml;Windows\ListUsuarios.xaml;
 
-True
+False
 
