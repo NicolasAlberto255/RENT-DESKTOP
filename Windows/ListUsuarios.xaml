@@ -8,7 +8,7 @@
       d:Height="530" d:Width="850"
       Title="ListUsuarios">
 
-    <Grid Background="#FFFCFCFC">
+    <Grid Background="White">
         <DataGrid x:Name="dgUsuarios" Margin="286,84,31,137" 
                   xmlns:my="http://schemas.microsoft.com/wpf/2008/toolkit"
                   CanUserAddRows="False"
@@ -27,21 +27,80 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <Button x:Name="idBtn" Content="Buscar por ID" HorizontalAlignment="Left" Margin="137,216,0,0" VerticalAlignment="Top" Width="119" Click="idBtn_Click"/>
-        <Button x:Name="nombreBtn" Content="Buscar por Nombre" HorizontalAlignment="Left" Margin="137,141,0,0" VerticalAlignment="Top" Width="119" Click="nombreBtn_Click"/>
-        <Button x:Name="apellidoBtn" Content="Buscar por Apellido" HorizontalAlignment="Left" Margin="137,166,0,0" VerticalAlignment="Top" Width="119" Click="apellidoBtn_Click"/>
-        <Button x:Name="cedulabtn" Content="Buscar por Cedula" HorizontalAlignment="Left" Margin="137,190,0,0" VerticalAlignment="Top" Width="119" Click="cedulaBtn_Click"/>
+        <Button x:Name="idBtn" Content="Buscar por ID" HorizontalAlignment="Left" Margin="137,216,0,0" VerticalAlignment="Top" Width="119" Click="idBtn_Click" Padding="2">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="BorderBrush" Value="#FF144FBE"/>
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="nombreBtn" Content="Buscar por Nombre" HorizontalAlignment="Left" Margin="137,141,0,0" VerticalAlignment="Top" Width="119" Click="nombreBtn_Click" Padding="2">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="BorderBrush" Value="#FF144FBE"/>
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="apellidoBtn" Content="Buscar por Apellido" HorizontalAlignment="Left" Margin="137,166,0,0" VerticalAlignment="Top" Width="119" Click="apellidoBtn_Click" Padding="2">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="BorderBrush" Value="#FF144FBE"/>
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="cedulabtn" Content="Buscar por Cedula" HorizontalAlignment="Left" Margin="137,190,0,0" VerticalAlignment="Top" Width="119" Click="cedulaBtn_Click" Padding="2">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="BorderBrush" Value="#FF144FBE"/>
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
 
         <Label x:Name="lblMessage" Content="" HorizontalAlignment="Left" Margin="64,43,0,0" Visibility="Hidden" VerticalAlignment="Top" RenderTransformOrigin="0.101,0.595" Width="37"/>
 
-        <TextBox x:Name="nombreFindTxt"  HorizontalAlignment="Left" Margin="31,141,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="20" Width="101"
-                 PreviewTextInput="ValidacionDeTexto"/>
-        <TextBox x:Name="apellidoFindTxt"  HorizontalAlignment="Left" Margin="31,166,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="20" Width="101"
-                 PreviewTextInput="ValidacionDeTexto"/>
-        <TextBox x:Name="cedulaFindTxt"  HorizontalAlignment="Left" Margin="31,191,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="20" Width="101"/>
+        <TextBox x:Name="nombreFindTxt"  HorizontalAlignment="Left" Margin="31,142,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="20" Width="101"
+                 PreviewTextInput="ValidacionDeTexto">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="apellidoFindTxt"  HorizontalAlignment="Left" Margin="31,168,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="20" Width="101"
+                 PreviewTextInput="ValidacionDeTexto">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="cedulaFindTxt"  HorizontalAlignment="Left" Margin="31,191,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="20" Width="101">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
         <TextBox x:Name="idFindTxt"  HorizontalAlignment="Left" Margin="101,216,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="20" Width="31"
-                 PreviewTextInput="ValidacionDeNumeros"/>
-        <Button x:Name="cargarUsuariobtn" Content="Cargar Usuarios" HorizontalAlignment="Left" Margin="137,241,0,0" VerticalAlignment="Top" Width="119" Click="cargarUsuariobtn_Click"/>
+                 PreviewTextInput="ValidacionDeNumeros">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <Button x:Name="cargarUsuariobtn" Content="Cargar Usuarios" HorizontalAlignment="Left" Margin="137,241,0,0" VerticalAlignment="Top" Width="119" Click="cargarUsuariobtn_Click" Padding="2">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="BorderBrush" Value="#FF144FBE"/>
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
 
     </Grid>
 </Page>

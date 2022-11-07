@@ -20,18 +20,57 @@
         <Label Content="¿Tiene Balcon?" HorizontalAlignment="Left" Margin="67,379,0,0" VerticalAlignment="Top" Height="26"/>
 
         <TextBox x:Name="nombreDeptoTxt" HorizontalAlignment="Left" Margin="222,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="20"
-                 PreviewTextInput="ValidacionDeTexto"/>
+                 PreviewTextInput="ValidacionDeTexto" >
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
         <TextBox x:Name="nBanosTxt" HorizontalAlignment="Left" Margin="222,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="20"
                  PreviewTextInput="ValidacionDeNumeros"
-                 MaxLength="2"/>
-        <TextBox x:Name="nDeptoTxt" HorizontalAlignment="Left" Margin="222,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="20" PreviewTextInput="ValidacionDeNumeros"/>
+                 MaxLength="2">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="nDeptoTxt" HorizontalAlignment="Left" Margin="222,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="20" 
+                 PreviewTextInput="ValidacionDeNumeros"
+                 MaxLength="5">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
         <TextBox x:Name="nEdificioTxt" HorizontalAlignment="Left" Margin="222,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="20" 
                  PreviewTextInput="ValidacionDeNumeros"
-                 MaxLength="5"/>
+                 MaxLength="5">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
         <TextBox x:Name="nHabitacionesTxt" HorizontalAlignment="Left" Margin="222,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="20" 
-                 PreviewTextInput="ValidacionDeNumeros"/>
+                 PreviewTextInput="ValidacionDeNumeros"
+                 MaxLength="2">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
         <TextBox x:Name="vNocheTxt" HorizontalAlignment="Left" Margin="222,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="20"
-                 PreviewTextInput="ValidacionDeNumeros"/>
+                 PreviewTextInput="ValidacionDeNumeros">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
         <ComboBox x:Name="regionCmb" HorizontalAlignment="Left" Margin="222,301,0,0" VerticalAlignment="Top" Width="120" Height="20"
                   ItemsSource="{Binding Path=nombreRegion}"
                   DisplayMemberPath="nombreRegion"
@@ -41,7 +80,14 @@
                   ItemsSource="{Binding Path=nombreComuna}" 
                   DisplayMemberPath="nombreComuna"
                   SelectedValuePath="idComuna"/>
-        <Button x:Name="guardarBtn" Content="Guardar" HorizontalAlignment="Left" Margin="226,414,0,0" VerticalAlignment="Top" Width="112" Click="guardarBtn_Click"/>
+        <Button x:Name="guardarBtn" Content="Guardar" HorizontalAlignment="Left" Margin="226,414,0,0" VerticalAlignment="Top" Width="112" Click="guardarBtn_Click" Padding="2">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="BorderBrush" Value="#FF144FBE"/>
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
         <TextBox x:Name="idDeptoTxt"  HorizontalAlignment="Left" Visibility="Hidden"  Margin="89,37,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
         <CheckBox x:Name="balconCbx" Content="" HorizontalAlignment="Left" Margin="225,384,0,0" VerticalAlignment="Top" 
                   Checked="balconCbx_Checked"

@@ -3,17 +3,52 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:RENT"
+        xmlns:local="clr-namespace:RENT" xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         mc:Ignorable="d"
         Title="MainWindow" Height="550" Width="800">
     <Grid>
         <Frame x:Name="Main" Margin="0,40,0,23" Width="800" NavigationUIVisibility="Hidden"/>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Height="35" Grid.ColumnSpan="2">
-            <Button x:Name="HomeBtn" Content="Inicio" Margin="10,5,0,0" Click="inicioBtn_Click"/>
-            <Button x:Name="rgUsuarioBtn" Content="Registrar Usuario" Margin="10,5,0,0" Click="rgUsuarioBtn_Click"/>
-            <Button x:Name="bUsuariosBtn" Content="Buscar Usuarios" Margin="10,5,0,0" Click="bUsuariosBtn_Click"/>
-            <Button x:Name="addReservaBtn" Content="Añadir Reserva" Margin="10,5,0,0" Click="addReservaBtn_Click"/>
-            <Button x:Name="addDepartamentoBtn" Content="Añadir Departamento" Margin="10,5,0,0" Click="addDepartamentoBtn_Click"/>
+            <Button ToolTip="Volver al Inicio" ToolTipService.InitialShowDelay="100" x:Name="HomeBtn" Margin="10,5,0,0" Click="inicioBtn_Click" Content="{iconPacks:Material Kind=Home}" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="Black" Height="27" Width="27">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="BorderBrush" Value="#FF144FBE"/>
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>    
+                </Button.Resources>
+            </Button>
+                <Button ToolTip="Crear Usuarios" ToolTipService.InitialShowDelay="100"  x:Name="rgUsuarioBtn" Content="{iconPacks:Material Kind=AccountPlus}" Margin="5,5,0,0" Click="rgUsuarioBtn_Click" BorderBrush="{x:Null}" Background="{x:Null}" Width="27" Height="27">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="BorderBrush" Value="#FF144FBE"/>
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button ToolTip="Buscar Usuarios" ToolTipService.InitialShowDelay="100" x:Name="bUsuariosBtn" Content="{iconPacks:Material Kind=AccountMultipleOutline}" Margin="5,5,0,0" Click="bUsuariosBtn_Click" Background="{x:Null}" BorderBrush="{x:Null}" Height="27" Width="27">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="BorderBrush" Value="#FF144FBE"/>
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button ToolTip="Registrar Reserva" ToolTipService.InitialShowDelay="100" x:Name="addReservaBtn" Content="{iconPacks:Material Kind=Notebook}" Margin="5,5,0,0" Click="addReservaBtn_Click" Background="{x:Null}" BorderBrush="{x:Null}" Height="27" Width="27">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="BorderBrush" Value="#FF144FBE"/>
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button ToolTip="Añadir Departamentos" ToolTipService.InitialShowDelay="100" x:Name="addDepartamentoBtn" Content="{iconPacks:Material Kind=OfficeBuilding}" Margin="5,5,0,0" Click="addDepartamentoBtn_Click" Background="{x:Null}" BorderBrush="{x:Null}" Height="27" Width="27">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="BorderBrush" Value="#FF144FBE"/>
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
         </StackPanel>
         <Image x:Name="logoImg" Margin="158,156,158,156" Source="C:\Users\Lab02\Desktop\RENT-DESKTOP\img\6T0bcLp.png" Stretch="Fill"/>
     </Grid>

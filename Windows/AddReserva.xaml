@@ -23,13 +23,31 @@
         <Label Content="Valor Total" HorizontalAlignment="Left" Margin="389,267,0,0" VerticalAlignment="Top"/>
 
         <TextBox x:Name="valorTotalTxt" HorizontalAlignment="Left" Margin="596,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="27"
-                 IsEnabled="False"/>
+                 IsEnabled="False">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
         <TextBox x:Name="cntDiasTxt" HorizontalAlignment="Left" Margin="596,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="33" Height="27" MaxLength="2"
                  TextChanged="Dias_TextChanged"
-                 PreviewTextInput="ValidacionDeNumeros"/>
+                 PreviewTextInput="ValidacionDeNumeros">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
         <TextBox x:Name="precioAbonoTxt" HorizontalAlignment="Left" Margin="596,299,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="27"
                  PreviewTextInput="ValidacionDeNumeros"
-                 TextChanged="Precio_TextChanged"/>
+                 TextChanged="Precio_TextChanged">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
 
         <TextBox Visibility="Hidden" x:Name="cedulaFindTxt" HorizontalAlignment="Left" Margin="0,427,0,0" VerticalAlignment="Top" Width="120" Height="20" TextWrapping="Wrap"/>
 
@@ -134,7 +152,13 @@
         <ComboBox x:Name="departamentoCmb" HorizontalAlignment="Left" Margin="226,200,0,0" VerticalAlignment="Top" Width="120"
             ItemsSource="{Binding nombreDepartamento}"
             DisplayMemberPath="nombreDepartamento"
-            SelectedValuePath="idDepartamentos" SelectionChanged="departamentoCmb_SelectionChanged"/>
+            SelectedValuePath="idDepartamentos" SelectionChanged="departamentoCmb_SelectionChanged">
+            <ComboBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </ComboBox.Resources>
+        </ComboBox>
 
         <ListBox x:Name="usListBox" Margin="65,229,0,0" IsEnabled="False" HorizontalAlignment="Left" VerticalAlignment="Top" Height="108" Width="280">
             <ListBox.ItemTemplate>
@@ -210,7 +234,14 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <Button x:Name="guardarReservaBtn" Content="Guardar Reserva" HorizontalAlignment="Left" Margin="620,349,0,0" VerticalAlignment="Top" Click="guardarReservaBtn_Click" Width="96"/>
+        <Button x:Name="guardarReservaBtn" Content="Guardar Reserva" HorizontalAlignment="Left" Margin="620,349,0,0" VerticalAlignment="Top" Click="guardarReservaBtn_Click" Width="96" Padding="2">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="BorderBrush" Value="#FF144FBE"/>
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
         <Button Visibility="Hidden" x:Name="cargarCedulaBtn" Content="Buscar Usuario" HorizontalAlignment="Left" Margin="0,402,0,0" VerticalAlignment="Top" Click="cargarCedulaBtn_Click"/>
         <Label Content="Precio Abono" HorizontalAlignment="Left" Margin="389,299,0,0" VerticalAlignment="Top"/>
         <TextBlock x:Name="reservasDiasTB" HorizontalAlignment="Left" Margin="395,103,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="9" Width="138" Foreground="#FFF51313" TextAlignment="Center"/>
