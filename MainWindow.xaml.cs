@@ -75,5 +75,12 @@ namespace RENT
             Main.Content = null;
             logoImg.Visibility = Visibility.Visible;
         }
+
+        private void listTipoDepartamentoBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ListTipoDepartamento listTipoDepartamento = new ListTipoDepartamento();
+            Main.Content = listTipoDepartamento;
+            logoImg.Visibility = Visibility.Hidden;
+        }
     }
 }

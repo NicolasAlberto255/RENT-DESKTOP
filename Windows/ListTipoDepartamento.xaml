@@ -1,0 +1,55 @@
+﻿<Page
+    x:Class="RENT.Windows.ListTipoDepartamento"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:RENT.Windows"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="ListTipoDepartamento"
+    d:DesignHeight="530"
+    d:DesignWidth="850"
+    mc:Ignorable="d">
+
+    <Grid Background="White">
+        <DataGrid
+            xmlns:my="http://schemas.microsoft.com/wpf/2008/toolkit"
+            x:Name="dgTipoDepartamento"
+            Margin="100,34,69,396"
+            AutoGenerateColumns="False"
+            CanUserAddRows="False"
+            ItemsSource="{Binding}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=idImagen}" Header="ID Imagen" />
+                <DataGridTextColumn Binding="{Binding Path=nombreImagen}" Header="Nombre Imagen" />
+                <DataGridTextColumn Binding="{Binding Path=url}" Header="URL Imagen" />
+                <DataGridTextColumn Binding="{Binding Path=tipoExtension}" Header="Tipo Extension Imagen" />
+                <DataGridTextColumn Binding="{Binding Path=size}" Header="Size Imagen" />
+                <DataGridTextColumn Binding="{Binding Path=idTipoDepto}" Header="ID Tipo Departamento Imagen" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button
+            x:Name="CargarTabla"
+            Width="84"
+            Margin="104,139,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="CargarTabla_Click"
+            Content="Cargar Tabla" />
+        <Button
+            x:Name="SubirBtn"
+            Width="84"
+            Margin="104,187,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="SubirBtn_Click"
+            Content="Subir Imagen" />
+        <Image
+            x:Name="imagenPanel"
+            Width="359"
+            Height="296"
+            Margin="353,149,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top" />
+        <Button x:Name="GuardarBtn" Content="Guardar Imagen" HorizontalAlignment="Left" Margin="104,224,0,0" VerticalAlignment="Top" Click="GuardarBtn_Click"/>
+    </Grid>
+</Page>

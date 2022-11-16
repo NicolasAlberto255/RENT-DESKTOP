@@ -49,7 +49,15 @@
                     </Style>
                 </Button.Resources>
             </Button>
+            <Button ToolTip="Listar Tipo de Departamento" ToolTipService.InitialShowDelay="100" x:Name="listTipoDepartamento" Content="{iconPacks:Material Kind=OfficeBuildingMarker}" Margin="5,5,0,0"  Click="listTipoDepartamentoBtn_Click" Background="{x:Null}" BorderBrush="{x:Null}" Height="27" Width="27">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="BorderBrush" Value="#FF144FBE"/>
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
         </StackPanel>
-        <Image x:Name="logoImg" Margin="-4,121,-4,104" Source="C:\Users\Lab02\Desktop\RENT-DESKTOP\img\Logo-RENT.png" Stretch="Fill"/>
+        <Image x:Name="logoImg" Margin="-4,121,-4,104" Source="C:\Users\Nicolas\OneDrive\Escritorio\Portafolio\RENT-DESKTOP\RENT\RENT-DESKTOP\img\Logo-RENT.png" Stretch="Fill"/>
     </Grid>
 </Window>
