@@ -41,6 +41,16 @@ namespace RENT.Windows
         {
             CargarImagenData(new TipoDeptoImagen());
         }
+        
+        private void CargarBtn_Click(object sender, RoutedEventArgs e)
+        {
+            SubirImagen();            
+        }
+
+        private void GuardarBtn_Click(object sender, RoutedEventArgs e)
+        {
+            GuardarDatos();
+        }
 
         private async void CargarImagenData(TipoDeptoImagen tipoDeptoImagen)
         {
@@ -50,18 +60,13 @@ namespace RENT.Windows
                 var json = await response.Content.ReadAsStringAsync();
                 var tipoDeptoList = JsonConvert.DeserializeObject<List<TipoDeptoImagen>>(json);
 
-                dgTipoDepartamento.ItemsSource = tipoDeptoList;
+                imagenListBox.ItemsSource = tipoDeptoList;
             }
             else
             {
                 MessageBox.Show("Error Code" + response.StatusCode + " : Message - " + response.ReasonPhrase);
             }
 
-        }
-
-        private void SubirBtn_Click(object sender, RoutedEventArgs e)
-        {
-            SubirImagen();            
         }
 
         OpenFileDialog showImagen = new OpenFileDialog();
@@ -121,9 +126,6 @@ namespace RENT.Windows
             }
         }
 
-        private void GuardarBtn_Click(object sender, RoutedEventArgs e)
-        {
-            GuardarDatos();
-        }
+        
     }
 }

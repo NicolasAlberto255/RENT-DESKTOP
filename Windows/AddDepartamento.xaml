@@ -1,109 +1,320 @@
-﻿<Page x:Class="RENT.Windows.AddDepartamento"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:RENT.Windows"
-      mc:Ignorable="d" 
-      d:Height="530" d:Width="850"
-      Title="AddDepartamento">
+﻿<Page
+    x:Class="RENT.Windows.AddDepartamento"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:RENT.Windows"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="AddDepartamento"
+    d:Height="450"
+    d:Width="800"
+    mc:Ignorable="d">
 
     <Grid Background="White">
-        <Label Content="Nombre de Departamento" HorizontalAlignment="Left" Margin="70,29,0,0" VerticalAlignment="Top" Height="26"/>
-        <Label Content="N° Baños" HorizontalAlignment="Left" Margin="70,69,0,0" VerticalAlignment="Top" Height="26"/>
-        <Label Content="N° Departamento" HorizontalAlignment="Left" Margin="70,109,0,0" VerticalAlignment="Top" Height="26"/>
-        <Label Content="N° Edificio" HorizontalAlignment="Left" Margin="70,149,0,0" VerticalAlignment="Top" Height="26"/>
-        <Label Content="N° Habitaciones" HorizontalAlignment="Left" Margin="70,189,0,0" VerticalAlignment="Top" Height="26"/>
-        <Label Content="Valor de Noche" HorizontalAlignment="Left" Margin="70,229,0,0" VerticalAlignment="Top" Height="26"/>
-        <Label Content="Region" HorizontalAlignment="Left" Margin="70,269,0,0" VerticalAlignment="Top" Height="26"/>
-        <Label Content="Comuna" HorizontalAlignment="Left" Margin="70,309,0,0" VerticalAlignment="Top" Height="26"/>
-        <Label Content="¿Tiene Balcon?" HorizontalAlignment="Left" Margin="70,349,0,0" VerticalAlignment="Top" Height="26"/>
+        <Label
+            Height="26"
+            Margin="70,29,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Nombre de Departamento" />
+        <Label
+            Height="26"
+            Margin="70,69,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="N° Baños" />
+        <Label
+            Height="26"
+            Margin="70,109,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="N° Departamento" />
+        <Label
+            Height="26"
+            Margin="70,149,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="N° Edificio" />
+        <Label
+            Height="26"
+            Margin="70,189,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="N° Habitaciones" />
+        <Label
+            Height="26"
+            Margin="70,229,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Valor de Noche" />
+        <Label
+            Height="26"
+            Margin="70,269,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Region" />
+        <Label
+            Height="26"
+            Margin="70,309,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Comuna" />
+        <Label
+            Height="26"
+            Margin="70,349,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="¿Tiene Balcon?" />
 
-        <TextBox x:Name="nombreDeptoTxt" HorizontalAlignment="Left" Margin="225,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="20"
-                 PreviewTextInput="ValidacionDeTexto" >
+        <TextBox
+            x:Name="nombreDeptoTxt"
+            Width="120"
+            Height="20"
+            Margin="225,32,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            PreviewTextInput="ValidacionDeTexto"
+            TextWrapping="Wrap">
             <TextBox.Resources>
                 <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="3"/>
+                    <Setter Property="CornerRadius" Value="3" />
                 </Style>
             </TextBox.Resources>
         </TextBox>
-        <TextBox x:Name="nBanosTxt" HorizontalAlignment="Left" Margin="225,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="20"
-                 PreviewTextInput="ValidacionDeNumeros"
-                 MaxLength="2">
+        <TextBox
+            x:Name="nBanosTxt"
+            Width="120"
+            Height="20"
+            Margin="225,72,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="2"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
             <TextBox.Resources>
                 <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="3"/>
+                    <Setter Property="CornerRadius" Value="3" />
                 </Style>
             </TextBox.Resources>
         </TextBox>
-        <TextBox x:Name="nDeptoTxt" HorizontalAlignment="Left" Margin="225,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="20" 
-                 PreviewTextInput="ValidacionDeNumeros"
-                 MaxLength="5">
+        <TextBox
+            x:Name="nDeptoTxt"
+            Width="120"
+            Height="20"
+            Margin="225,112,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="5"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
             <TextBox.Resources>
                 <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="3"/>
+                    <Setter Property="CornerRadius" Value="3" />
                 </Style>
             </TextBox.Resources>
         </TextBox>
-        <TextBox x:Name="nEdificioTxt" HorizontalAlignment="Left" Margin="225,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="20" 
-                 PreviewTextInput="ValidacionDeNumeros"
-                 MaxLength="5">
+        <TextBox
+            x:Name="nEdificioTxt"
+            Width="120"
+            Height="20"
+            Margin="225,152,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="5"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
             <TextBox.Resources>
                 <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="3"/>
+                    <Setter Property="CornerRadius" Value="3" />
                 </Style>
             </TextBox.Resources>
         </TextBox>
-        <TextBox x:Name="nHabitacionesTxt" HorizontalAlignment="Left" Margin="225,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="20" 
-                 PreviewTextInput="ValidacionDeNumeros"
-                 MaxLength="5">
+        <TextBox
+            x:Name="nHabitacionesTxt"
+            Width="120"
+            Height="20"
+            Margin="225,189,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="5"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
             <TextBox.Resources>
                 <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="3"/>
+                    <Setter Property="CornerRadius" Value="3" />
                 </Style>
             </TextBox.Resources>
         </TextBox>
-        <TextBox x:Name="vNocheTxt" HorizontalAlignment="Left" Margin="225,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="20"
-                 PreviewTextInput="ValidacionDeNumeros">
+        <TextBox
+            x:Name="vNocheTxt"
+            Width="120"
+            Height="20"
+            Margin="225,232,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
             <TextBox.Resources>
                 <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="3"/>
+                    <Setter Property="CornerRadius" Value="3" />
                 </Style>
             </TextBox.Resources>
         </TextBox>
-        <ComboBox x:Name="regionCmb" HorizontalAlignment="Left" Margin="225,271,0,0" VerticalAlignment="Top" Width="120" Height="20"
-                  ItemsSource="{Binding Path=nombreRegion}"
-                  DisplayMemberPath="nombreRegion"
-                  SelectedValuePath="idRegion"
-                  SelectionChanged="regionCmb_Changed"/>
-        <ComboBox x:Name="comunaCmb" HorizontalAlignment="Left" Margin="225,312,0,0" VerticalAlignment="Top" Width="120" Height="20"
-                  ItemsSource="{Binding Path=nombreComuna}" 
-                  DisplayMemberPath="nombreComuna"
-                  SelectedValuePath="idComuna"/>
-        <Button x:Name="guardarBtn" Content="Guardar" HorizontalAlignment="Left" Margin="229,384,0,0" VerticalAlignment="Top" Width="112" Click="guardarBtn_Click" Padding="2">
+        <ComboBox
+            x:Name="regionCmb"
+            Width="120"
+            Height="20"
+            Margin="225,271,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            DisplayMemberPath="nombreRegion"
+            ItemsSource="{Binding Path=nombreRegion}"
+            SelectedValuePath="idRegion"
+            SelectionChanged="regionCmb_Changed" />
+        <ComboBox
+            x:Name="comunaCmb"
+            Width="120"
+            Height="20"
+            Margin="225,312,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            DisplayMemberPath="nombreComuna"
+            ItemsSource="{Binding Path=nombreComuna}"
+            SelectedValuePath="idComuna" />
+        <Button
+            x:Name="guardarBtn"
+            Width="112"
+            Margin="229,384,0,0"
+            Padding="2"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="guardarBtn_Click"
+            Content="Guardar">
             <Button.Resources>
                 <Style TargetType="Border">
-                    <Setter Property="BorderBrush" Value="#FF144FBE"/>
-                    <Setter Property="CornerRadius" Value="5"/>
+                    <Setter Property="BorderBrush" Value="#FF144FBE" />
+                    <Setter Property="CornerRadius" Value="5" />
                 </Style>
             </Button.Resources>
         </Button>
-        <TextBox x:Name="idDeptoTxt"  HorizontalAlignment="Left" Visibility="Hidden"  Margin="89,37,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
-        <CheckBox x:Name="balconCbx" Content="" HorizontalAlignment="Left" Margin="228,354,0,0" VerticalAlignment="Top" 
-                  Checked="balconCbx_Checked"
-                  Unchecked="balconCbx_Unckechecked"/>
+        <TextBox
+            x:Name="idDeptoTxt"
+            Width="120"
+            Margin="89,37,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text="0"
+            TextWrapping="Wrap"
+            Visibility="Hidden" />
+        <CheckBox
+            x:Name="balconCbx"
+            Margin="228,354,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Checked="balconCbx_Checked"
+            Content=""
+            Unchecked="balconCbx_Unckechecked" />
 
-        <Label x:Name="lblMessage"  Content="" HorizontalAlignment="Left" Margin="199,415,0,0" VerticalAlignment="Top" Width="172"/>
+        <Label
+            x:Name="lblMessage"
+            Width="172"
+            Margin="199,415,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="" />
 
-        <TextBlock x:Name="nomErrTB" Text="" HorizontalAlignment="Left" Margin="228,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="9" Width="114" Foreground="#FFF51313" TextAlignment="Center"/>
-        <TextBlock x:Name="nBanosErrTB" Text="" HorizontalAlignment="Left" Margin="228,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="9" Width="114" Foreground="#FFF51313" TextAlignment="Center"/>
-        <TextBlock x:Name="nDeptoErrTB" Text="" HorizontalAlignment="Left" Margin="228,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="9" Width="114" Foreground="#FFF51313" TextAlignment="Center"/>
-        <TextBlock x:Name="nEdificioErrTB" Text="" HorizontalAlignment="Left" Margin="228,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="9" Width="114" Foreground="#FFF51313" TextAlignment="Center"/>
-        <TextBlock x:Name="nHabitErrTB" Text="" HorizontalAlignment="Left" Margin="228,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="9" Width="114" Foreground="#FFF51313" TextAlignment="Center"/>
-        <TextBlock x:Name="vNocheErrTB" Text="" HorizontalAlignment="Left" Margin="228,252,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="9" Width="114" Foreground="#FFF51313" TextAlignment="Center"/>
-        <TextBlock x:Name="regionErrTB" Text="" HorizontalAlignment="Left" Margin="228,291,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="9" Width="114" Foreground="#FFF51313" TextAlignment="Center"/>
-        <TextBlock x:Name="comunaErrTB" Text="" HorizontalAlignment="Left" Margin="228,332,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="9" Width="114" Foreground="#FFF51313" TextAlignment="Center"/>
-        <Image Margin="404,82,80,174" Source="C:\Users\Lab02\Desktop\RENT-DESKTOP\img\Plano-de-departamento-en-3D-Jermey-Gamelin.jpg" Stretch="Fill"/>
+        <TextBlock
+            x:Name="nomErrTB"
+            Width="114"
+            Margin="228,52,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontSize="9"
+            Foreground="#FFF51313"
+            Text=""
+            TextAlignment="Center"
+            TextWrapping="Wrap" />
+        <TextBlock
+            x:Name="nBanosErrTB"
+            Width="114"
+            Margin="228,92,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontSize="9"
+            Foreground="#FFF51313"
+            Text=""
+            TextAlignment="Center"
+            TextWrapping="Wrap" />
+        <TextBlock
+            x:Name="nDeptoErrTB"
+            Width="114"
+            Margin="228,132,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontSize="9"
+            Foreground="#FFF51313"
+            Text=""
+            TextAlignment="Center"
+            TextWrapping="Wrap" />
+        <TextBlock
+            x:Name="nEdificioErrTB"
+            Width="114"
+            Margin="228,172,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontSize="9"
+            Foreground="#FFF51313"
+            Text=""
+            TextAlignment="Center"
+            TextWrapping="Wrap" />
+        <TextBlock
+            x:Name="nHabitErrTB"
+            Width="114"
+            Margin="228,209,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontSize="9"
+            Foreground="#FFF51313"
+            Text=""
+            TextAlignment="Center"
+            TextWrapping="Wrap" />
+        <TextBlock
+            x:Name="vNocheErrTB"
+            Width="114"
+            Margin="228,252,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontSize="9"
+            Foreground="#FFF51313"
+            Text=""
+            TextAlignment="Center"
+            TextWrapping="Wrap" />
+        <TextBlock
+            x:Name="regionErrTB"
+            Width="114"
+            Margin="228,291,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontSize="9"
+            Foreground="#FFF51313"
+            Text=""
+            TextAlignment="Center"
+            TextWrapping="Wrap" />
+        <TextBlock
+            x:Name="comunaErrTB"
+            Width="114"
+            Margin="228,332,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontSize="9"
+            Foreground="#FFF51313"
+            Text=""
+            TextAlignment="Center"
+            TextWrapping="Wrap" />
+        <Image
+            Margin="404,82,80,174"
+            Source="C:\Users\Lab02\Desktop\RENT-DESKTOP\img\Plano-de-departamento-en-3D-Jermey-Gamelin.jpg"
+            Stretch="Fill" />
 
     </Grid>
 
