@@ -78,7 +78,7 @@ namespace RENT
 
         private void listTipoDepartamentoBtn_Click(object sender, RoutedEventArgs e)
         {
-            ListTipoDepartamento listTipoDepartamento = new ListTipoDepartamento();
+            ListDepartamentosImagenes listTipoDepartamento = new ListDepartamentosImagenes();
             Main.Content = listTipoDepartamento;
             logoImg.Visibility = Visibility.Hidden;
         }

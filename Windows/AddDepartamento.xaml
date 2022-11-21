@@ -6,8 +6,8 @@
     xmlns:local="clr-namespace:RENT.Windows"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="AddDepartamento"
-    d:Height="450"
-    d:Width="800"
+    d:Height="640"
+    d:Width="900"
     mc:Ignorable="d">
 
     <Grid Background="White">
@@ -184,7 +184,7 @@
         <Button
             x:Name="guardarBtn"
             Width="112"
-            Margin="229,384,0,0"
+            Margin="229,550,0,0"
             Padding="2"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
@@ -218,7 +218,7 @@
         <Label
             x:Name="lblMessage"
             Width="172"
-            Margin="199,415,0,0"
+            Margin="199,584,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="" />
@@ -311,10 +311,19 @@
             Text=""
             TextAlignment="Center"
             TextWrapping="Wrap" />
-        <Image
-            Margin="404,82,80,174"
-            Source="C:\Users\Lab02\Desktop\RENT-DESKTOP\img\Plano-de-departamento-en-3D-Jermey-Gamelin.jpg"
-            Stretch="Fill" />
+        <ComboBox
+            x:Name="tipoDeptoCmb"
+            Width="120"
+            Margin="555,146,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top">
+            <ComboBoxItem Content="Loft" />
+            <ComboBoxItem Content="Normal" />
+            <ComboBoxItem Content="Mariposa" />
+            <ComboBoxItem Content="Pent-House" />
+            <ComboBoxItem Content="Duplex" />
+            <ComboBoxItem Content="Triplex" />
+        </ComboBox>
 
     </Grid>
 

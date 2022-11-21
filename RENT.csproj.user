@@ -16,7 +16,7 @@
     <Compile Update="Windows\AddUsuarios.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Windows\ListTipoDepartamento.xaml.cs">
+    <Compile Update="Windows\ListDepartamentosImagenes.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Windows\ListUsuarios.xaml.cs">
@@ -39,7 +39,7 @@
     <Page Update="Windows\AddUsuarios.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Windows\ListTipoDepartamento.xaml">
+    <Page Update="Windows\ListDepartamentosImagenes.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\ListUsuarios.xaml">

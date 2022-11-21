@@ -344,5 +344,5 @@ C:\Users\Lab02\Desktop\RENT-DESKTOP\bin\Debug\net6.0-windows\zh-Hant\Wisej.Frame
 C:\Users\Lab02\Desktop\RENT-DESKTOP\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\Users\Lab02\Desktop\RENT-DESKTOP\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\Users\Lab02\Desktop\RENT-DESKTOP\obj\Debug\net6.0-windows\Themes\Generic.baml
-C:\Users\Nicolas\OneDrive\Escritorio\Portafolio\RENT-DESKTOP\RENT\RENT-DESKTOP\obj\Debug\net6.0-windows\Windows\ListTipoDepartamento.g.cs
-C:\Users\Nicolas\OneDrive\Escritorio\Portafolio\RENT-DESKTOP\RENT\RENT-DESKTOP\obj\Debug\net6.0-windows\Windows\ListTipoDepartamento.baml
+C:\Users\Nicolas\OneDrive\Escritorio\Portafolio\RENT-DESKTOP\RENT\RENT-DESKTOP\obj\Debug\net6.0-windows\Windows\ListDepartamentosImagenes.g.cs
+C:\Users\Nicolas\OneDrive\Escritorio\Portafolio\RENT-DESKTOP\RENT\RENT-DESKTOP\obj\Debug\net6.0-windows\Windows\ListDepartamentosImagenes.baml
