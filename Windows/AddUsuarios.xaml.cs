@@ -59,16 +59,16 @@ namespace RENT.Windows
                     {
                         var usuario = new Usuarios()
                         {
-                            idUsuario = Convert.ToInt32(idTxt.Text),
                             nombreUsuario = nombreTxt.Text,
                             apellidoUsuario = apellidoTxt.Text,
                             correoUsuario = correoTxt.Text,
                             cedulaUsuario = cedulaTxt.Text,
                             telefonoUsuario = Convert.ToInt32(telefonoTxt.Text),
-                            rolUsuario = Convert.ToInt32(rolTxt.Text),
                             regionUsuario = regionCmb.Text,
                             comunaUsuario = comunaCmb.Text,
-                            passwordUsuario = conPassPB.Password
+                            passwordUsuario = conPassPB.Password,
+                            rol = new Roles() { idRol = Convert.ToInt32(rolTxt.Text) }
+
                         };
 
                         if (usuario.idUsuario == 0)

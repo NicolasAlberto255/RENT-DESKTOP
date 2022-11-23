@@ -10,6 +10,9 @@
     <Compile Update="Windows\AddDepartamento.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\AddInventario.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\AddReserva.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -31,6 +34,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\AddDepartamento.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\AddInventario.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\AddReserva.xaml">

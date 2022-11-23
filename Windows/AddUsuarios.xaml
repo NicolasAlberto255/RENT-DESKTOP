@@ -6,30 +6,41 @@
     xmlns:local="clr-namespace:RENT.Windows"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="AddUsuarios"
-    d:Height="640"
-    d:Width="900"
+    d:Height="500"
+    d:Width="850"
     mc:Ignorable="d">
 
     <Grid Background="White">
-        <Rectangle
-            Width="318"
-            Height="384"
-            Margin="417,39,0,0"
+        <GroupBox
+            Width="850"
+            Height="500"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            BorderBrush="#FF192EA0"
+            BorderThickness="5,5,5,5"
+            FontWeight="Bold"
+            Header="Nuevo Usuario" />
+        <GroupBox
+            Width="345"
+            Height="325"
+            Margin="446,65,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Stroke="Black" />
-
+            BorderBrush="#FF198425"
+            BorderThickness="5,5,5,5"
+            FontWeight="Bold"
+            Header="Nueva Contraseña" />
         <TextBox
             x:Name="nombreTxt"
             Width="138"
             Height="20"
-            Margin="199,71,0,0"
+            Margin="153,84,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             PreviewTextInput="ValidacionDeTexto"
             TextWrapping="Wrap">
             <TextBox.Resources>
-                <Style TargetType="Border">
+                <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="3" />
                 </Style>
             </TextBox.Resources>
@@ -38,13 +49,13 @@
             x:Name="apellidoTxt"
             Width="138"
             Height="20"
-            Margin="199,111,0,0"
+            Margin="153,124,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             PreviewTextInput="ValidacionDeTexto"
             TextWrapping="Wrap">
             <TextBox.Resources>
-                <Style TargetType="Border">
+                <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="3" />
                 </Style>
             </TextBox.Resources>
@@ -53,7 +64,7 @@
             x:Name="cedulaTxt"
             Width="138"
             Height="20"
-            Margin="199,151,0,0"
+            Margin="153,164,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             LostFocus="ValidarRut_LostFocus"
@@ -61,7 +72,7 @@
             PreviewTextInput="ValidacionDeNumeros"
             TextWrapping="Wrap">
             <TextBox.Resources>
-                <Style TargetType="Border">
+                <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="3" />
                 </Style>
             </TextBox.Resources>
@@ -70,7 +81,7 @@
             x:Name="correoTxt"
             Width="138"
             Height="20"
-            Margin="199,191,0,0"
+            Margin="153,204,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             TextWrapping="Wrap" />
@@ -78,14 +89,14 @@
             x:Name="telefonoTxt"
             Width="138"
             Height="20"
-            Margin="199,231,0,0"
+            Margin="153,244,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             MaxLength="9"
             PreviewTextInput="ValidacionDeNumeros"
             TextWrapping="Wrap">
             <TextBox.Resources>
-                <Style TargetType="Border">
+                <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="3" />
                 </Style>
             </TextBox.Resources>
@@ -117,7 +128,7 @@
             x:Name="regionCmb"
             Width="138"
             Height="20"
-            Margin="199,271,0,0"
+            Margin="153,284,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             DisplayMemberPath="nombreRegion"
@@ -128,7 +139,7 @@
             x:Name="comunaCmb"
             Width="138"
             Height="20"
-            Margin="199,311,0,0"
+            Margin="153,324,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             DisplayMemberPath="nombreComuna"
@@ -138,35 +149,35 @@
         <Label
             Width="56"
             Height="26"
-            Margin="127,68,0,0"
+            Margin="81,81,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Nombre:" />
         <Label
             Width="56"
             Height="26"
-            Margin="127,108,0,0"
+            Margin="81,121,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Apellido:" />
         <Label
             Width="56"
             Height="26"
-            Margin="127,148,0,0"
+            Margin="81,161,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Cedula:" />
         <Label
             Width="56"
             Height="26"
-            Margin="127,188,0,0"
+            Margin="81,201,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Correo:" />
         <Label
             Width="58"
             Height="26"
-            Margin="127,228,0,0"
+            Margin="81,241,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Telefono:" />
@@ -174,88 +185,92 @@
             x:Name="lblMessage"
             Width="210"
             Height="26"
-            Margin="490,277,0,0"
+            Margin="512,305,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="" />
+            HorizontalContentAlignment="Center"
+            Background="{x:Null}"
+            Content=""
+            FontWeight="Bold"
+            Foreground="#FF1B3F96" />
         <Label
             Width="61"
             Height="26"
-            Margin="127,268,0,0"
+            Margin="81,281,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Regiones:" />
         <Label
             Width="57"
             Height="26"
-            Margin="127,308,0,0"
+            Margin="81,321,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Comuna:" />
 
         <Label
-            Margin="466,77,0,0"
+            Margin="487,106,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Nueva Contraseña:" />
         <Label
-            Margin="462,162,0,0"
+            Margin="483,191,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Repetir Contraseña:" />
 
 
         <Label
-            Margin="337,68,0,0"
+            Margin="291,81,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="*"
             Foreground="#FFF51313"
             RenderTransformOrigin="0.517,0.395" />
         <Label
-            Margin="337,108,0,0"
+            Margin="291,121,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="*"
             Foreground="#FFF51313" />
         <Label
-            Margin="337,148,0,0"
+            Margin="291,161,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="*"
             Foreground="#FFF51313" />
         <Label
-            Margin="337,188,0,0"
+            Margin="291,201,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="*"
             Foreground="#FFF51313" />
         <Label
-            Margin="337,228,0,0"
+            Margin="291,241,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="*"
             Foreground="#FFF51313" />
         <Label
-            Margin="337,268,0,0"
+            Margin="291,281,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="*"
             Foreground="#FFF51313" />
         <Label
-            Margin="337,308,0,0"
+            Margin="291,321,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="*"
             Foreground="#FFF51313" />
         <Label
-            Margin="700,77,0,0"
+            Margin="733,72,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="*"
             Foreground="#FFF51313" />
         <Label
-            Margin="700,164,0,0"
+            Margin="733,159,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="*"
@@ -265,9 +280,10 @@
             x:Name="lblError"
             Width="210"
             Height="26"
-            Margin="163,348,0,0"
+            Margin="117,361,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
             Content=""
             Foreground="#FFF51313" />
 
@@ -275,7 +291,7 @@
             x:Name="passNewPB"
             Width="124"
             Height="20"
-            Margin="576,80,0,0"
+            Margin="597,109,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="11"
@@ -283,7 +299,7 @@
             <PasswordBox.Style>
                 <Style TargetType="{x:Type PasswordBox}">
                     <Style.Resources>
-                        <Style TargetType="Border">
+                        <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="3" />
                         </Style>
                     </Style.Resources>
@@ -324,14 +340,14 @@
             x:Name="conPassPB"
             Width="124"
             Height="20"
-            Margin="576,166,0,0"
+            Margin="597,195,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             MaxLength="12">
             <PasswordBox.Style>
                 <Style TargetType="{x:Type PasswordBox}">
                     <Style.Resources>
-                        <Style TargetType="Border">
+                        <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="3" />
                         </Style>
                     </Style.Resources>
@@ -372,7 +388,7 @@
         <TextBlock
             Width="124"
             Height="60"
-            Margin="576,100,0,0"
+            Margin="597,129,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
@@ -381,7 +397,7 @@
         <TextBlock
             x:Name="nomErrLbl"
             Width="114"
-            Margin="211,91,0,0"
+            Margin="165,104,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
@@ -392,7 +408,7 @@
         <TextBlock
             x:Name="apeErrLbl"
             Width="114"
-            Margin="211,131,0,0"
+            Margin="165,144,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
@@ -403,7 +419,7 @@
         <TextBlock
             x:Name="cedErrLbl"
             Width="114"
-            Margin="211,171,0,0"
+            Margin="165,184,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
@@ -414,7 +430,7 @@
         <TextBlock
             x:Name="emailErrLbl"
             Width="114"
-            Margin="211,211,0,0"
+            Margin="165,223,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
@@ -425,7 +441,7 @@
         <TextBlock
             x:Name="telErrLbl"
             Width="114"
-            Margin="211,251,0,0"
+            Margin="165,264,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
@@ -436,7 +452,7 @@
         <TextBlock
             x:Name="regErrLbl"
             Width="114"
-            Margin="211,291,0,0"
+            Margin="165,304,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
@@ -447,7 +463,7 @@
         <TextBlock
             x:Name="comErrLbl"
             Width="114"
-            Margin="211,331,0,0"
+            Margin="165,344,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
@@ -458,7 +474,7 @@
         <TextBlock
             x:Name="incPassLbl"
             Width="114"
-            Margin="581,186,0,0"
+            Margin="602,215,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
@@ -469,7 +485,7 @@
         <TextBlock
             x:Name="noPassLbl"
             Width="114"
-            Margin="581,148,0,0"
+            Margin="602,177,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
@@ -479,14 +495,14 @@
             TextWrapping="Wrap" />
         <Button
             x:Name="guardarBtn"
-            Margin="544,308,0,0"
+            Margin="565,337,0,0"
             Padding="5"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="guardarBtn_Click"
             Content="Guardar Usuarios">
             <Button.Resources>
-                <Style TargetType="Border">
+                <Style TargetType="{x:Type Border}">
                     <Setter Property="BorderBrush" Value="#FF144FBE" />
                     <Setter Property="CornerRadius" Value="5" />
                 </Style>

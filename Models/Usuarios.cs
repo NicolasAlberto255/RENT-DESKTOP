@@ -16,10 +16,10 @@ namespace RENT.Models
         public string? apellidoUsuario { get; set; }
         public string? correoUsuario { get; set; }
         public string? cedulaUsuario { get; set; }
-        public int telefonoUsuario { get; set; }
-        public int rolUsuario { get; set; }
         public string? regionUsuario { get; set; }
         public string? comunaUsuario { get; set; }
         public string? passwordUsuario { get; set; }
+        public int telefonoUsuario { get; set; }
+        public object? rol { get; set; }
     }
 }

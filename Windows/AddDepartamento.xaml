@@ -6,93 +6,97 @@
     xmlns:local="clr-namespace:RENT.Windows"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="AddDepartamento"
-    d:Height="640"
-    d:Width="900"
+    d:Height="500"
+    d:Width="850"
     mc:Ignorable="d">
 
     <Grid Background="White">
+        <GroupBox
+            Width="850"
+            Height="500"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            BorderBrush="#FF192EA0"
+            BorderThickness="5,5,5,5"
+            FontWeight="Bold"
+            Header="Nuevo Departamento" />
         <Label
             Height="26"
-            Margin="70,29,0,0"
+            Margin="70,26,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Nombre de Departamento" />
         <Label
             Height="26"
-            Margin="70,69,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Content="N° Baños" />
-        <Label
-            Height="26"
-            Margin="70,109,0,0"
+            Margin="70,66,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="N° Departamento" />
         <Label
             Height="26"
-            Margin="70,149,0,0"
+            Margin="70,106,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="N° Edificio" />
         <Label
             Height="26"
-            Margin="70,189,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Content="N° Habitaciones" />
-        <Label
-            Height="26"
-            Margin="70,229,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Content="Valor de Noche" />
-        <Label
-            Height="26"
-            Margin="70,269,0,0"
+            Margin="70,146,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Region" />
         <Label
             Height="26"
-            Margin="70,309,0,0"
+            Margin="70,186,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Comuna" />
         <Label
             Height="26"
-            Margin="70,349,0,0"
+            Margin="70,226,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Valor de Noche" />
+        <Label
+            Height="26"
+            Margin="475,26,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="N° Habitaciones" />
+        <Label
+            Height="26"
+            Margin="475,66,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="N° Baños" />
+        <Label
+            Height="26"
+            Margin="475,106,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="¿Tiene Balcon?" />
+        <Label
+            Height="26"
+            Margin="475,146,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Tipo de Departamento" />
+        <Label
+            Height="26"
+            Margin="475,186,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Direccion" />
 
         <TextBox
             x:Name="nombreDeptoTxt"
             Width="120"
-            Height="20"
-            Margin="225,32,0,0"
+            Margin="225,30,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             PreviewTextInput="ValidacionDeTexto"
             TextWrapping="Wrap">
             <TextBox.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="3" />
-                </Style>
-            </TextBox.Resources>
-        </TextBox>
-        <TextBox
-            x:Name="nBanosTxt"
-            Width="120"
-            Height="20"
-            Margin="225,72,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            MaxLength="2"
-            PreviewTextInput="ValidacionDeNumeros"
-            TextWrapping="Wrap">
-            <TextBox.Resources>
-                <Style TargetType="Border">
+                <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="3" />
                 </Style>
             </TextBox.Resources>
@@ -100,15 +104,14 @@
         <TextBox
             x:Name="nDeptoTxt"
             Width="120"
-            Height="20"
-            Margin="225,112,0,0"
+            Margin="225,70,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             MaxLength="5"
             PreviewTextInput="ValidacionDeNumeros"
             TextWrapping="Wrap">
             <TextBox.Resources>
-                <Style TargetType="Border">
+                <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="3" />
                 </Style>
             </TextBox.Resources>
@@ -116,31 +119,14 @@
         <TextBox
             x:Name="nEdificioTxt"
             Width="120"
-            Height="20"
-            Margin="225,152,0,0"
+            Margin="225,110,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             MaxLength="5"
             PreviewTextInput="ValidacionDeNumeros"
             TextWrapping="Wrap">
             <TextBox.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="3" />
-                </Style>
-            </TextBox.Resources>
-        </TextBox>
-        <TextBox
-            x:Name="nHabitacionesTxt"
-            Width="120"
-            Height="20"
-            Margin="225,189,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            MaxLength="5"
-            PreviewTextInput="ValidacionDeNumeros"
-            TextWrapping="Wrap">
-            <TextBox.Resources>
-                <Style TargetType="Border">
+                <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="3" />
                 </Style>
             </TextBox.Resources>
@@ -148,14 +134,59 @@
         <TextBox
             x:Name="vNocheTxt"
             Width="120"
-            Height="20"
-            Margin="225,232,0,0"
+            Margin="225,230,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             PreviewTextInput="ValidacionDeNumeros"
             TextWrapping="Wrap">
             <TextBox.Resources>
-                <Style TargetType="Border">
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox
+            x:Name="nHabitacionesTxt"
+            Width="120"
+            Margin="615,30,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="5"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox
+            x:Name="direccionTxt"
+            Width="120"
+            Height="77"
+            Margin="615,189,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            PreviewTextInput="ValidacionDeTexto"
+            TextAlignment="Justify"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox
+            x:Name="nBanosTxt"
+            Width="120"
+            Margin="615,70,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="2"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="3" />
                 </Style>
             </TextBox.Resources>
@@ -164,34 +195,34 @@
             x:Name="regionCmb"
             Width="120"
             Height="20"
-            Margin="225,271,0,0"
+            Margin="225,149,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             DisplayMemberPath="nombreRegion"
-            ItemsSource="{Binding Path=nombreRegion}"
+            ItemsSource="{Binding nombreRegion}"
             SelectedValuePath="idRegion"
             SelectionChanged="regionCmb_Changed" />
         <ComboBox
             x:Name="comunaCmb"
             Width="120"
             Height="20"
-            Margin="225,312,0,0"
+            Margin="225,189,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             DisplayMemberPath="nombreComuna"
-            ItemsSource="{Binding Path=nombreComuna}"
+            ItemsSource="{Binding nombreComuna}"
             SelectedValuePath="idComuna" />
         <Button
             x:Name="guardarBtn"
             Width="112"
-            Margin="229,550,0,0"
+            Margin="619,317,0,0"
             Padding="2"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="guardarBtn_Click"
             Content="Guardar">
             <Button.Resources>
-                <Style TargetType="Border">
+                <Style TargetType="{x:Type Border}">
                     <Setter Property="BorderBrush" Value="#FF144FBE" />
                     <Setter Property="CornerRadius" Value="5" />
                 </Style>
@@ -208,7 +239,8 @@
             Visibility="Hidden" />
         <CheckBox
             x:Name="balconCbx"
-            Margin="228,354,0,0"
+            Width="15"
+            Margin="615,111,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Checked="balconCbx_Checked"
@@ -218,7 +250,7 @@
         <Label
             x:Name="lblMessage"
             Width="172"
-            Margin="199,584,0,0"
+            Margin="589,344,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="" />
@@ -226,7 +258,7 @@
         <TextBlock
             x:Name="nomErrTB"
             Width="114"
-            Margin="228,52,0,0"
+            Margin="229,48,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
@@ -237,7 +269,7 @@
         <TextBlock
             x:Name="nBanosErrTB"
             Width="114"
-            Margin="228,92,0,0"
+            Margin="618,88,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
@@ -248,7 +280,7 @@
         <TextBlock
             x:Name="nDeptoErrTB"
             Width="114"
-            Margin="228,132,0,0"
+            Margin="229,88,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
@@ -259,7 +291,7 @@
         <TextBlock
             x:Name="nEdificioErrTB"
             Width="114"
-            Margin="228,172,0,0"
+            Margin="229,128,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
@@ -270,7 +302,7 @@
         <TextBlock
             x:Name="nHabitErrTB"
             Width="114"
-            Margin="228,209,0,0"
+            Margin="621,48,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
@@ -281,7 +313,7 @@
         <TextBlock
             x:Name="vNocheErrTB"
             Width="114"
-            Margin="228,252,0,0"
+            Margin="229,248,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
@@ -292,7 +324,7 @@
         <TextBlock
             x:Name="regionErrTB"
             Width="114"
-            Margin="228,291,0,0"
+            Margin="229,168,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
@@ -303,7 +335,7 @@
         <TextBlock
             x:Name="comunaErrTB"
             Width="114"
-            Margin="228,332,0,0"
+            Margin="229,209,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
@@ -314,7 +346,7 @@
         <ComboBox
             x:Name="tipoDeptoCmb"
             Width="120"
-            Margin="555,146,0,0"
+            Margin="615,148,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top">
             <ComboBoxItem Content="Loft" />
@@ -324,7 +356,5 @@
             <ComboBoxItem Content="Duplex" />
             <ComboBoxItem Content="Triplex" />
         </ComboBox>
-
     </Grid>
-
 </Page>

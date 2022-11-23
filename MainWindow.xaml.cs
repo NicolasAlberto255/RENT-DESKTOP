@@ -82,5 +82,13 @@ namespace RENT
             Main.Content = listTipoDepartamento;
             logoImg.Visibility = Visibility.Hidden;
         }
+
+        private void addInventarioBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddInventario addInventario = new AddInventario();
+            Main.Content = addInventario;
+            addInventario.GetDepartamentos();
+            logoImg.Visibility = Visibility.Hidden;
+        }
     }
 }

@@ -346,3 +346,5 @@ C:\Users\Lab02\Desktop\RENT-DESKTOP\obj\Debug\net6.0-windows\GeneratedInternalTy
 C:\Users\Lab02\Desktop\RENT-DESKTOP\obj\Debug\net6.0-windows\Themes\Generic.baml
 C:\Users\Nicolas\OneDrive\Escritorio\Portafolio\RENT-DESKTOP\RENT\RENT-DESKTOP\obj\Debug\net6.0-windows\Windows\ListDepartamentosImagenes.g.cs
 C:\Users\Nicolas\OneDrive\Escritorio\Portafolio\RENT-DESKTOP\RENT\RENT-DESKTOP\obj\Debug\net6.0-windows\Windows\ListDepartamentosImagenes.baml
+C:\Users\Nicolas\OneDrive\Escritorio\Portafolio\RENT-DESKTOP\RENT\RENT-DESKTOP\obj\Debug\net6.0-windows\Windows\AddInventario.g.cs
+C:\Users\Nicolas\OneDrive\Escritorio\Portafolio\RENT-DESKTOP\RENT\RENT-DESKTOP\obj\Debug\net6.0-windows\Windows\AddInventario.baml

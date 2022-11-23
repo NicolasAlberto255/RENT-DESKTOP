@@ -113,9 +113,6 @@ namespace RENT.Windows
                 apellidoUsuarioTxt.Text = usuario.apellidoUsuario;
                 correoUsuarioTxt.Text = usuario.correoUsuario;
                 telefonoUsuarioTxt.Text = usuario.telefonoUsuario.ToString();
-                rolUsuarioTxt.Text = usuario.rolUsuario.ToString();
-                regionUsuarioTxt.Text = usuario.regionUsuario;
-                comunaUsuarioTxt.Text = usuario.comunaUsuario;
             }
         }
         private void departamentoCmb_SelectionChanged(object sender, SelectionChangedEventArgs e)

@@ -6,11 +6,20 @@
     xmlns:local="clr-namespace:RENT.Windows"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="ListUsuarios"
-    d:Height="640"
-    d:Width="900"
+    d:Height="500"
+    d:Width="850"
     mc:Ignorable="d">
 
     <Grid Background="White">
+        <GroupBox
+            Width="850"
+            Height="500"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            BorderBrush="#FF192EA0"
+            BorderThickness="5,5,5,5"
+            FontWeight="Bold"
+            Header="Listar Usuarios" />
         <DataGrid
             xmlns:my="http://schemas.microsoft.com/wpf/2008/toolkit"
             x:Name="dgUsuarios"
@@ -19,61 +28,29 @@
             CanUserAddRows="False"
             ItemsSource="{Binding}">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Path=idUsuario}" Header="ID Usuario" />
-                <DataGridTextColumn Binding="{Binding Path=nombreUsuario}" Header="Nombre" />
-                <DataGridTextColumn Binding="{Binding Path=apellidoUsuario}" Header="Apellido" />
-                <DataGridTextColumn Binding="{Binding Path=cedulaUsuario}" Header="Cedula" />
-                <DataGridTextColumn Binding="{Binding Path=correoUsuario}" Header="Correo" />
-                <DataGridTextColumn Binding="{Binding Path=telefonoUsuario}" Header="Telefono" />
-                <DataGridTextColumn Binding="{Binding Path=rolUsuario}" Header="Rol" />
-                <DataGridTextColumn Binding="{Binding Path=regionUsuario}" Header="Region" />
-                <DataGridTextColumn Binding="{Binding Path=comunaUsuario}" Header="Comuna" />
+                <DataGridTextColumn Binding="{Binding idUsuario}" Header="ID Usuario" />
+                <DataGridTextColumn Binding="{Binding nombreUsuario}" Header="Nombre" />
+                <DataGridTextColumn Binding="{Binding apellidoUsuario}" Header="Apellido" />
+                <DataGridTextColumn Binding="{Binding cedulaUsuario}" Header="Cedula" />
+                <DataGridTextColumn Binding="{Binding correoUsuario}" Header="Correo" />
+                <DataGridTextColumn Binding="{Binding telefonoUsuario}" Header="Telefono" />
+                <DataGridTextColumn Binding="{Binding rolUsuario}" Header="Rol" />
+                <DataGridTextColumn Binding="{Binding regionUsuario}" Header="Region" />
+                <DataGridTextColumn Binding="{Binding comunaUsuario}" Header="Comuna" />
             </DataGrid.Columns>
         </DataGrid>
 
         <Button
             x:Name="idBtn"
             Width="119"
-            Margin="137,216,0,0"
+            Margin="137,165,0,0"
             Padding="2"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="idBtn_Click"
             Content="Buscar por ID">
             <Button.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="BorderBrush" Value="#FF144FBE" />
-                    <Setter Property="CornerRadius" Value="5" />
-                </Style>
-            </Button.Resources>
-        </Button>
-        <Button
-            x:Name="nombreBtn"
-            Width="119"
-            Margin="137,141,0,0"
-            Padding="2"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Click="nombreBtn_Click"
-            Content="Buscar por Nombre">
-            <Button.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="BorderBrush" Value="#FF144FBE" />
-                    <Setter Property="CornerRadius" Value="5" />
-                </Style>
-            </Button.Resources>
-        </Button>
-        <Button
-            x:Name="apellidoBtn"
-            Width="119"
-            Margin="137,166,0,0"
-            Padding="2"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Click="apellidoBtn_Click"
-            Content="Buscar por Apellido">
-            <Button.Resources>
-                <Style TargetType="Border">
+                <Style TargetType="{x:Type Border}">
                     <Setter Property="BorderBrush" Value="#FF144FBE" />
                     <Setter Property="CornerRadius" Value="5" />
                 </Style>
@@ -82,14 +59,14 @@
         <Button
             x:Name="cedulabtn"
             Width="119"
-            Margin="137,190,0,0"
+            Margin="137,129,0,0"
             Padding="2"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="cedulaBtn_Click"
             Content="Buscar por Cedula">
             <Button.Resources>
-                <Style TargetType="Border">
+                <Style TargetType="{x:Type Border}">
                     <Setter Property="BorderBrush" Value="#FF144FBE" />
                     <Setter Property="CornerRadius" Value="5" />
                 </Style>
@@ -105,50 +82,17 @@
             Content=""
             RenderTransformOrigin="0.101,0.595"
             Visibility="Hidden" />
-
-        <TextBox
-            x:Name="nombreFindTxt"
-            Width="101"
-            Height="20"
-            Margin="31,142,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            PreviewTextInput="ValidacionDeTexto"
-            Text=""
-            TextWrapping="Wrap">
-            <TextBox.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="3" />
-                </Style>
-            </TextBox.Resources>
-        </TextBox>
-        <TextBox
-            x:Name="apellidoFindTxt"
-            Width="101"
-            Height="20"
-            Margin="31,168,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            PreviewTextInput="ValidacionDeTexto"
-            Text=""
-            TextWrapping="Wrap">
-            <TextBox.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="3" />
-                </Style>
-            </TextBox.Resources>
-        </TextBox>
         <TextBox
             x:Name="cedulaFindTxt"
             Width="101"
             Height="20"
-            Margin="31,191,0,0"
+            Margin="31,130,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text=""
             TextWrapping="Wrap">
             <TextBox.Resources>
-                <Style TargetType="Border">
+                <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="3" />
                 </Style>
             </TextBox.Resources>
@@ -157,14 +101,14 @@
             x:Name="idFindTxt"
             Width="31"
             Height="20"
-            Margin="101,216,0,0"
+            Margin="101,165,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             PreviewTextInput="ValidacionDeNumeros"
             Text=""
             TextWrapping="Wrap">
             <TextBox.Resources>
-                <Style TargetType="Border">
+                <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="3" />
                 </Style>
             </TextBox.Resources>
@@ -172,14 +116,14 @@
         <Button
             x:Name="cargarUsuariobtn"
             Width="119"
-            Margin="137,241,0,0"
+            Margin="137,202,0,0"
             Padding="2"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="cargarUsuariobtn_Click"
             Content="Cargar Usuarios">
             <Button.Resources>
-                <Style TargetType="Border">
+                <Style TargetType="{x:Type Border}">
                     <Setter Property="BorderBrush" Value="#FF144FBE" />
                     <Setter Property="CornerRadius" Value="5" />
                 </Style>

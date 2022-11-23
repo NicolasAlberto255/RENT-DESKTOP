@@ -41,14 +41,6 @@ namespace RENT.Windows
         {
             SearchByIdUsuario(new Usuarios());
         }
-        private void nombreBtn_Click(object sender, RoutedEventArgs e)
-        {
-            SearchByNombre(new Usuarios());
-        }
-        private void apellidoBtn_Click(object sender, RoutedEventArgs e)
-        {
-            SearchByApellido(new Usuarios());
-        }
         private void cedulaBtn_Click(object sender, RoutedEventArgs e)
         {
             SearchByCedula(new Usuarios());
@@ -76,40 +68,6 @@ namespace RENT.Windows
             {
                 var usuarioFind = await response.Content.ReadAsAsync<Usuarios>();
                 dgUsuarios.ItemsSource = new List<Usuarios> { usuarioFind };
-            }
-            else
-            {
-                MessageBox.Show("Error Code" + response.StatusCode + " : Message - " + response.ReasonPhrase);
-            }
-        }
-        private async void SearchByNombre(Usuarios usuario)
-        {
-            var nombreUsuario = nombreFindTxt.Text;
-            var url = "usuario/nombreUsuario?nombreUsuario=" + nombreUsuario;
-
-            HttpResponseMessage response = client.GetAsync(url).Result;
-            if (response.IsSuccessStatusCode)
-            {
-                var jsonString = await response.Content.ReadAsStringAsync();
-                var _Data = JsonConvert.DeserializeObject<List<Usuarios>>(jsonString);
-                dgUsuarios.ItemsSource = _Data;
-            }
-            else
-            {
-                MessageBox.Show("Error Code" + response.StatusCode + " : Message - " + response.ReasonPhrase);
-            }
-        }
-        private async void SearchByApellido(Usuarios usuario)
-        {
-            var apellidoUsuario = apellidoFindTxt.Text;
-            var url = "usuario/apellidoUsuario?apellidoUsuario=" + apellidoUsuario;
-
-            HttpResponseMessage response = client.GetAsync(url).Result;
-            if (response.IsSuccessStatusCode)
-            {
-                var jsonString = await response.Content.ReadAsStringAsync();
-                var _Data = JsonConvert.DeserializeObject<List<Usuarios>>(jsonString);
-                dgUsuarios.ItemsSource = _Data;
             }
             else
             {

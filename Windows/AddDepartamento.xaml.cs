@@ -55,6 +55,8 @@ namespace RENT.Windows
                     nEdificio = Convert.ToInt32(nEdificioTxt.Text),
                     nHabitacion = Convert.ToInt32(nHabitacionesTxt.Text),
                     vNoche = Convert.ToInt32(vNocheTxt.Text),
+                    tipoDepto = tipoDeptoCmb.Text,
+                    direccionDepartamento = direccionTxt.Text,
                     balcon = Convert.ToBoolean(balcon)
                 };
 

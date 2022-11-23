@@ -1,0 +1,729 @@
+﻿<Page
+    x:Class="RENT.Windows.AddInventario"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:RENT.Windows"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="AddInventario"
+    d:Height="500"
+    d:Width="850"
+    mc:Ignorable="d">
+
+    <Grid Background="White">
+        <GroupBox
+            Width="240"
+            Height="369"
+            Margin="60,36,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            BorderBrush="#FF198425"
+            BorderThickness="5,5,5,5"
+            FontWeight="Bold"
+            Header="Living Comedor / Sala de Estar" />
+        <Label
+            Margin="85,59,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Cantidad de Sillas" />
+        <Label
+            Margin="85,89,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Cantidad de Mesas" />
+        <Label
+            Margin="85,119,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Cantidad de Sofas" />
+        <Label
+            Margin="85,149,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Cantidad de Lamparas" />
+        <Label
+            Margin="85,179,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Cantidad de Cortinas" />
+        <Label
+            Margin="85,209,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Cantidad de Cuadros" />
+        <Label
+            Margin="85,239,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Cantidad de Sobre Mesas" />
+        <Label
+            Margin="85,269,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Cantidad de Plantas" />
+        <Label
+            Margin="85,299,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Cantidad de Televisores" />
+        <Label
+            Margin="85,329,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Cantidad de Alfombras" />
+        <Label
+            Margin="85,359,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Cantidad de Estufas" />
+
+        <TextBox
+            x:Name="cntSillasTxt"
+            Width="24"
+            Margin="256,63,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="2"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox
+            x:Name="cntMesasTxt"
+            Width="24"
+            Margin="256,93,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="2"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox
+            x:Name="cntSofasTxt"
+            Width="24"
+            Margin="256,123,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="2"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox
+            x:Name="cntLamparasTxt"
+            Width="24"
+            Margin="256,153,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="2"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox
+            x:Name="cntCortinasTxt"
+            Width="24"
+            Margin="256,183,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="2"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox
+            x:Name="cntCuadrosTxt"
+            Width="24"
+            Margin="256,213,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="2"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox
+            x:Name="cntAdornosTxt"
+            Width="24"
+            Margin="256,243,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="2"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox
+            x:Name="cntPlantasTxt"
+            Width="24"
+            Margin="256,273,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="2"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox
+            x:Name="cntTvTxt"
+            Width="24"
+            Margin="256,303,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="2"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox
+            x:Name="cntAlfombrasTxt"
+            Width="24"
+            Margin="256,333,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="2"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox
+            x:Name="cntEstufasTxt"
+            Width="24"
+            Margin="256,363,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="2"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+
+        <GroupBox
+            Width="240"
+            Height="184"
+            Margin="305,36,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            BorderBrush="#FF198425"
+            BorderThickness="5,5,5,5"
+            FontWeight="Bold"
+            Header="Habitacion" />
+        <Label
+            Margin="330,59,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Cantidad de Camas" />
+        <Label
+            Margin="330,89,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Cantidad de Cojines" />
+        <Label
+            Margin="330,119,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Cantidad de Muebles" />
+        <Label
+            Margin="330,149,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Cantidad de Closet" />
+        <Label
+            Margin="330,179,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Cantidad de Espejos" />
+        <TextBox
+            x:Name="cntCamasTxt"
+            Width="24"
+            Margin="501,63,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="2"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox
+            x:Name="cntCojinesTxt"
+            Width="24"
+            Margin="501,93,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="2"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox
+            x:Name="cntMueblesTxt"
+            Width="24"
+            Margin="501,123,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="2"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox
+            x:Name="cntClosetTxt"
+            Width="24"
+            Margin="501,153,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="2"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox
+            x:Name="cntEspejosHabitacionTxt"
+            Width="24"
+            Margin="501,183,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="2"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <GroupBox
+            Width="240"
+            Height="192"
+            Margin="305,213,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            BorderBrush="#FF198425"
+            BorderThickness="5,5,5,5"
+            FontWeight="Bold"
+            Header="Baño" />
+        <Label
+            Margin="330,239,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Cantidad de Toallas" />
+        <Label
+            Margin="330,269,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Cantidad de Espejos" />
+        <Label
+            Margin="330,299,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Cantidad de Bañeras" />
+        <Label
+            Margin="330,329,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Cantidad de Jacuzzi" />
+        <Label
+            Margin="330,359,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Cantidad de Duchas" />
+
+        <TextBox
+            x:Name="cntToallasTxt"
+            Width="24"
+            Margin="501,243,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="2"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox
+            x:Name="cntEspejosBanoTxt"
+            Width="24"
+            Margin="501,273,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="2"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox
+            x:Name="cntBanerasTxt"
+            Width="24"
+            Margin="501,303,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="2"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox
+            x:Name="cntJacuzzisTxt"
+            Width="24"
+            Margin="501,333,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="2"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox
+            x:Name="cntDuchasTxt"
+            Width="24"
+            Margin="501,363,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="2"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <GroupBox
+            Width="240"
+            Height="369"
+            Margin="550,36,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            BorderBrush="#FF198425"
+            BorderThickness="5,5,5,5"
+            FontWeight="Bold"
+            Header="Cocina" />
+        <Label
+            Margin="575,59,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Cantidad de Cocinas" />
+        <Label
+            Margin="575,89,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Cantidad de Microondas" />
+        <Label
+            Margin="575,119,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Cantidad de Refrigeradores" />
+        <Label
+            Margin="575,149,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Cantidad de Cafeteras" />
+        <Label
+            Margin="575,179,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Cantidad de Hornos" />
+        <Label
+            Margin="575,209,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Cantidad de Tenedores" />
+        <Label
+            Margin="575,239,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Cantidad de Cucharas" />
+        <Label
+            Margin="575,269,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Cantidad de Cuchillos" />
+        <Label
+            Margin="575,299,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Cantidad de Platos" />
+        <Label
+            Margin="575,329,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Cantidad de Tazas" />
+        <Label
+            Margin="575,359,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Cantidad de Vasos" />
+        <TextBox
+            x:Name="cntCocinasTxt"
+            Width="24"
+            Margin="746,63,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="2"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox
+            x:Name="cntMicroondasTxt"
+            Width="24"
+            Margin="746,93,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="2"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox
+            x:Name="cntRefrigeradoresTxt"
+            Width="24"
+            Margin="746,123,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="2"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox
+            x:Name="cntCafeterasTxt"
+            Width="24"
+            Margin="746,153,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="2"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox
+            x:Name="cntHornosTxt"
+            Width="24"
+            Margin="746,183,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="2"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox
+            x:Name="cntTenedoresTxt"
+            Width="24"
+            Margin="746,213,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="2"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox
+            x:Name="cntCucharasTxt"
+            Width="24"
+            Margin="746,243,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="2"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox
+            x:Name="cntCuchillosTxt"
+            Width="24"
+            Margin="746,273,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="2"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox
+            x:Name="cntPlatosTxt"
+            Width="24"
+            Margin="746,303,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="2"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox
+            x:Name="cntTazasTxt"
+            Width="24"
+            Margin="746,333,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="2"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox
+            x:Name="cntVasosTxt"
+            Width="24"
+            Margin="746,363,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="2"
+            PreviewTextInput="ValidacionDeNumeros"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <Label
+            Margin="183,410,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Seleccionar Departamento" />
+        <ComboBox
+            x:Name="departamentosCmb"
+            Width="149"
+            Margin="354,412,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            DisplayMemberPath="nombreDepartamento"
+            ItemsSource="{Binding Path=nombreDepartamento}"
+            SelectedValuePath="idDepartamentos" />
+        <Button
+            x:Name="GuardarBtn"
+            Width="60"
+            Height="24"
+            Margin="540,411,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="guardarBtn_Click"
+            Content="Guardar">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="BorderBrush" Value="#FF144FBE" />
+                    <Setter Property="CornerRadius" Value="5" />
+                </Style>
+            </Button.Resources>
+        </Button>
+
+    </Grid>
+</Page>

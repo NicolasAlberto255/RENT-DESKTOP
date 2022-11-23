@@ -6,79 +6,92 @@
     xmlns:local="clr-namespace:RENT.Windows"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="AddReserva"
-    d:Height="640"
-    d:Width="900"
+    d:Height="500"
+    d:Width="850"
     xml:lang="es"
     mc:Ignorable="d">
 
     <Grid Background="White">
+        <GroupBox
+            Width="850"
+            Height="500"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            BorderBrush="#FF192EA0"
+            BorderThickness="5,5,5,5"
+            FontWeight="Bold"
+            Header="Nueva Reserva" />
         <Label
-            Margin="471,88,0,0"
+            Margin="415,57,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="¿Agregar Cantidad de Dias?" />
         <Label
-            Margin="471,127,0,0"
+            Margin="415,87,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="¿Seleccionar ultimo dia de Reseva?" />
         <Label
-            Margin="471,166,0,0"
+            Margin="415,117,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Cantidad de Dias Reserva" />
         <Label
-            Margin="471,209,0,0"
+            Margin="415,147,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Fecha de Inicio de Reserva" />
         <Label
-            Margin="471,239,0,0"
+            Margin="415,177,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Fecha de Fin de Reserva" />
         <Label
-            Margin="471,271,0,0"
+            Margin="415,207,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Servicios 1" />
         <Label
-            Margin="471,301,0,0"
+            Margin="415,237,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Servicios 2" />
         <Label
-            Margin="471,354,0,0"
+            Margin="415,267,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Servicios 3" />
         <Label
-            Margin="133,282,0,0"
+            Margin="110,241,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Seleccionar Departamento" />
         <Label
-            Margin="186,504,0,0"
+            Margin="153,407,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Buscar por Cedula" />
         <Label
-            Margin="480,427,0,0"
+            Margin="415,297,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Valor Total" />
+        <Label
+            Margin="415,327,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Precio Abono" />
 
         <TextBox
             x:Name="valorTotalTxt"
             Width="120"
-            Height="26"
-            Margin="678,418,0,0"
+            Margin="622,300,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             IsEnabled="False"
             TextWrapping="Wrap">
             <TextBox.Resources>
-                <Style TargetType="Border">
+                <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="3" />
                 </Style>
             </TextBox.Resources>
@@ -86,8 +99,7 @@
         <TextBox
             x:Name="cntDiasTxt"
             Width="33"
-            Height="26"
-            Margin="678,166,0,0"
+            Margin="622,121,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             MaxLength="2"
@@ -96,7 +108,7 @@
             TextChanged="Dias_TextChanged"
             TextWrapping="Wrap">
             <TextBox.Resources>
-                <Style TargetType="Border">
+                <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="3" />
                 </Style>
             </TextBox.Resources>
@@ -104,15 +116,14 @@
         <TextBox
             x:Name="precioAbonoTxt"
             Width="120"
-            Height="26"
-            Margin="678,467,0,0"
+            Margin="622,331,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             PreviewTextInput="ValidacionDeNumeros"
             TextChanged="Precio_TextChanged"
             TextWrapping="Wrap">
             <TextBox.Resources>
-                <Style TargetType="Border">
+                <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="3" />
                 </Style>
             </TextBox.Resources>
@@ -407,7 +418,7 @@
             x:Name="fechaInicioDtp"
             Width="120"
             Height="26"
-            Margin="678,209,0,0"
+            Margin="622,147,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FirstDayOfWeek="Monday"
@@ -416,7 +427,7 @@
             x:Name="fechaFinDtp"
             Width="120"
             Height="26"
-            Margin="678,239,0,0"
+            Margin="622,177,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FirstDayOfWeek="Monday"
@@ -425,7 +436,7 @@
         <CheckBox
             x:Name="diasBetweenCbx"
             Width="16"
-            Margin="682,132,0,0"
+            Margin="626,92,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Checked="diasBetweenCbx_Checked"
@@ -447,7 +458,7 @@
             x:Name="diasFinCbx"
             Width="16"
             Height="15"
-            Margin="682,92,0,0"
+            Margin="626,62,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Checked="diasFinCbx_Checked"
@@ -469,21 +480,19 @@
         <ComboBox
             x:Name="servicios1Cmb"
             Width="120"
-            Height="23"
-            Margin="678,271,0,0"
+            Margin="622,211,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             DisplayMemberPath="nombreServicios"
-            ItemsSource="{Binding Path=nombreServicios}"
+            ItemsSource="{Binding nombreServicios}"
             SelectedValuePath="idServicios"
             SelectionChanged="serviciosCmb1_SelectionChanged" />
         <ComboBox
             x:Name="servicios2Cmb"
             Width="120"
-            Height="23"
-            Margin="678,301,0,0"
+            Margin="622,0,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top"
+            VerticalAlignment="Center"
             DisplayMemberPath="nombreServicios"
             ItemsSource="{Binding nombreServicios}"
             SelectedValuePath="idServicios"
@@ -491,8 +500,7 @@
         <ComboBox
             x:Name="servicios3Cmb"
             Width="120"
-            Height="23"
-            Margin="678,354,0,0"
+            Margin="622,269,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             DisplayMemberPath="nombreServicios"
@@ -502,17 +510,17 @@
         <ComboBox
             x:Name="cedulaCmb"
             Width="120"
-            Margin="297,506,0,0"
+            Margin="264,409,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             DisplayMemberPath="cedulaUsuario"
-            ItemsSource="{Binding Path=cedulaUsuario}"
+            ItemsSource="{Binding cedulaUsuario}"
             SelectedValuePath="idUsuario"
             SelectionChanged="cedulaCmb_SelectionChanged" />
         <ComboBox
             x:Name="departamentoCmb"
             Width="120"
-            Margin="288,284,0,0"
+            Margin="265,243,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             DisplayMemberPath="nombreDepartamento"
@@ -520,7 +528,7 @@
             SelectedValuePath="idDepartamentos"
             SelectionChanged="departamentoCmb_SelectionChanged">
             <ComboBox.Resources>
-                <Style TargetType="Border">
+                <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="5" />
                 </Style>
             </ComboBox.Resources>
@@ -530,14 +538,14 @@
             x:Name="usListBox"
             Width="280"
             Height="108"
-            Margin="137,388,0,0"
+            Margin="104,291,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             IsEnabled="False">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Border
-                        Name="border"
+                        x:Name="border"
                         Margin="5"
                         Padding="5"
                         BorderBrush="DarkSlateBlue"
@@ -614,7 +622,7 @@
             x:Name="deptoListBox"
             Width="304"
             Height="179"
-            Margin="103,100,0,0"
+            Margin="80,58,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             HorizontalContentAlignment="Stretch"
@@ -750,14 +758,14 @@
         <Button
             x:Name="guardarReservaBtn"
             Width="96"
-            Margin="672,526,0,0"
+            Margin="634,374,0,0"
             Padding="2"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="guardarReservaBtn_Click"
             Content="Guardar Reserva">
             <Button.Resources>
-                <Style TargetType="Border">
+                <Style TargetType="{x:Type Border}">
                     <Setter Property="BorderBrush" Value="#FF144FBE" />
                     <Setter Property="CornerRadius" Value="5" />
                 </Style>
@@ -771,15 +779,10 @@
             Click="cargarCedulaBtn_Click"
             Content="Buscar Usuario"
             Visibility="Hidden" />
-        <Label
-            Margin="481,467,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Content="Precio Abono" />
         <TextBlock
             x:Name="reservasDiasTB"
             Width="138"
-            Margin="477,190,0,0"
+            Margin="418,137,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
@@ -790,7 +793,7 @@
         <TextBlock
             x:Name="departamentosTB"
             Width="138"
-            Margin="279,308,0,0"
+            Margin="256,266,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
@@ -801,7 +804,7 @@
         <TextBlock
             x:Name="usuarioTB"
             Width="138"
-            Margin="289,530,0,0"
+            Margin="256,433,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
@@ -812,7 +815,7 @@
         <TextBlock
             x:Name="abonoTB"
             Width="138"
-            Margin="481,492,0,0"
+            Margin="418,353,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
@@ -823,7 +826,7 @@
         <TextBlock
             x:Name="saveBtnTB"
             Width="116"
-            Margin="680,524,0,0"
+            Margin="622,402,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
@@ -834,7 +837,7 @@
         <TextBlock
             x:Name="correctBtnTB"
             Width="116"
-            Margin="680,524,0,0"
+            Margin="639,438,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"

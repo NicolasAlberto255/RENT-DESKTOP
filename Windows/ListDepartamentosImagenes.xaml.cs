@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Win32;
 using Newtonsoft.Json;
 using RENT.Models;
 using System;
@@ -87,6 +88,8 @@ namespace RENT.Windows
         
         private void GuardarDatos()
         {
+            HttpResponseMessage httpResponseMessage = new HttpResponseMessage();
+            
             foreach (string item in showImagen.SafeFileNames)
             {
                 MultipartFormDataContent imagen = new MultipartFormDataContent();
@@ -114,22 +117,22 @@ namespace RENT.Windows
                     ByteArrayContent bytes = new ByteArrayContent(data);
                     bytes.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(contentype);
                     imagen.Add(bytes, "imagen", fileName);
-                    imagen.Add(new StringContent("1"), "idDepartamentos");
-                    var responseUpload = client.PostAsync("deptoImagen/imagenesUpload", imagen).Result;
-
-                    if (responseUpload.IsSuccessStatusCode)
-                    {
-                        MessageBox.Show("Imagenes subidas correctamente");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error Code" + responseUpload.StatusCode + " : Message - " + responseUpload.ReasonPhrase);
-                    }
+                    imagen.Add(new StringContent(idDepartamentosTxt.Text), "idDepartamentos");
+                    httpResponseMessage = client.PostAsync("deptoImagen/imagenesUpload", imagen).Result;
                 }
                 else
                 {
                     MessageBox.Show("Ingresa una Imagen Valida.");
                 }
+            }
+
+            if (httpResponseMessage.IsSuccessStatusCode)
+            {
+                MessageBox.Show("Imagenes subidas correctamente");
+            }
+            else
+            {
+                MessageBox.Show("Error Code" + httpResponseMessage.StatusCode + " : Message - " + httpResponseMessage.ReasonPhrase);
             }
         }
     }

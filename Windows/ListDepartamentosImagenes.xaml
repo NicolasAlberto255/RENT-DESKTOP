@@ -6,15 +6,15 @@
     xmlns:local="clr-namespace:RENT.Windows"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="ListDepartamentosImagenes"
-    d:Height="640"
-    d:Width="900"
+    d:Height="500"
+    d:Width="850"
     mc:Ignorable="d">
 
     <Grid Background="White">
         <Button
             x:Name="CargarTabla"
             Width="84"
-            Margin="33,320,0,0"
+            Margin="33,215,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="CargarTabla_Click"
@@ -22,7 +22,7 @@
         <Button
             x:Name="SubirBtn"
             Width="84"
-            Margin="80,488,0,0"
+            Margin="75,295,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="CargarBtn_Click"
@@ -31,19 +31,23 @@
             x:Name="imagenPanel"
             Width="256"
             Height="209"
-            Margin="595,400,0,0"
+            Margin="195,195,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top" />
         <Button
             x:Name="GuardarBtn"
-            Margin="80,525,0,0"
+            Margin="75,332,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="GuardarBtn_Click"
             Content="Guardar Imagen" />
         <ListBox
             x:Name="imagenListBox"
-            Margin="33,16,40,465"
+            Width="762"
+            Height="159"
+            Margin="33,16,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
             HorizontalContentAlignment="Stretch"
             Background="#FFCACACA">
             <ListBox.ItemTemplate>
@@ -127,9 +131,20 @@
         </ListBox>
         <ListBox
             x:Name="uplListImagenes"
-            Margin="465,185,40,320"
+            Width="330"
+            Height="146"
+            Margin="465,206,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
             HorizontalContentAlignment="Stretch"
-            Background="#FFCACACA">
-        </ListBox>
+            Background="#FFCACACA" />
+        <TextBox
+            x:Name="idDepartamentosTxt"
+            Width="120"
+            Margin="294,392,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text=""
+            TextWrapping="Wrap" />
     </Grid>
 </Page>
