@@ -49,14 +49,11 @@ namespace RENT
             Main.Content = addReserva;
             addReserva.cntDiasTxt.IsEnabled = false;
             addReserva.fechaFinDtp.IsEnabled = false;
-            addReserva.servicios1Cmb.SelectedIndex = 0;
-            addReserva.servicios2Cmb.SelectedIndex = 0;
-            addReserva.servicios3Cmb.SelectedIndex = 0;
-            addReserva.GetServicios();
             addReserva.GetUsuarios();
             addReserva.GetDepartamentos();
+            addReserva.GetServicios();
             addReserva.Today();
-            addReserva.valorTotalTxt.Text = "$";
+            addReserva.valorTotalTxt.Text = "0";
             addReserva.precioAbonoTxt.Text = "0";
             logoImg.Visibility = Visibility.Hidden;
         }
@@ -76,10 +73,11 @@ namespace RENT
             logoImg.Visibility = Visibility.Visible;
         }
 
-        private void listTipoDepartamentoBtn_Click(object sender, RoutedEventArgs e)
+        private void imagenesDeptoBtn_Click(object sender, RoutedEventArgs e)
         {
-            ListDepartamentosImagenes listTipoDepartamento = new ListDepartamentosImagenes();
-            Main.Content = listTipoDepartamento;
+            AddDeptoImagen imagenDepto = new AddDeptoImagen();
+            Main.Content = imagenDepto;
+            imagenDepto.GetDepartamentos();
             logoImg.Visibility = Visibility.Hidden;
         }
 

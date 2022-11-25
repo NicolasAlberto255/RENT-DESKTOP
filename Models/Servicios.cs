@@ -11,5 +11,7 @@ namespace RENT.Models
         public int idServicios { get; set; }
         public string? nombreServicios { get; set; }
         public string? descripcionServicios { get; set; }
+        public string? estadoServicios { get; set; }
+        public int precioServicios { get; set; }
     }
 }

@@ -61,7 +61,7 @@ namespace RENT.Windows
                 cntMicroondas = Convert.ToInt32(cntMicroondasTxt.Text),
                 cntRefrigeradores = Convert.ToInt32(cntRefrigeradoresTxt.Text),
                 cntEstufas = Convert.ToInt32(cntEstufasTxt.Text),
-                cntCocinas = Convert.ToInt32(cntCocinasTxt.Text),
+                cntHoyas = Convert.ToInt32(cntHoyasTxt.Text),
                 cntCafeteras = Convert.ToInt32(cntCafeterasTxt.Text),
                 cntHornos = Convert.ToInt32(cntHornosTxt.Text),
                 cntTenedores = Convert.ToInt32(cntTenedoresTxt.Text),
@@ -168,9 +168,9 @@ namespace RENT.Windows
             {
                 cntEstufasTxt.Text = "0";
             }
-            if (cntCocinasTxt.Text == "")
+            if (cntHoyasTxt.Text == "")
             {
-                cntCocinasTxt.Text = "0";
+                cntHoyasTxt.Text = "0";
             }
             if (cntCafeterasTxt.Text == "")
             {
@@ -260,7 +260,7 @@ namespace RENT.Windows
             cntMicroondasTxt.Text = "";
             cntRefrigeradoresTxt.Text = "";
             cntEstufasTxt.Text = "";
-            cntCocinasTxt.Text = "";
+            cntHoyasTxt.Text = "";
             cntCafeterasTxt.Text = "";
             cntHornosTxt.Text = "";
             cntTenedoresTxt.Text = "";

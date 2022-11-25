@@ -19,6 +19,8 @@ using System.Data;
 using System.Net.Http.Json;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
+using System.Globalization;
 
 namespace RENT.Windows
 {
@@ -120,7 +122,7 @@ namespace RENT.Windows
             deptoListBox.Items.Clear();
             deptoListBox.Items.Add(departamentoCmb.SelectedItem);
             correctBtnTB.Text = "";
-
+            
             if (departamentoCmb.SelectedItem != null)
             {
                 var departamento = (Departamentos)departamentoCmb.SelectedItem;
@@ -134,40 +136,127 @@ namespace RENT.Windows
                 nHabitacionTxt.Text = departamento.nHabitacion.ToString();
                 vNocheTxt.Text = departamento.vNoche.ToString();
                 balconTxt.Text = departamento.balcon.ToString();
+            }
+        }
 
+        private void acercamientoCbx_Checked(object sender, RoutedEventArgs e)
+        {
+            int valorTotalInt = Convert.ToInt32(valorTotalIntTxt.Text);
+            int servicioValor = Convert.ToInt32(precioServicios1Txt.Text);
+
+            if (acercamientoCbx.IsChecked == true)
+            {
+                valorTotalIntTxt.Text = (valorTotalInt + servicioValor).ToString();
             }
         }
-        private void serviciosCmb1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void acercamientoCbx_Unchecked(object sender, RoutedEventArgs e)
         {
-            correctBtnTB.Text = "";
-            if (servicios1Cmb.SelectedItem != null)
+            int valorTotalInt = Convert.ToInt32(valorTotalIntTxt.Text);
+            int servicioValor = Convert.ToInt32(precioServicios1Txt.Text);
+
+            if (acercamientoCbx.IsChecked == false)
             {
-                var servicios = (Servicios)servicios1Cmb.SelectedItem;
-                idServicios1Txt.Text = servicios.idServicios.ToString();
-                nombreServicios1Txt.Text = servicios.nombreServicios;
-                descripcionServicios1Txt.Text = servicios.descripcionServicios;
+                valorTotalIntTxt.Text = (valorTotalInt - servicioValor).ToString();
             }
         }
-        private void servicios2Cmb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void taxiCbx_Checked(object sender, RoutedEventArgs e)
         {
-            correctBtnTB.Text = "";
-            if (servicios2Cmb.SelectedItem != null)
+            int valorTotalInt = Convert.ToInt32(valorTotalIntTxt.Text);
+            int servicioValor = Convert.ToInt32(precioServicios2Txt.Text);
+
+            if (taxiCbx.IsChecked == true)
             {
-                var servicios = (Servicios)servicios2Cmb.SelectedItem;
-                idServicios2Txt.Text = servicios.idServicios.ToString();
-                nombreServicios2Txt.Text = servicios.nombreServicios;
-                descripcionServicios2Txt.Text = servicios.descripcionServicios;
+                valorTotalIntTxt.Text = (valorTotalInt + servicioValor).ToString();
+            }            
+        }
+        private void taxiCbx_Unchecked(object sender, RoutedEventArgs e)
+        {
+            int valorTotalInt = Convert.ToInt32(valorTotalIntTxt.Text);
+            int servicioValor = Convert.ToInt32(precioServicios2Txt.Text);
+
+            if (taxiCbx.IsChecked == false)
+            {
+                valorTotalIntTxt.Text = (valorTotalInt - servicioValor).ToString();
             }
         }
-        private void servicios3Cmb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void tourCbx_Checked(object sender, RoutedEventArgs e)
         {
-            correctBtnTB.Text = "";
-            if (servicios3Cmb.SelectedItem != null)
+            int valorTotalInt = Convert.ToInt32(valorTotalIntTxt.Text);
+            int servicioValor = Convert.ToInt32(precioServicios3Txt.Text);
+
+            if (tourCbx.IsChecked == true)
             {
-                var servicios = (Servicios)servicios3Cmb.SelectedItem;
-                idServicios3Txt.Text = servicios.idServicios.ToString();
-                nombreServicios3Txt.Text = servicios.nombreServicios;
-                descripcionServicios3Txt.Text = servicios.descripcionServicios;
+                valorTotalIntTxt.Text = (valorTotalInt + servicioValor).ToString();
+            }
+        }
+        private void tourCbx_Unchecked(object sender, RoutedEventArgs e)
+        {
+            int valorTotalInt = Convert.ToInt32(valorTotalIntTxt.Text);
+            int servicioValor = Convert.ToInt32(precioServicios3Txt.Text);
+
+            if (tourCbx.IsChecked == false)
+            {
+                valorTotalIntTxt.Text = (valorTotalInt - servicioValor).ToString();
+            }
+        }
+        private void vehiculoCbx_Checked(object sender, RoutedEventArgs e)
+        {
+            int valorTotalInt = Convert.ToInt32(valorTotalIntTxt.Text);
+            int servicioValor = Convert.ToInt32(precioServicios4Txt.Text);
+
+            if (vehiculoCbx.IsChecked == true)
+            {
+                valorTotalIntTxt.Text = (valorTotalInt + servicioValor).ToString();
+            }
+        }
+        private void vehiculoCbx_Unchecked(object sender, RoutedEventArgs e)
+        {
+            int valorTotalInt = Convert.ToInt32(valorTotalIntTxt.Text);
+            int servicioValor = Convert.ToInt32(precioServicios4Txt.Text);
+
+            if (vehiculoCbx.IsChecked == false)
+            {
+                valorTotalIntTxt.Text = (valorTotalInt - servicioValor).ToString();
+            }
+        }
+        private void bicicletasCbx_Checked(object sender, RoutedEventArgs e)
+        {
+            int valorTotalInt = Convert.ToInt32(valorTotalTxt.Text);
+            int servicioValor = Convert.ToInt32(precioServicios5Txt.Text);
+            
+            if (bicicletasCbx.IsChecked == true)
+            {
+                valorTotalIntTxt.Text = (valorTotalInt + servicioValor).ToString();
+            }
+        }
+        private void bicicletasCbx_Unchecked(object sender, RoutedEventArgs e)
+        {
+            int valorTotalInt = Convert.ToInt32(valorTotalIntTxt.Text);
+            int servicioValor = Convert.ToInt32(precioServicios5Txt.Text);
+
+            if (bicicletasCbx.IsChecked == false)
+            {
+                valorTotalIntTxt.Text = (valorTotalInt - servicioValor).ToString();
+            }
+        }
+        private void cenasCbx_Checked(object sender, RoutedEventArgs e)
+        {
+            int valorTotalInt = Convert.ToInt32(valorTotalIntTxt.Text);
+            int servicioValor = Convert.ToInt32(precioServicios6Txt.Text);
+            
+            if (cenasCbx.IsChecked == true)
+            {
+                valorTotalIntTxt.Text = (valorTotalInt + servicioValor).ToString();
+            }
+        }
+        private void cenasCbx_Unchecked(object sender, RoutedEventArgs e)
+        {
+            int valorTotalInt = Convert.ToInt32(valorTotalIntTxt.Text);
+            int servicioValor = Convert.ToInt32(precioServicios6Txt.Text);
+
+            if (cenasCbx.IsChecked == false)
+            {
+                valorTotalIntTxt.Text = (valorTotalInt - servicioValor).ToString();
             }
         }
         private void guardarReservaBtn_Click(object sender, RoutedEventArgs e)
@@ -176,102 +265,78 @@ namespace RENT.Windows
             if (departamentoCmb.SelectedItem != null && cedulaCmb.SelectedItem != null && cntDias > 0
                 && fechaInicioDtp.Text != "" && fechaFinDtp.Text != "")
             {
-                if (servicios1Cmb.SelectedItem == null)
-                {
-                    idServicios1Txt.Text = "1";
-                    nombreServicios1Txt.Text = "Ningun Servicio";
-                    descripcionServicios1Txt.Text = "Nada";
-                }
+                ValidarServicios();
 
-                if (servicios2Cmb.SelectedItem == null)
-                {
-                    idServicios2Txt.Text = "1";
-                    nombreServicios2Txt.Text = "Ningun Servicio";
-                    descripcionServicios2Txt.Text = "Nada";
-                }
-
-                if (servicios3Cmb.SelectedItem == null)
-                {
-                    idServicios3Txt.Text = "1";
-                    nombreServicios3Txt.Text = "Ningun Servicio";
-                    descripcionServicios3Txt.Text = "Nada";
-                }
+                double valorTotal = Double.Parse(valorTotalTxt.Text, NumberStyles.AllowCurrencySymbol | NumberStyles.AllowDecimalPoint | NumberStyles.AllowThousands, new CultureInfo("es-CL"));
 
                 Reservas reservas = new Reservas()
                 {
-                    idReserva = 0,
                     fechaInicio = fechaInicioDtp.SelectedDate.Value,
                     fechaFin = fechaFinDtp.SelectedDate.Value,
                     fechaCreacion = DateTime.Today,
                     precioAbono = Convert.ToInt32(precioAbonoTxt.Text),
-                    usuarios = new object[] { new Usuarios() {
+                    precioTotal = (valorTotal - Convert.ToDouble(precioAbonoTxt.Text)),
+                    usuarios = new object[] { 
+                new Usuarios() {
                     idUsuario = Convert.ToInt32(idUsuarioTxt.Text) }
                 },
-                    departamentos = new object[] { new Departamentos() {
+                    departamentos = new object[] { 
+                new Departamentos() {
                     idDepartamentos = Convert.ToInt32(idDepartamentoTxt.Text)}
                 },
-                    servicios = new object[] { new Servicios() {
-                    idServicios = Convert.ToInt32(idServicios1Txt.Text)
+                    servicios = new object[] { 
+                new Servicios() {
+                    idServicios = Convert.ToInt32(servicios1Txt.Text)
                 },
                 new Servicios() {
-                    idServicios = Convert.ToInt32(idServicios2Txt.Text)
+                    idServicios = Convert.ToInt32(servicios2Txt.Text)
                 },
                 new Servicios() {
-                    idServicios = Convert.ToInt32(idServicios3Txt.Text)
+                    idServicios = Convert.ToInt32(servicios3Txt.Text)
+                },
+                new Servicios() {
+                    idServicios = Convert.ToInt32(servicios4Txt.Text)
+                },
+                new Servicios() {
+                    idServicios = Convert.ToInt32(servicios5Txt.Text)
+                },
+                new Servicios() {
+                    idServicios = Convert.ToInt32(servicios6Txt.Text)
                 } }
                 };
 
-
-                if (reservas.idReserva == 0)
+                
+                if (valorTotal < Convert.ToDouble(precioAbonoTxt.Text))
                 {
-                    SaveReservas(reservas);
-
-                    cedulaCmb.SelectedItem = null;
-                    departamentoCmb.SelectedItem = null;
-                    abonoTB.Text = "";
-                    precioAbonoTxt.Text = "";
-                    reservasDiasTB.Text = "";
-                    departamentosTB.Text = "";
-                    usuarioTB.Text = "";
-                    abonoTB.Text = "";
-                    servicios1Cmb.SelectedIndex = 0;
-                    servicios2Cmb.SelectedIndex = 0;
-                    servicios3Cmb.SelectedIndex = 0;
-                    correctBtnTB.Text = "Reserva guardada con exito";
-                    reservasDiasTB.Text = "";
-                    departamentosTB.Text = "";
-                    usuarioTB.Text = "";
-                    abonoTB.Text = "";
+                    abonoMayorErr.Text = "El abono no puede ser mayor al valor total";
                 }
                 else
                 {
-                    UpdateReserva(reservas);
-                    MessageBox.Show("Reserva actualizada con exito");
+                    abonoMayorErr.Text = "";
+                    if (valorTotal > Convert.ToDouble(precioAbonoTxt.Text))
+                    {
+                        if (reservas.idReserva == 0)
+                        {
+                            SaveReservas(reservas);
+                            LimpiarDatos();
+                        }
+                        else
+                        {
+                            UpdateReserva(reservas);
+                            MessageBox.Show("Reserva actualizada con exito");
+                        }
+
+                        GetDepartamentos();
+                    }
                 }
             }
             else
             {
                 ValidarDatos();
                 saveBtnTB.Text = "Debe llenar todos los campos";
-            } 
-        }
-        private void Dias_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            correctBtnTB.Text = "";
-            if (cntDiasTxt.Text != "")
-            {
-                int valorNoche = Convert.ToInt32(vNocheTxt.Text);
-                int cantidadDias = Convert.ToInt32(cntDiasTxt.Text);
-                double suma = valorNoche * cantidadDias;
-                var valorTotal = String.Format("{0:C}", suma);
-                valorTotalTxt.Text = Convert.ToString(valorTotal);
-            }
-            else
-            {
-                cntDiasTxt.Text = "0";
-                valorTotalTxt.Text = "$";
             }
         }
+
         private void Precio_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (precioAbonoTxt.Text == "")
@@ -279,10 +344,112 @@ namespace RENT.Windows
                 precioAbonoTxt.Text = "0";
             }
         }
-        private void cargarCedulaBtn_Click(object sender, RoutedEventArgs e)
+        
+        private void dias_Changed(object sender, TextChangedEventArgs e)
         {
-            //SearchByCedula(new Usuarios());
+            Suma();
         }
+
+        private void valor_Changed(object sender, TextChangedEventArgs e)
+        {
+            valorTotalTxt.Text = valorTotalIntTxt.Text;
+            Suma();
+        }
+        private void Suma()
+        {
+            if (cntDiasTxt.Text == "")
+            {
+                cntDiasTxt.Text = "0";
+            }
+            if (valorTotalIntTxt.Text == "")
+            {
+                valorTotalIntTxt.Text = "0";
+            }
+            
+            NumberFormatInfo formatoChileno = new CultureInfo("es-CL", false).NumberFormat;
+            int valorNoche = Convert.ToInt32(vNocheTxt.Text);
+            int cantidadDias = Convert.ToInt32(cntDiasTxt.Text);
+            double suma = (valorNoche * cantidadDias)+ Convert.ToDouble(valorTotalIntTxt.Text);
+            var valorTotalInt= suma.ToString();
+            double sumaFinal = Convert.ToDouble(valorTotalInt);
+            var valorTotalChile = sumaFinal.ToString("C", formatoChileno);
+            valorTotalTxt.Text = Convert.ToString(valorTotalChile);      
+        }
+        private void ValidarServicios()
+        {
+            if (tourCbx.IsChecked == true)
+            {
+                servicios1Txt.Text = "2";
+            }
+            else
+            {
+                servicios1Txt.Text = "1";
+            }
+            if (taxiCbx.IsChecked == true)
+            {
+                servicios2Txt.Text = "3";
+            }
+            else
+            {
+                servicios2Txt.Text = "1";
+            }
+            if (acercamientoCbx.IsChecked == true)
+            {
+                servicios3Txt.Text = "4";
+            }
+            else
+            {
+                servicios3Txt.Text = "1";
+            }
+            if (vehiculoCbx.IsChecked == true)
+            {
+                servicios4Txt.Text = "5";
+            }
+            else
+            {
+                servicios4Txt.Text = "1";
+            }
+            if (bicicletasCbx.IsChecked == true)
+            {
+                servicios5Txt.Text = "6";
+            }
+            else
+            {
+                servicios5Txt.Text = "1";
+            }
+            if (cenasCbx.IsChecked == true)
+            {
+                servicios6Txt.Text = "7";
+            }
+            else
+            {
+                servicios6Txt.Text = "1";
+            }
+        }
+
+        private void LimpiarDatos()
+        {
+            cedulaCmb.SelectedItem = null;
+            departamentoCmb.SelectedItem = null;
+            abonoTB.Text = "";
+            precioAbonoTxt.Text = "";
+            reservasDiasTB.Text = "";
+            departamentosTB.Text = "";
+            usuarioTB.Text = "";
+            abonoTB.Text = "";
+            acercamientoCbx.IsChecked = false;
+            taxiCbx.IsChecked = false;
+            tourCbx.IsChecked = false;
+            vehiculoCbx.IsChecked = false;
+            bicicletasCbx.IsChecked = false;
+            cenasCbx.IsChecked = false;
+            correctBtnTB.Text = "Reserva guardada con exito";
+            reservasDiasTB.Text = "";
+            departamentosTB.Text = "";
+            usuarioTB.Text = "";
+            abonoTB.Text = "";
+        }
+
         public void Today()
         {
             cntDiasTxt.Text = "0";
@@ -306,18 +473,7 @@ namespace RENT.Windows
             DateTime fechaInicio = (DateTime)fechaInicioDtp.SelectedDate;
             fechaFinDtp.SelectedDate = fechaInicio.AddDays(Convert.ToInt32(cntDiasTxt.Text));
         }
-        public void GetServicios()
-        {
-            var response = client.GetAsync("servicio/servicios").Result;
-            var servicios = response.Content.ReadAsAsync<List<Servicios>>().Result;
 
-            foreach (var servicio in servicios)
-            {
-                servicios1Cmb.ItemsSource = servicios;
-                servicios2Cmb.ItemsSource = servicios;
-                servicios3Cmb.ItemsSource = servicios;
-            }
-        }
         public void GetUsuarios()
         {
             var response = client.GetAsync("usuario/usuarios").Result;
@@ -333,9 +489,100 @@ namespace RENT.Windows
             var response = client.GetAsync("departamentos/departamentos").Result;
             var departamentos = response.Content.ReadAsAsync<List<Departamentos>>().Result;
 
+            var serialize = JsonConvert.SerializeObject(departamentos);
+            var deserialize = JsonConvert.DeserializeObject<List<Departamentos>>(serialize);
+
+            var estado = deserialize.Where(x => x.estadoDepartamento == "Disponible").ToList();
+
             foreach (var departamento in departamentos)
             {
-                departamentoCmb.ItemsSource = departamentos;
+                if (departamento.estadoDepartamento == "Disponible")
+                {
+                    departamentoCmb.ItemsSource = estado;
+                }
+            }
+        }
+
+        public void GetServicios()
+        {
+            var response = client.GetAsync("servicio/servicios").Result;
+            var servicios = response.Content.ReadAsAsync<List<Servicios>>().Result;
+                    
+
+            foreach (var servicio in servicios)
+            {
+                if (servicio.nombreServicios == "Tour")
+                {
+                    precioServicios1Txt.Text = servicio.precioServicios.ToString();
+                    if (servicio.estadoServicios == "No Disponible")
+                    {
+                        tourCbx.IsEnabled = false;
+                    }
+                    else
+                    {
+                        tourCbx.IsEnabled = true;
+                    }
+                }
+                if (servicio.nombreServicios == "Taxi")
+                {
+                    precioServicios2Txt.Text = servicio.precioServicios.ToString();
+                    if (servicio.estadoServicios == "No Disponible")
+                    {
+                        taxiCbx.IsEnabled = false;
+                    }
+                    else
+                    {
+                        taxiCbx.IsEnabled = true;
+                    }
+                }
+                if (servicio.nombreServicios == "Acercamiento")
+                {
+                    precioServicios3Txt.Text = servicio.precioServicios.ToString();
+                    if (servicio.estadoServicios == "No Disponible")
+                    {
+                        acercamientoCbx.IsEnabled = false;
+                    }
+                    else
+                    {
+                        acercamientoCbx.IsEnabled = true;
+                    }
+                }
+                if (servicio.nombreServicios == "Vehiculos")
+                {
+                    precioServicios4Txt.Text = servicio.precioServicios.ToString();
+                    if (servicio.estadoServicios == "No Disponible")
+                    {
+                        vehiculoCbx.IsEnabled = false;
+                    }
+                    else
+                    {
+                        vehiculoCbx.IsEnabled = true;
+                    }
+                }
+                if (servicio.nombreServicios == "Bicicletas")
+                {
+                    precioServicios5Txt.Text = servicio.precioServicios.ToString();
+                    if (servicio.estadoServicios == "No Disponible")
+                    {
+                        bicicletasCbx.IsEnabled = false;
+                    }
+                    else
+                    {
+                        bicicletasCbx.IsEnabled = true;
+                    }
+                }
+                if (servicio.nombreServicios == "Cenas")
+                {
+                    precioServicios6Txt.Text = servicio.precioServicios.ToString();
+                    if (servicio.estadoServicios == "No Disponible")
+                    {
+                        cenasCbx.IsEnabled = false;
+                    }
+                    else
+                    {
+                        cenasCbx.IsEnabled = true;
+                    }
+                }
             }
         }
         private async void SaveReservas(Reservas reservas)
@@ -370,5 +617,7 @@ namespace RENT.Windows
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
         }
+
+        
     }
 }

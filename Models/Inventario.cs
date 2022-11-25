@@ -28,7 +28,7 @@ namespace RENT.Models
         public int cntMicroondas { get; set; }
         public int cntRefrigeradores { get; set; }
         public int cntEstufas { get; set; }
-        public int cntCocinas { get; set; }
+        public int cntHoyas { get; set; }
         public int cntCafeteras { get; set; }
         public int cntHornos { get; set; }
         public int cntTenedores { get; set; }

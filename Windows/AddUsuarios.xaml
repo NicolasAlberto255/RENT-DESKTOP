@@ -264,13 +264,13 @@
             Content="*"
             Foreground="#FFF51313" />
         <Label
-            Margin="733,72,0,0"
+            Margin="725,106,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="*"
             Foreground="#FFF51313" />
         <Label
-            Margin="733,159,0,0"
+            Margin="725,192,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="*"

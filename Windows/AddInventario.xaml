@@ -478,7 +478,7 @@
             Margin="575,59,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Cantidad de Cocinas" />
+            Content="Cantidad de Hoyas" />
         <Label
             Margin="575,89,0,0"
             HorizontalAlignment="Left"
@@ -530,7 +530,7 @@
             VerticalAlignment="Top"
             Content="Cantidad de Vasos" />
         <TextBox
-            x:Name="cntCocinasTxt"
+            x:Name="cntHoyasTxt"
             Width="24"
             Margin="746,63,0,0"
             HorizontalAlignment="Left"

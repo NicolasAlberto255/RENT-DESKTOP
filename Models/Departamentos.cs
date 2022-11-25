@@ -14,6 +14,7 @@ namespace RENT.Models
         public string? nombreRegionDepto { get; set; }
         public string? tipoDepto { get; set; }
         public string? direccionDepartamento { get; set; }
+        public string? estadoDepartamento { get; set; }
         public int nBanos { get; set; }
         public int nDepto { get; set; }
         public int nEdificio { get; set; }
