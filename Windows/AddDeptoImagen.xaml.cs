@@ -91,13 +91,13 @@ namespace RENT.Windows
         }
         private void SelectIdDepto()
         {
-            var idListBox = deptoListBox.SelectedIndex + 1;
-            foreach (Departamentos item in deptoListBox.Items)
+            foreach (var item in deptoListBox.Items)
             {
+                var id = (Departamentos)deptoListBox.SelectedItem;
                 
-                if (idListBox.ToString() == item.idDepartamentos.ToString())
+                if (id != null)
                 {
-                    idDeptoTxt.Text = item.idDepartamentos.ToString();
+                    idDeptoTxt.Text = id.idDepartamentos.ToString();
                 }
             }
         }
@@ -135,26 +135,26 @@ namespace RENT.Windows
 
                 string fileName = item;
                 string fileExt = System.IO.Path.GetExtension(fileName);
-                string contentype = string.Empty;
+                string contentType = string.Empty;
 
                 switch (fileExt)
                 {
                     case ".jpg":
-                        contentype = "image/jpg";
+                        contentType = "image/jpg";
                         break;
                     case ".jpeg":
-                        contentype = "image/jpeg";
+                        contentType = "image/jpeg";
                         break;
                     case ".png":
-                        contentype = "image/png";
+                        contentType = "image/png";
                         break;
                 }
 
-                if (contentype != string.Empty)
+                if (contentType != string.Empty)
                 {
                     byte[] data = System.IO.File.ReadAllBytes(showImagen.FileName);
                     ByteArrayContent bytes = new ByteArrayContent(data);
-                    bytes.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(contentype);
+                    bytes.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(contentType);
                     imagen.Add(bytes, "imagen", fileName);
                     imagen.Add(new StringContent(idDeptoTxt.Text), "idDepartamentos");
                     httpResponseMessage = client.PostAsync("deptoImagen/imagenesUpload", imagen).Result;
@@ -163,13 +163,15 @@ namespace RENT.Windows
                 {
                     MessageBox.Show("Ingresa una Imagen Valida.");
                 }
-                
             }
 
             if (httpResponseMessage.IsSuccessStatusCode)
             {
                 MessageBox.Show("Imagenes subidas correctamente"); 
                 uplListImagenes.Items.Clear();
+                imagenesListBox.Items.Clear();
+                imagenSelected.Source = null;
+                idDeptoTxt.Text = "";
             }
             else
             {

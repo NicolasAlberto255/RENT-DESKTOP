@@ -47,6 +47,38 @@ namespace RENT.Windows
         {
             GetDaysBetween();
         }
+
+        private void cntPersonas_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (Convert.ToInt32(cntAdultosTxt.Text) > 6)
+            {
+                cntAdultosErr.Text = "No se pueden mas de 6 personas";
+                cntAdultosTxt.Text = "0";
+            }
+            else
+            {
+                if (Convert.ToInt32(cntAdultosTxt.Text) < 6)
+                {
+                    cntAdultosTxt.Text = cntAdultosTxt.Text;
+                }
+            }
+        }
+
+        private void cntNinos_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (Convert.ToInt32(cntNinosTxt.Text) > 6)
+            {
+                cntNinosErr.Text = "No se pueden mas de 6 Niños";
+                cntNinosTxt.Text = "0";
+            }
+            else
+            {
+                if (Convert.ToInt32(cntNinosTxt.Text) < 6)
+                {
+                    cntNinosTxt.Text = cntNinosTxt.Text;
+                }
+            }
+        }
         private void diasFinCbx_Checked(object sender, RoutedEventArgs e)
         {
             if (diasFinCbx.IsChecked == true)
@@ -261,73 +293,91 @@ namespace RENT.Windows
         }
         private void guardarReservaBtn_Click(object sender, RoutedEventArgs e)
         {
-            int cntDias = Convert.ToInt32(cntDiasTxt.Text); 
+            int cntDias = Convert.ToInt32(cntDiasTxt.Text);
             if (departamentoCmb.SelectedItem != null && cedulaCmb.SelectedItem != null && cntDias > 0
                 && fechaInicioDtp.Text != "" && fechaFinDtp.Text != "")
             {
                 ValidarServicios();
 
-                double valorTotal = Double.Parse(valorTotalTxt.Text, NumberStyles.AllowCurrencySymbol | NumberStyles.AllowDecimalPoint | NumberStyles.AllowThousands, new CultureInfo("es-CL"));
-
-                Reservas reservas = new Reservas()
+                if ((Convert.ToInt32(cntAdultosTxt.Text) < 6 && cntAdultosTxt.Text == "")
+                && (Convert.ToInt32(cntNinosTxt.Text) < 6 && cntNinosTxt.Text == ""))
                 {
-                    fechaInicio = fechaInicioDtp.SelectedDate.Value,
-                    fechaFin = fechaFinDtp.SelectedDate.Value,
-                    fechaCreacion = DateTime.Today,
-                    precioAbono = Convert.ToInt32(precioAbonoTxt.Text),
-                    precioTotal = (valorTotal - Convert.ToDouble(precioAbonoTxt.Text)),
-                    usuarios = new object[] { 
-                new Usuarios() {
-                    idUsuario = Convert.ToInt32(idUsuarioTxt.Text) }
-                },
-                    departamentos = new object[] { 
-                new Departamentos() {
-                    idDepartamentos = Convert.ToInt32(idDepartamentoTxt.Text)}
-                },
-                    servicios = new object[] { 
-                new Servicios() {
-                    idServicios = Convert.ToInt32(servicios1Txt.Text)
-                },
-                new Servicios() {
-                    idServicios = Convert.ToInt32(servicios2Txt.Text)
-                },
-                new Servicios() {
-                    idServicios = Convert.ToInt32(servicios3Txt.Text)
-                },
-                new Servicios() {
-                    idServicios = Convert.ToInt32(servicios4Txt.Text)
-                },
-                new Servicios() {
-                    idServicios = Convert.ToInt32(servicios5Txt.Text)
-                },
-                new Servicios() {
-                    idServicios = Convert.ToInt32(servicios6Txt.Text)
-                } }
-                };
+                    double valorTotal = Double.Parse(valorTotalTxt.Text, NumberStyles.AllowCurrencySymbol | NumberStyles.AllowDecimalPoint | NumberStyles.AllowThousands, new CultureInfo("es-CL"));
 
-                
-                if (valorTotal < Convert.ToDouble(precioAbonoTxt.Text))
-                {
-                    abonoMayorErr.Text = "El abono no puede ser mayor al valor total";
+                    Reservas reservas = new Reservas()
+                    {
+                        fechaInicio = fechaInicioDtp.SelectedDate.Value,
+                        fechaFin = fechaFinDtp.SelectedDate.Value,
+                        fechaCreacion = DateTime.Today,
+                        precioAbono = Convert.ToInt32(precioAbonoTxt.Text),
+                        precioTotal = (valorTotal - Convert.ToDouble(precioAbonoTxt.Text)),
+                        cntPersonas = Convert.ToInt32(cntAdultosTxt.Text) + Convert.ToInt32(cntNinosTxt.Text),
+                        usuarios = new object[] {
+                    new Usuarios() {
+                        idUsuario = Convert.ToInt32(idUsuarioTxt.Text) }
+                    },
+                            departamentos = new object[] {
+                    new Departamentos() {
+                        idDepartamentos = Convert.ToInt32(idDepartamentoTxt.Text)}
+                    },
+                            servicios = new object[] {
+                    new Servicios() {
+                        idServicios = Convert.ToInt32(servicios1Txt.Text)
+                    },
+                    new Servicios() {
+                        idServicios = Convert.ToInt32(servicios2Txt.Text)
+                    },
+                    new Servicios() {
+                        idServicios = Convert.ToInt32(servicios3Txt.Text)
+                    },
+                    new Servicios() {
+                        idServicios = Convert.ToInt32(servicios4Txt.Text)
+                    },
+                    new Servicios() {
+                        idServicios = Convert.ToInt32(servicios5Txt.Text)
+                    },
+                    new Servicios() {
+                        idServicios = Convert.ToInt32(servicios6Txt.Text)
+                    } }
+                        };
+
+                    var checkIn = new CheckIn()
+                    {
+                        nombreCliente = nombreUsuarioTxt.Text + " " + apellidoUsuarioTxt.Text,
+                        anotaciones = anotacionesTxt.Text,
+                        fechaCheckIn = fechaInicioDtp.SelectedDate.Value,
+                        montoFinalReserva = (valorTotal - Convert.ToDouble(precioAbonoTxt.Text))
+                    };
+
+
+                    if (valorTotal < Convert.ToDouble(precioAbonoTxt.Text))
+                    {
+                        abonoMayorErr.Text = "El abono no puede ser mayor al valor total";
+                    }
+                    else
+                    {
+                        abonoMayorErr.Text = "";
+                        if (valorTotal > Convert.ToDouble(precioAbonoTxt.Text))
+                        {
+                            if (reservas.idReserva == 0)
+                            {
+                                SaveReservas(reservas);
+                                SaveCheckIn(checkIn);
+                                LimpiarDatos();
+                            }
+                            else
+                            {
+                                UpdateReserva(reservas);
+                                MessageBox.Show("Reserva actualizada con exito");
+                            }
+
+                            GetDepartamentos();
+                        }
+                    }
                 }
                 else
                 {
-                    abonoMayorErr.Text = "";
-                    if (valorTotal > Convert.ToDouble(precioAbonoTxt.Text))
-                    {
-                        if (reservas.idReserva == 0)
-                        {
-                            SaveReservas(reservas);
-                            LimpiarDatos();
-                        }
-                        else
-                        {
-                            UpdateReserva(reservas);
-                            MessageBox.Show("Reserva actualizada con exito");
-                        }
-
-                        GetDepartamentos();
-                    }
+                    saveBtnTB.Text = "Ingrese una Cantidad Correcta de Personas";
                 }
             }
             else
@@ -585,6 +635,11 @@ namespace RENT.Windows
                 }
             }
         }
+
+        private async void SaveCheckIn(CheckIn checkIn)
+        {
+            await client.PostAsJsonAsync("checkin/checkinSave", checkIn);
+        }
         private async void SaveReservas(Reservas reservas)
         {
             var reservaPost = JsonConvert.SerializeObject(reservas);
@@ -617,7 +672,5 @@ namespace RENT.Windows
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
         }
-
-        
     }
 }

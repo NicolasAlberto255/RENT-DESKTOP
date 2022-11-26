@@ -16,6 +16,9 @@
     <Compile Update="Windows\AddReserva.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Windows\AddServicioImagen.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Windows\AddUsuarios.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -40,6 +43,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\AddReserva.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\AddServicioImagen.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\AddUsuarios.xaml">

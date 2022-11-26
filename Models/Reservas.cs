@@ -13,6 +13,7 @@ namespace RENT.Models
         public DateTime fechaInicio { get; set; }
         public DateTime fechaFin { get; set; }
         public int precioAbono { get; set; }
+        public int cntPersonas { get; set; }
         public double precioTotal { get; set; }
         public object[] servicios { get; set; }
         public object[] usuarios { get; set; }

@@ -44,9 +44,7 @@ namespace RENT.Windows
                 && comunaCmb.SelectedItem != null)
             {
                 var departamentos = new Departamentos()
-                {
-
-                    idDepartamentos = Convert.ToInt32(idDeptoTxt.Text),
+                {                   
                     nombreDepartamento = nombreDeptoTxt.Text,
                     nombreComunaDepto = comunaCmb.Text,
                     nombreRegionDepto = regionCmb.Text,
@@ -70,8 +68,7 @@ namespace RENT.Windows
                     this.UpdateDepartamento(departamentos);
                     lblMessage.Content = "Departamento actualizado";
                 }
-
-                idDeptoTxt.Text = 0.ToString();
+                
                 nombreDeptoTxt.Text = "";
                 nBanosTxt.Text = "";
                 nDeptoTxt.Text = "";
@@ -88,7 +85,6 @@ namespace RENT.Windows
             else
             {
                 ValidarDatos();
-                
             }
             
         }

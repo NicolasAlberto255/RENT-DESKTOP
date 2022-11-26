@@ -55,6 +55,8 @@ namespace RENT
             addReserva.Today();
             addReserva.valorTotalTxt.Text = "0";
             addReserva.precioAbonoTxt.Text = "0";
+            addReserva.cntAdultosTxt.Text = "1";
+            addReserva.cntNinosTxt.Text = "0";
             logoImg.Visibility = Visibility.Hidden;
         }
 
@@ -86,6 +88,14 @@ namespace RENT
             AddInventario addInventario = new AddInventario();
             Main.Content = addInventario;
             addInventario.GetDepartamentos();
+            logoImg.Visibility = Visibility.Hidden;
+        }
+
+        private void addServicioImagenBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddServicioImagen imagenServicio = new AddServicioImagen();
+            Main.Content = imagenServicio;
+            imagenServicio.GetServicios();
             logoImg.Visibility = Visibility.Hidden;
         }
     }

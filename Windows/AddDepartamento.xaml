@@ -228,15 +228,6 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <TextBox
-            x:Name="idDeptoTxt"
-            Width="120"
-            Margin="89,37,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Text="0"
-            TextWrapping="Wrap"
-            Visibility="Hidden" />
         <CheckBox
             x:Name="balconCbx"
             Width="15"

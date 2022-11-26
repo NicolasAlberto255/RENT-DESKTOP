@@ -54,7 +54,13 @@
             VerticalAlignment="Top"
             HorizontalContentAlignment="Stretch"
             Background="{x:Null}"
-            SelectionChanged="uplListImagenes_SelectionChanged" />
+            SelectionChanged="uplListImagenes_SelectionChanged">
+            <ListBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10" />
+                </Style>
+            </ListBox.Resources>
+        </ListBox>
         <ListBox
             x:Name="imagenesListBox"
             Width="374"
@@ -83,6 +89,11 @@
             VerticalAlignment="Bottom"
             HorizontalContentAlignment="Stretch"
             SelectionChanged="deptoListBox_SelectionChanged">
+            <ListBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10" />
+                </Style>
+            </ListBox.Resources>
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Border
@@ -202,7 +213,7 @@
                 </StackPanel>
             </Grid>
             <Button
-                x:Name="SubirBtn"
+                x:Name="CargarBtn"
                 Width="92"
                 Height="26"
                 Margin="10"

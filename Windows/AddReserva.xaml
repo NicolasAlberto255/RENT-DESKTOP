@@ -15,7 +15,7 @@
         <GroupBox
             Width="255"
             Height="122"
-            Margin="410,208,0,0"
+            Margin="391,179,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             BorderBrush="#FF192EA0"
@@ -25,7 +25,7 @@
         <GroupBox
             Width="155"
             Height="92"
-            Margin="665,225,0,0"
+            Margin="646,196,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             BorderBrush="#FF7B1B1B"
@@ -40,79 +40,80 @@
             BorderBrush="#FF192EA0"
             BorderThickness="5,5,5,5"
             FontWeight="Bold"
-            Header="Nueva Reserva" />
+            Header="Nueva Reserva"
+            Visibility="Hidden" />
         <Label
-            Margin="415,57,0,0"
+            Margin="396,28,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="¿Agregar Cantidad de Dias?" />
         <Label
-            Margin="415,87,0,0"
+            Margin="396,58,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="¿Seleccionar ultimo dia de Reseva?" />
         <Label
-            Margin="415,117,0,0"
+            Margin="396,88,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Cantidad de Dias Reserva" />
         <Label
-            Margin="415,147,0,0"
+            Margin="396,118,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Fecha de Inicio de Reserva" />
         <Label
-            Margin="415,177,0,0"
+            Margin="396,148,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Fecha de Fin de Reserva" />
         <Label
-            Margin="429,231,0,0"
+            Margin="410,202,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Acercamiento" />
         <Label
-            Margin="429,261,0,0"
+            Margin="410,232,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Taxi" />
         <Label
-            Margin="429,291,0,0"
+            Margin="410,262,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Tour" />
         <Label
-            Margin="555,231,0,0"
+            Margin="536,202,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Vehiculos" />
         <Label
-            Margin="555,261,0,0"
+            Margin="536,232,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Bicicletas" />
         <Label
-            Margin="555,291,0,0"
+            Margin="536,262,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Cenas" />
         <Label
-            Margin="110,241,0,0"
+            Margin="91,212,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Seleccionar Departamento" />
         <Label
-            Margin="153,407,0,0"
+            Margin="134,378,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Buscar por Cedula" />
         <Label
-            Margin="418,345,0,0"
+            Margin="399,316,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Valor Total" />
         <Label
-            Margin="418,375,0,0"
+            Margin="399,346,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Precio Abono" />
@@ -120,7 +121,7 @@
         <TextBox
             x:Name="valorTotalTxt"
             Width="120"
-            Margin="505,349,0,0"
+            Margin="486,320,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             IsEnabled="False"
@@ -134,7 +135,7 @@
         <TextBox
             x:Name="cntDiasTxt"
             Width="33"
-            Margin="622,121,0,0"
+            Margin="603,92,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             MaxLength="2"
@@ -151,7 +152,7 @@
         <TextBox
             x:Name="precioAbonoTxt"
             Width="120"
-            Margin="505,379,0,0"
+            Margin="486,350,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             PreviewTextInput="ValidacionDeNumeros"
@@ -461,9 +462,9 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text=""
+            TextChanged="valor_Changed"
             TextWrapping="Wrap"
-            Visibility="Hidden" 
-            TextChanged="valor_Changed"/>
+            Visibility="Hidden" />
 
         <TextBlock
             Margin="5,427,0,0"
@@ -489,7 +490,7 @@
             x:Name="fechaInicioDtp"
             Width="120"
             Height="26"
-            Margin="622,147,0,0"
+            Margin="603,118,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FirstDayOfWeek="Monday"
@@ -498,7 +499,7 @@
             x:Name="fechaFinDtp"
             Width="120"
             Height="26"
-            Margin="622,177,0,0"
+            Margin="603,148,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FirstDayOfWeek="Monday"
@@ -507,7 +508,7 @@
         <CheckBox
             x:Name="diasBetweenCbx"
             Width="16"
-            Margin="626,92,0,0"
+            Margin="607,63,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Checked="diasBetweenCbx_Checked"
@@ -526,7 +527,7 @@
             x:Name="diasFinCbx"
             Width="16"
             Height="15"
-            Margin="626,62,0,0"
+            Margin="607,33,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Checked="diasFinCbx_Checked"
@@ -547,7 +548,7 @@
         <ComboBox
             x:Name="cedulaCmb"
             Width="120"
-            Margin="264,409,0,0"
+            Margin="245,380,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             DisplayMemberPath="cedulaUsuario"
@@ -557,7 +558,7 @@
         <ComboBox
             x:Name="departamentoCmb"
             Width="120"
-            Margin="265,243,0,0"
+            Margin="246,214,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             DisplayMemberPath="nombreDepartamento"
@@ -575,7 +576,7 @@
             x:Name="usListBox"
             Width="280"
             Height="108"
-            Margin="104,291,0,0"
+            Margin="85,262,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             IsEnabled="False">
@@ -659,7 +660,7 @@
             x:Name="deptoListBox"
             Width="304"
             Height="179"
-            Margin="80,58,0,0"
+            Margin="61,29,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             HorizontalContentAlignment="Stretch"
@@ -795,7 +796,7 @@
         <Button
             x:Name="guardarReservaBtn"
             Width="96"
-            Margin="682,366,0,0"
+            Margin="676,425,0,0"
             Padding="2"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
@@ -809,9 +810,10 @@
             </Button.Resources>
         </Button>
         <TextBlock
-            x:Name="reservasDiasTB"
-            Width="138"
-            Margin="418,137,0,0"
+            x:Name="cntAdultosErr"
+            Width="134"
+            Height="19"
+            Margin="634,340,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
@@ -822,7 +824,7 @@
         <TextBlock
             x:Name="departamentosTB"
             Width="138"
-            Margin="256,266,0,0"
+            Margin="237,237,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
@@ -833,7 +835,7 @@
         <TextBlock
             x:Name="usuarioTB"
             Width="138"
-            Margin="256,433,0,0"
+            Margin="237,404,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
@@ -844,7 +846,7 @@
         <TextBlock
             x:Name="abonoTB"
             Width="138"
-            Margin="421,401,0,0"
+            Margin="402,372,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
@@ -855,27 +857,19 @@
         <TextBlock
             x:Name="saveBtnTB"
             Width="116"
-            Margin="672,388,0,0"
+            Margin="666,447,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
             Foreground="#FFF51313"
             Text=""
             TextAlignment="Center"
-            TextWrapping="Wrap" RenderTransformOrigin="0.5,0.5" >
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleX="7.717"/>
-                    <RotateTransform/>
-                    <TranslateTransform X="-0.811"/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
-        </TextBlock>
+            TextWrapping="Wrap" />
+
         <TextBlock
             x:Name="abonoMayorErr"
             Width="116"
-            Margin="507,399,0,0"
+            Margin="488,370,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
@@ -887,19 +881,19 @@
         <TextBlock
             x:Name="correctBtnTB"
             Width="116"
-            Margin="675,395,0,0"
+            Margin="666,448,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
             Foreground="#FF091DC5"
             Text=""
             TextAlignment="Center"
-            TextWrapping="Wrap" />
+            TextWrapping="Wrap" Height="37" />
         <CheckBox
             x:Name="acercamientoCbx"
             Width="16"
             Height="15"
-            Margin="523,238,0,0"
+            Margin="504,209,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Checked="acercamientoCbx_Checked"
@@ -916,7 +910,7 @@
             x:Name="taxiCbx"
             Width="16"
             Height="15"
-            Margin="523,267,0,0"
+            Margin="504,238,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Checked="taxiCbx_Checked"
@@ -933,7 +927,7 @@
             x:Name="tourCbx"
             Width="16"
             Height="15"
-            Margin="523,296,0,0"
+            Margin="504,267,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Checked="tourCbx_Checked"
@@ -950,7 +944,7 @@
             x:Name="vehiculoCbx"
             Width="16"
             Height="15"
-            Margin="627,238,0,0"
+            Margin="608,209,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Checked="vehiculoCbx_Checked"
@@ -967,7 +961,7 @@
             x:Name="bicicletasCbx"
             Width="16"
             Height="15"
-            Margin="627,267,0,0"
+            Margin="608,238,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Checked="bicicletasCbx_Checked"
@@ -984,7 +978,7 @@
             x:Name="cenasCbx"
             Width="16"
             Height="15"
-            Margin="627,296,0,0"
+            Margin="608,267,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Checked="cenasCbx_Checked"
@@ -998,12 +992,12 @@
             </CheckBox.RenderTransform>
         </CheckBox>
         <Label
-            Margin="675,245,0,0"
+            Margin="656,216,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Disponible" />
         <Label
-            Margin="675,280,0,0"
+            Margin="656,251,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="No Disponible" />
@@ -1011,7 +1005,7 @@
             x:Name="disponibleCbx"
             Width="16"
             Height="15"
-            Margin="774,250,0,0"
+            Margin="755,221,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             IsHitTestVisible="False"
@@ -1027,7 +1021,7 @@
             x:Name="noDisponibleCbx"
             Width="16"
             Height="15"
-            Margin="774,285,0,0"
+            Margin="755,256,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             IsEnabled="False"
@@ -1040,6 +1034,93 @@
                 </TransformGroup>
             </CheckBox.RenderTransform>
         </CheckBox>
+        <Label
+            Margin="399,378,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Anotaciones" />
+        <TextBox
+            x:Name="anotacionesTxt"
+            Width="120"
+            Height="54"
+            Margin="486,382,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <Label
+            Margin="634,316,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Cantidad de Adultos" />
+        <TextBox
+            x:Name="cntAdultosTxt"
+            Width="21"
+            Margin="768,320,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="1"
+            PreviewTextInput="ValidacionDeNumeros"
+            RenderTransformOrigin="0.525,0.513"
+            TextChanged="cntPersonas_TextChanged"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <Label
+            Margin="634,367,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Cantidad de Niños" />
+        <TextBox
+            x:Name="cntNinosTxt"
+            Width="21"
+            Margin="768,370,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MaxLength="1"
+            PreviewTextInput="ValidacionDeNumeros"
+            RenderTransformOrigin="0.525,0.513"
+            TextChanged="cntNinos_TextChanged"
+            TextWrapping="Wrap">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBlock
+            x:Name="cntNinosErr"
+            Width="129"
+            Height="19"
+            Margin="634,391,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontSize="9"
+            Foreground="#FFF51313"
+            Text=""
+            TextAlignment="Center"
+            TextWrapping="Wrap" />
+        <TextBlock
+            x:Name="reservasDiasTB"
+            Width="134"
+            Height="22"
+            Margin="641,91,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontSize="9"
+            Foreground="#FFF51313"
+            Text=""
+            TextAlignment="Center"
+            TextWrapping="Wrap" />
 
 
     </Grid>
