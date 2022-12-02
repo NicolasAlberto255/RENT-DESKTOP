@@ -142,11 +142,6 @@ namespace RENT.Windows
             {
                 var usuario = (Usuarios)cedulaCmb.SelectedItem;
                 idUsuarioTxt.Text = usuario.idUsuario.ToString();
-                nombreUsuarioTxt.Text = usuario.nombreUsuario;
-                cedulaUsuarioTxt.Text = usuario.cedulaUsuario;
-                apellidoUsuarioTxt.Text = usuario.apellidoUsuario;
-                correoUsuarioTxt.Text = usuario.correoUsuario;
-                telefonoUsuarioTxt.Text = usuario.telefonoUsuario.ToString();
             }
         }
         private void departamentoCmb_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -159,15 +154,6 @@ namespace RENT.Windows
             {
                 var departamento = (Departamentos)departamentoCmb.SelectedItem;
                 idDepartamentoTxt.Text = departamento.idDepartamentos.ToString();
-                nombreDepartamentoTxt.Text = departamento.nombreDepartamento;
-                nombreComunaDeptoTxt.Text = departamento.nombreComunaDepto;
-                nombreRegionDeptoTxt.Text = departamento.nombreRegionDepto;
-                nBanosTxt.Text = departamento.nBanos.ToString();
-                nDeptoTxt.Text = departamento.nDepto.ToString();
-                nEdificioTxt.Text = departamento.nEdificio.ToString();
-                nHabitacionTxt.Text = departamento.nHabitacion.ToString();
-                vNocheTxt.Text = departamento.vNoche.ToString();
-                balconTxt.Text = departamento.balcon.ToString();
             }
         }
 
@@ -313,33 +299,33 @@ namespace RENT.Windows
                         precioTotal = (valorTotal - Convert.ToDouble(precioAbonoTxt.Text)),
                         cntPersonas = Convert.ToInt32(cntAdultosTxt.Text) + Convert.ToInt32(cntNinosTxt.Text),
                         usuarios = new object[] {
-                    new Usuarios() {
-                        idUsuario = Convert.ToInt32(idUsuarioTxt.Text) }
-                    },
-                            departamentos = new object[] {
-                    new Departamentos() {
-                        idDepartamentos = Convert.ToInt32(idDepartamentoTxt.Text)}
-                    },
-                            servicios = new object[] {
-                    new Servicios() {
-                        idServicios = Convert.ToInt32(servicios1Txt.Text)
-                    },
-                    new Servicios() {
-                        idServicios = Convert.ToInt32(servicios2Txt.Text)
-                    },
-                    new Servicios() {
-                        idServicios = Convert.ToInt32(servicios3Txt.Text)
-                    },
-                    new Servicios() {
-                        idServicios = Convert.ToInt32(servicios4Txt.Text)
-                    },
-                    new Servicios() {
-                        idServicios = Convert.ToInt32(servicios5Txt.Text)
-                    },
-                    new Servicios() {
-                        idServicios = Convert.ToInt32(servicios6Txt.Text)
-                    } }
-                        };
+                        new Usuarios() {
+                            idUsuario = Convert.ToInt32(idUsuarioTxt.Text) }
+                        },
+                                departamentos = new object[] {
+                        new Departamentos() {
+                            idDepartamentos = Convert.ToInt32(idDepartamentoTxt.Text)}
+                        },
+                                servicios = new object[] {
+                        new Servicios() {
+                            idServicios = Convert.ToInt32(servicios1Txt.Text)
+                        },
+                        new Servicios() {
+                            idServicios = Convert.ToInt32(servicios2Txt.Text)
+                        },
+                        new Servicios() {
+                            idServicios = Convert.ToInt32(servicios3Txt.Text)
+                        },
+                        new Servicios() {
+                            idServicios = Convert.ToInt32(servicios4Txt.Text)
+                        },
+                        new Servicios() {
+                            idServicios = Convert.ToInt32(servicios5Txt.Text)
+                        },
+                        new Servicios() {
+                            idServicios = Convert.ToInt32(servicios6Txt.Text)
+                        } }
+                    };
 
                     var checkIn = new CheckIn()
                     {

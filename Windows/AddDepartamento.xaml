@@ -19,78 +19,132 @@
             BorderBrush="#FF192EA0"
             BorderThickness="5,5,5,5"
             FontWeight="Bold"
-            Header="Nuevo Departamento" />
+            Header="Nuevo Departamento"
+            Visibility="Hidden" />
         <Label
             Height="26"
-            Margin="70,26,0,0"
+            Margin="80,41,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Nombre de Departamento" />
         <Label
             Height="26"
-            Margin="70,66,0,0"
+            Margin="80,81,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="N° Departamento" />
         <Label
             Height="26"
-            Margin="70,106,0,0"
+            Margin="80,121,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="N° Edificio" />
         <Label
             Height="26"
-            Margin="70,146,0,0"
+            Margin="80,161,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Region" />
         <Label
             Height="26"
-            Margin="70,186,0,0"
+            Margin="80,201,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Comuna" />
         <Label
             Height="26"
-            Margin="70,226,0,0"
+            Margin="80,241,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Valor de Noche" />
         <Label
             Height="26"
-            Margin="475,26,0,0"
+            Margin="485,41,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="N° Habitaciones" />
         <Label
             Height="26"
-            Margin="475,66,0,0"
+            Margin="485,81,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="N° Baños" />
         <Label
             Height="26"
-            Margin="475,106,0,0"
+            Margin="485,121,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="¿Tiene Balcon?" />
         <Label
             Height="26"
-            Margin="475,146,0,0"
+            Margin="485,161,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Tipo de Departamento" />
         <Label
             Height="26"
-            Margin="475,186,0,0"
+            Margin="485,201,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Direccion" />
-
+        <TextBox
+            x:Name="servicios1Txt"
+            Width="120"
+            Margin="5,429,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text=""
+            TextWrapping="Wrap"
+            Visibility="Hidden" />
+        <TextBox
+            x:Name="servicios2Txt"
+            Width="120"
+            Margin="5,429,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text=""
+            TextWrapping="Wrap"
+            Visibility="Hidden" />
+        <TextBox
+            x:Name="servicios3Txt"
+            Width="120"
+            Margin="5,429,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text=""
+            TextWrapping="Wrap"
+            Visibility="Hidden" />
+        <TextBox
+            x:Name="servicios4Txt"
+            Width="120"
+            Margin="5,429,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text=""
+            TextWrapping="Wrap"
+            Visibility="Hidden" />
+        <TextBox
+            x:Name="servicios5Txt"
+            Width="120"
+            Margin="5,429,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text=""
+            TextWrapping="Wrap"
+            Visibility="Hidden" />
+        <TextBox
+            x:Name="servicios6Txt"
+            Width="120"
+            Margin="5,429,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text=""
+            TextWrapping="Wrap"
+            Visibility="Hidden" />
         <TextBox
             x:Name="nombreDeptoTxt"
             Width="120"
-            Margin="225,30,0,0"
+            Margin="235,45,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             PreviewTextInput="ValidacionDeTexto"
@@ -103,8 +157,8 @@
         </TextBox>
         <TextBox
             x:Name="nDeptoTxt"
-            Width="120"
-            Margin="225,70,0,0"
+            Width="30"
+            Margin="235,85,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             MaxLength="5"
@@ -118,8 +172,8 @@
         </TextBox>
         <TextBox
             x:Name="nEdificioTxt"
-            Width="120"
-            Margin="225,110,0,0"
+            Width="30"
+            Margin="235,125,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             MaxLength="5"
@@ -134,7 +188,7 @@
         <TextBox
             x:Name="vNocheTxt"
             Width="120"
-            Margin="225,230,0,0"
+            Margin="235,245,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             PreviewTextInput="ValidacionDeNumeros"
@@ -147,8 +201,8 @@
         </TextBox>
         <TextBox
             x:Name="nHabitacionesTxt"
-            Width="120"
-            Margin="615,30,0,0"
+            Width="25"
+            Margin="625,45,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             MaxLength="5"
@@ -164,7 +218,7 @@
             x:Name="direccionTxt"
             Width="120"
             Height="77"
-            Margin="615,189,0,0"
+            Margin="625,204,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             PreviewTextInput="ValidacionDeTexto"
@@ -178,8 +232,8 @@
         </TextBox>
         <TextBox
             x:Name="nBanosTxt"
-            Width="120"
-            Margin="615,70,0,0"
+            Width="25"
+            Margin="625,85,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             MaxLength="2"
@@ -195,7 +249,7 @@
             x:Name="regionCmb"
             Width="120"
             Height="20"
-            Margin="225,149,0,0"
+            Margin="235,164,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             DisplayMemberPath="nombreRegion"
@@ -206,7 +260,7 @@
             x:Name="comunaCmb"
             Width="120"
             Height="20"
-            Margin="225,189,0,0"
+            Margin="235,204,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             DisplayMemberPath="nombreComuna"
@@ -215,7 +269,7 @@
         <Button
             x:Name="guardarBtn"
             Width="112"
-            Margin="619,317,0,0"
+            Margin="535,360,0,0"
             Padding="2"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
@@ -230,18 +284,29 @@
         </Button>
         <CheckBox
             x:Name="balconCbx"
-            Width="15"
-            Margin="615,111,0,0"
+            Width="16"
+            Height="15"
+            Margin="629,126,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            Background="{x:Null}"
             Checked="balconCbx_Checked"
             Content=""
-            Unchecked="balconCbx_Unckechecked" />
+            Foreground="Black"
+            RenderTransformOrigin="0.5,0.5"
+            Unchecked="balconCbx_Unckechecked"
+            UseLayoutRounding="False">
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
 
         <Label
             x:Name="lblMessage"
             Width="172"
-            Margin="589,344,0,0"
+            Margin="505,386,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="" />
@@ -249,7 +314,7 @@
         <TextBlock
             x:Name="nomErrTB"
             Width="114"
-            Margin="229,48,0,0"
+            Margin="239,63,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
@@ -260,7 +325,7 @@
         <TextBlock
             x:Name="nBanosErrTB"
             Width="114"
-            Margin="618,88,0,0"
+            Margin="655,88,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
@@ -271,7 +336,7 @@
         <TextBlock
             x:Name="nDeptoErrTB"
             Width="114"
-            Margin="229,88,0,0"
+            Margin="270,88,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
@@ -282,7 +347,7 @@
         <TextBlock
             x:Name="nEdificioErrTB"
             Width="114"
-            Margin="229,128,0,0"
+            Margin="270,128,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
@@ -293,7 +358,7 @@
         <TextBlock
             x:Name="nHabitErrTB"
             Width="114"
-            Margin="621,48,0,0"
+            Margin="655,48,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
@@ -304,7 +369,7 @@
         <TextBlock
             x:Name="vNocheErrTB"
             Width="114"
-            Margin="229,248,0,0"
+            Margin="239,263,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
@@ -315,7 +380,7 @@
         <TextBlock
             x:Name="regionErrTB"
             Width="114"
-            Margin="229,168,0,0"
+            Margin="239,183,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
@@ -326,7 +391,7 @@
         <TextBlock
             x:Name="comunaErrTB"
             Width="114"
-            Margin="229,209,0,0"
+            Margin="239,224,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="9"
@@ -337,7 +402,7 @@
         <ComboBox
             x:Name="tipoDeptoCmb"
             Width="120"
-            Margin="615,148,0,0"
+            Margin="625,163,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top">
             <ComboBoxItem Content="Loft" />
@@ -347,5 +412,136 @@
             <ComboBoxItem Content="Duplex" />
             <ComboBoxItem Content="Triplex" />
         </ComboBox>
+        <GroupBox
+            Width="255"
+            Height="122"
+            Margin="81,291,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            BorderBrush="#FF192EA0"
+            BorderThickness="5,5,5,5"
+            FontWeight="Bold"
+            Header="Servicios"
+            Visibility="Hidden" />
+        <Label
+            Margin="87,310,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Acercamiento" />
+        <Label
+            Margin="87,340,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Taxi" />
+        <Label
+            Margin="87,370,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Tour" />
+        <Label
+            Margin="213,310,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Vehiculos" />
+        <Label
+            Margin="213,340,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Bicicletas" />
+        <Label
+            Margin="213,370,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Cenas" />
+        <CheckBox
+            x:Name="acercamientoCbx"
+            Width="16"
+            Height="15"
+            Margin="181,317,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            RenderTransformOrigin="0.5,0.5"
+            UseLayoutRounding="False">
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+        <CheckBox
+            x:Name="taxiCbx"
+            Width="16"
+            Height="15"
+            Margin="181,346,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            RenderTransformOrigin="0.5,0.5"
+            UseLayoutRounding="False">
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+        <CheckBox
+            x:Name="tourCbx"
+            Width="16"
+            Height="15"
+            Margin="181,375,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            RenderTransformOrigin="0.5,0.5"
+            UseLayoutRounding="False">
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+        <CheckBox
+            x:Name="vehiculoCbx"
+            Width="16"
+            Height="15"
+            Margin="287,317,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            RenderTransformOrigin="0.5,0.5"
+            UseLayoutRounding="False">
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+        <CheckBox
+            x:Name="bicicletasCbx"
+            Width="16"
+            Height="15"
+            Margin="287,346,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            RenderTransformOrigin="0.5,0.5"
+            UseLayoutRounding="False">
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+        <CheckBox
+            x:Name="cenasCbx"
+            Width="16"
+            Height="15"
+            Margin="287,375,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            RenderTransformOrigin="0.5,0.5"
+            UseLayoutRounding="False">
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
     </Grid>
 </Page>

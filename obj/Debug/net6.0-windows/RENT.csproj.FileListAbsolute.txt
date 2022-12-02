@@ -239,7 +239,6 @@ C:\Users\Lab02\Desktop\RENT-DESKTOP\obj\Debug\net6.0-windows\Windows\AddDepartam
 C:\Users\Lab02\Desktop\RENT-DESKTOP\obj\Debug\net6.0-windows\Windows\AddReserva.baml
 C:\Users\Lab02\Desktop\RENT-DESKTOP\obj\Debug\net6.0-windows\Windows\ListUsuarios.baml
 C:\Users\Nicolas\OneDrive\Escritorio\Portafolio\RENT-DESKTOP\RENT\RENT-DESKTOP\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
-C:\Users\Nicolas\OneDrive\Escritorio\Portafolio\RENT-DESKTOP\RENT\RENT-DESKTOP\obj\Debug\net6.0-windows\Themes\Generic.baml
 C:\Users\Nicolas\OneDrive\Escritorio\Portafolio\RENT-DESKTOP\RENT\RENT-DESKTOP\bin\Debug\net6.0-windows\MahApps.Metro.IconPacks.BootstrapIcons.dll
 C:\Users\Nicolas\OneDrive\Escritorio\Portafolio\RENT-DESKTOP\RENT\RENT-DESKTOP\bin\Debug\net6.0-windows\MahApps.Metro.IconPacks.BoxIcons.dll
 C:\Users\Nicolas\OneDrive\Escritorio\Portafolio\RENT-DESKTOP\RENT\RENT-DESKTOP\bin\Debug\net6.0-windows\MahApps.Metro.IconPacks.Codicons.dll

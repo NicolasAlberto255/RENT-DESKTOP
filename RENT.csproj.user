@@ -33,9 +33,6 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Themes\Generic.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="Windows\AddDepartamento.xaml">
       <SubType>Designer</SubType>
     </Page>

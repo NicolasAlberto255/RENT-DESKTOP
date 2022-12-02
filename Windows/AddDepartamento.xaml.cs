@@ -39,11 +39,13 @@ namespace RENT.Windows
         }
         private void guardarBtn_Click(object sender, RoutedEventArgs e)
         {
+            ValidarServicios();
+                
             if (nombreDeptoTxt.Text != "" && nBanosTxt.Text != "" && nDeptoTxt.Text != ""
                 && nHabitacionesTxt.Text != "" && vNocheTxt.Text != "" && regionCmb.SelectedItem != null
                 && comunaCmb.SelectedItem != null)
             {
-                var departamentos = new Departamentos()
+                Departamentos departamentos = new Departamentos()
                 {                   
                     nombreDepartamento = nombreDeptoTxt.Text,
                     nombreComunaDepto = comunaCmb.Text,
@@ -52,10 +54,30 @@ namespace RENT.Windows
                     nDepto = Convert.ToInt32(nDeptoTxt.Text),
                     nEdificio = Convert.ToInt32(nEdificioTxt.Text),
                     nHabitacion = Convert.ToInt32(nHabitacionesTxt.Text),
+                    estadoDepartamento = "Disponible",
                     vNoche = Convert.ToInt32(vNocheTxt.Text),
                     tipoDepto = tipoDeptoCmb.Text,
                     direccionDepartamento = direccionTxt.Text,
-                    balcon = Convert.ToBoolean(balcon)
+                    balcon = Convert.ToBoolean(balcon),
+                    servicios = new object[] {
+                       new Servicios() {
+                        idServicios = Convert.ToInt32(servicios1Txt.Text)
+                    },
+                    new Servicios() {
+                        idServicios = Convert.ToInt32(servicios2Txt.Text)
+                    },
+                    new Servicios() {
+                        idServicios = Convert.ToInt32(servicios3Txt.Text)
+                    },
+                    new Servicios() {
+                        idServicios = Convert.ToInt32(servicios4Txt.Text)
+                    },
+                    new Servicios() {
+                        idServicios = Convert.ToInt32(servicios5Txt.Text)
+                    },
+                    new Servicios() {
+                        idServicios = Convert.ToInt32(servicios6Txt.Text)
+                    } }
                 };
 
                 if (departamentos.idDepartamentos == 0)
@@ -94,11 +116,62 @@ namespace RENT.Windows
         }
         private async void SaveDepartamento(Departamentos departamentos)
         {
-            await client.PostAsJsonAsync("departamentos/departamentosSave", departamentos);
+            await client.PostAsJsonAsync("departamentos/deptoAdd", departamentos);
         }
         private async void UpdateDepartamento(Departamentos departamentos)
         {
             await client.PostAsJsonAsync("departamentos/departamentosPut/" + departamentos.idDepartamentos, departamentos);
+        }
+        private void ValidarServicios()
+        {
+            if (tourCbx.IsChecked == true)
+            {
+                servicios1Txt.Text = "2";
+            }
+            else
+            {
+                servicios1Txt.Text = "1";
+            }
+            if (taxiCbx.IsChecked == true)
+            {
+                servicios2Txt.Text = "3";
+            }
+            else
+            {
+                servicios2Txt.Text = "1";
+            }
+            if (acercamientoCbx.IsChecked == true)
+            {
+                servicios3Txt.Text = "4";
+            }
+            else
+            {
+                servicios3Txt.Text = "1";
+            }
+            if (vehiculoCbx.IsChecked == true)
+            {
+                servicios4Txt.Text = "5";
+            }
+            else
+            {
+                servicios4Txt.Text = "1";
+            }
+            if (bicicletasCbx.IsChecked == true)
+            {
+                servicios5Txt.Text = "6";
+            }
+            else
+            {
+                servicios5Txt.Text = "1";
+            }
+            if (cenasCbx.IsChecked == true)
+            {
+                servicios6Txt.Text = "7";
+            }
+            else
+            {
+                servicios6Txt.Text = "1";
+            }
         }
         public void GetRegiones()
         {

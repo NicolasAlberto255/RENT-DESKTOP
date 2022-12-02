@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Nicolas\OneDrive\Escritorio\Portafolio\RENT-DESKTOP\RENT\RENT-DESKTOP\App.xaml
-9587304407
+8382998638
 
-22-526995451
+211454395362
 2622135030603
-MainWindow.xaml;Themes\Generic.xaml;Windows\AddDepartamento.xaml;Windows\AddDeptoImagen.xaml;Windows\AddInventario.xaml;Windows\AddReserva.xaml;Windows\AddServicioImagen.xaml;Windows\AddUsuarios.xaml;Windows\ListUsuarios.xaml;
+MainWindow.xaml;Windows\AddDepartamento.xaml;Windows\AddDeptoImagen.xaml;Windows\AddInventario.xaml;Windows\AddReserva.xaml;Windows\AddServicioImagen.xaml;Windows\AddUsuarios.xaml;Windows\ListUsuarios.xaml;
 
 False
 

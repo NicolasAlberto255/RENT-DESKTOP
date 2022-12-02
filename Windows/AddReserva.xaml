@@ -200,126 +200,9 @@
             Text=""
             TextWrapping="Wrap"
             Visibility="Hidden" />
-        <TextBox
-            x:Name="correoUsuarioTxt"
-            Width="120"
-            Margin="5,429,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Text=""
-            TextWrapping="Wrap"
-            Visibility="Hidden" />
-        <TextBox
-            x:Name="cedulaUsuarioTxt"
-            Width="120"
-            Margin="5,429,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Text=""
-            TextWrapping="Wrap"
-            Visibility="Hidden" />
-        <TextBox
-            x:Name="telefonoUsuarioTxt"
-            Width="120"
-            Margin="5,429,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Text=""
-            TextWrapping="Wrap"
-            Visibility="Hidden" />
-        <TextBox
-            x:Name="rolUsuarioTxt"
-            Width="120"
-            Margin="5,429,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Text=""
-            TextWrapping="Wrap"
-            Visibility="Hidden" />
-        <TextBox
-            x:Name="regionUsuarioTxt"
-            Width="120"
-            Margin="5,429,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Text=""
-            TextWrapping="Wrap"
-            Visibility="Hidden" />
-        <TextBox
-            x:Name="comunaUsuarioTxt"
-            Width="120"
-            Margin="5,429,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Text=""
-            TextWrapping="Wrap"
-            Visibility="Hidden" />
 
         <TextBox
             x:Name="idDepartamentoTxt"
-            Width="120"
-            Margin="5,429,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Text=""
-            TextWrapping="Wrap"
-            Visibility="Hidden" />
-        <TextBox
-            x:Name="nombreDepartamentoTxt"
-            Width="120"
-            Margin="5,429,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Text=""
-            TextWrapping="Wrap"
-            Visibility="Hidden" />
-        <TextBox
-            x:Name="nombreComunaDeptoTxt"
-            Width="120"
-            Margin="5,429,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Text=""
-            TextWrapping="Wrap"
-            Visibility="Hidden" />
-        <TextBox
-            x:Name="nombreRegionDeptoTxt"
-            Width="120"
-            Margin="5,429,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Text=""
-            TextWrapping="Wrap"
-            Visibility="Hidden" />
-        <TextBox
-            x:Name="nBanosTxt"
-            Width="120"
-            Margin="5,429,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Text=""
-            TextWrapping="Wrap"
-            Visibility="Hidden" />
-        <TextBox
-            x:Name="nDeptoTxt"
-            Width="120"
-            Margin="5,429,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Text=""
-            TextWrapping="Wrap"
-            Visibility="Hidden" />
-        <TextBox
-            x:Name="nEdificioTxt"
-            Width="120"
-            Margin="5,429,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Text=""
-            TextWrapping="Wrap"
-            Visibility="Hidden" />
-        <TextBox
-            x:Name="nHabitacionTxt"
             Width="120"
             Margin="5,429,0,0"
             HorizontalAlignment="Left"
@@ -334,15 +217,6 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Text="0"
-            TextWrapping="Wrap"
-            Visibility="Hidden" />
-        <TextBox
-            x:Name="balconTxt"
-            Width="120"
-            Margin="5,429,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Text=""
             TextWrapping="Wrap"
             Visibility="Hidden" />
 
@@ -881,6 +755,7 @@
         <TextBlock
             x:Name="correctBtnTB"
             Width="116"
+            Height="37"
             Margin="666,448,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
@@ -888,7 +763,7 @@
             Foreground="#FF091DC5"
             Text=""
             TextAlignment="Center"
-            TextWrapping="Wrap" Height="37" />
+            TextWrapping="Wrap" />
         <CheckBox
             x:Name="acercamientoCbx"
             Width="16"

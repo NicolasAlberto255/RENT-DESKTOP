@@ -21,5 +21,6 @@ namespace RENT.Models
         public int nHabitacion { get; set; }
         public int vNoche { get; set; }
         public Boolean balcon { get; set; }
+        public object[] servicios { get; set; }
     }
 }
